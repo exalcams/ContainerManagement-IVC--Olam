@@ -1,0 +1,224 @@
+@import "src/@fuse/scss/fuse";
+
+.mat-card {
+  margin: 5px !important;
+  padding: 5px !important;
+}
+.CardFont {
+  // font-family: Montserrat !important;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.Title {
+  @extend .CardFont;
+  font-size: 35px;
+  color: whitesmoke;
+  // border-bottom: 1px solid #f44336;
+}
+
+.SubTitle {
+  @extend .CardFont;
+  font-size: 18px;
+  font-weight: 500;
+  color: whitesmoke;
+}
+.ra {
+  text-align: right !important;
+  padding-right: 20% !important;
+}
+
+.formField {
+  width: 300px !important;
+}
+.example-container {
+  min-height: 600px;
+  background: white;
+}
+.search-input-wrapper {
+  max-width: 480px;
+}
+.report-table {
+  flex: 1 1 auto;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+table {
+  width: 100%;
+}
+th.mat-sort-header-sorted {
+  color: black;
+}
+// .mat-row {
+//   cursor: pointer;
+// }
+.mat-row, .mat-header-row {  
+  min-width: 2800px;  
+  cursor: pointer;
+  width: 100%;  
+  min-height: 64px;
+} 
+.mat-row:hover {
+  background-color: lightgrey;
+}
+// .mat-header-row {
+//   min-height: 64px;
+// }
+
+.product {
+  position: relative;
+  cursor: pointer;
+  height: 64px;
+}
+
+.mat-cell {
+  min-width: 0;
+  padding: 8px;
+  // text-align:center;
+  align-items: center;
+}
+
+.contentForTiles {
+  display: flex;
+  flex: 1 1 auto;
+  padding: 30px;
+  min-width: 0;
+
+  @include media-breakpoint-down("md") {
+    flex-direction: column;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+
+    .widget {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+  }
+
+  .right {
+    display: flex;
+    flex: 0 0 auto;
+    width: 320px;
+    min-width: 320px;
+    max-width: 320px;
+
+    @include media-breakpoint-down("md") {
+      flex: 1 0 100%;
+      margin-top: 32px;
+      width: 100%;
+      min-width: 0;
+      max-width: none;
+    }
+
+    .fuse-card {
+      @include media-breakpoint-down("md") {
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+      }
+    }
+  }
+}
+.content {
+  display: flex;
+  flex: 1 1 auto;
+  margin: 0px 32px -10px 32px;
+  min-width: 0;
+
+  @include media-breakpoint-down("md") {
+    flex-direction: column;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+
+    .widget {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+  }
+
+  .right {
+    display: flex;
+    flex: 0 0 auto;
+    width: 320px;
+    min-width: 320px;
+    max-width: 320px;
+
+    @include media-breakpoint-down("md") {
+      flex: 1 0 100%;
+      margin-top: 32px;
+      width: 100%;
+      min-width: 0;
+      max-width: none;
+    }
+
+    .fuse-card {
+      @include media-breakpoint-down("md") {
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+      }
+    }
+  }
+}
+.content1 {
+  display: flex;
+  flex: 1 1 auto;
+  margin: 20px 52px 0px 32px;
+  //padding: 0 80px;
+  min-width: 0;
+
+  @include media-breakpoint-down("md") {
+    flex-direction: column;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+
+    .widget {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+  }
+
+  .right {
+    display: flex;
+    flex: 0 0 auto;
+    width: 320px;
+    min-width: 320px;
+    max-width: 320px;
+
+    @include media-breakpoint-down("md") {
+      flex: 1 0 100%;
+      margin-top: 32px;
+      width: 100%;
+      min-width: 0;
+      max-width: none;
+    }
+
+    .fuse-card {
+      @include media-breakpoint-down("md") {
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+      }
+    }
+  }
+}

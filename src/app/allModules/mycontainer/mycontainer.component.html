@@ -1,0 +1,249 @@
+<div class="page-layout blank p-24" fusePerfectScrollbar>
+    <div class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="30px" fxLayoutGap.xs="30">
+      <!-- <div fxFlex>
+        <div class="container" fxLayout fxLayout.xs="column" fxLayout.sm="column" fxLayoutAlign="center"
+          fxLayoutGap="10px" fxLayoutGap.xs="10px">
+          <mat-card style="background-color:#6ca5a7 ;cursor: pointer;" (click)="loadSelectedReportDetails('TwentyEmpty')"
+            fxFlex>
+            <div class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="5px">
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <div class="pl-8 Title">
+                    20 Empty
+                  </div>
+                </div>
+              </div>
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <div class="SubTitle pl-8">
+                    {{TwentyEmptyCount}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+          <mat-card style="background-color:#6ca5a7 ;cursor: pointer;" (click)="loadSelectedReportDetails('FourtyEmpty')"
+            fxFlex>
+            <div class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="5px">
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <span class="pl-8 Title">
+                    40 Empty
+                  </span>
+                </div>
+              </div>
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <div class="SubTitle pl-8">
+                    {{FourtyEmptyCount}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+          <mat-card style="background-color:#5fa25f ;cursor: pointer;" (click)="loadSelectedReportDetails('TwentyFilled')"
+            fxFlex>
+            <div class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="5px">
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <span class="pl-8 Title">
+                    20 Filled
+                  </span>
+                </div>
+              </div>
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <div class="SubTitle pl-8">
+                    {{TwentyFilledCount}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+          <mat-card style="background-color:#5fa25f ;cursor: pointer;" (click)="loadSelectedReportDetails('FourtyFilled')"
+            fxFlex>
+            <div class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="5px">
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <span class="pl-8 Title">
+                    40 Filled
+                  </span>
+                </div>
+              </div>
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <div class="SubTitle pl-8">
+                    {{FourtyFilledCount}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+          <mat-card style="background-color:#bf5d5d ;cursor: pointer;"
+            (click)="loadSelectedReportDetails('TwentyDamagedEmpty')" fxFlex>
+            <div class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="5px">
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <span class="pl-8 Title">
+                    20 Damaged Empty
+                  </span>
+                </div>
+              </div>
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <div class="SubTitle pl-8">
+                    {{TwentyDamagedEmptyCount}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+          <mat-card style="background-color:#bf5d5d ;cursor: pointer;"
+            (click)="loadSelectedReportDetails('FourtyDamagedEmpty')" fxFlex>
+            <div class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="5px">
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <span class="pl-8 Title">
+                    40 Damaged Empty
+                  </span>
+                </div>
+              </div>
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <div class="SubTitle pl-8">
+                    {{FourtyDamagedEmptyCount}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+      </div> -->
+      <div fxFlex>
+        <div class="">
+          <div class="">
+            <div class="content-card">
+              <mat-form-field style="width:25% ; float:right;margin: 20px;">
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+              </mat-form-field>
+              <div class="example-container mat-elevation-z8">
+                <h1 style="width:25% ; float:left;margin: 20px;">My Containers</h1>
+                <table class="report-table" mat-table [dataSource]="dataSource" matSort [@animateStagger]="{value:'50'}"
+                  fusePerfectScrollbar>
+                  <ng-container matColumnDef="PLANT">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Plant </th>
+                      <td mat-cell *matCellDef="let element"> {{element.PLANT}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="SHIPPING_LINE">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Shipping Line </th>
+                        <td mat-cell *matCellDef="let element"> {{element.SHIPPING_LINE}} </td>
+                      </ng-container>
+
+                  <ng-container matColumnDef="CONTAINER_NO">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Container No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.CONTAINER_NO}} </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="CONTAINER_SIZE">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Container Size </th>
+                    <td mat-cell *matCellDef="let element"> {{element.CONTAINER_SIZE}} </td>
+                  </ng-container>
+  
+
+                  <ng-container matColumnDef="ENTRY_TIME">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Entry Date & Time </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ENTRY_TIME | date:'dd/MM/yyyy hh:MM:ss a'}} </td>
+                  </ng-container>
+  
+                   <ng-container matColumnDef="EXIT_TIME">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Exit Date & Time </th>
+                    <td mat-cell *matCellDef="let element"> {{element.EXIT_TIME | date:'dd/MM/yyyy hh:MM:ss a'}} </td>
+                  </ng-container>
+
+                  <!-- <ng-container matColumnDef="BLE_ID">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> BLE Id </th>
+                    <td mat-cell *matCellDef="let element"> {{element.BLE_ID}} </td>
+                  </ng-container> -->
+  
+                  <!-- <ng-container matColumnDef="CUSTOMER_NO">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Customer No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.CUSTOMER_NO}} </td>
+                  </ng-container>
+                
+                <ng-container matColumnDef="CUSTOMER_NAME">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Customer Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.CUSTOMER_NAME}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="SALES_CONTRACT_NO">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Sales Contract No </th>
+                      <td mat-cell *matCellDef="let element"> {{element.SALES_CONTRACT_NO}} </td>
+                    </ng-container>
+
+                    
+                    <ng-container matColumnDef="BOOKING_REFERENCE">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Booking Ref No </th>
+                      <td mat-cell *matCellDef="let element"> {{element.BOOKING_REFERENCE}} </td>
+                  </ng-container>  -->
+                  <!-- <ng-container matColumnDef="PLANT">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Plant </th>
+                      <td mat-cell *matCellDef="let element"> {{element.PLANT}} </td>
+                    </ng-container> -->
+  
+                  <!-- <ng-container matColumnDef="CONTAINER_TYPE">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Container Type </th>
+                    <td mat-cell *matCellDef="let element"> {{element.CONTAINER_TYPE}} </td>
+                  </ng-container> -->
+  
+                  <ng-container matColumnDef="TYPE">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+                    <td mat-cell *matCellDef="let element"> {{element.TYPE}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="TOTAL_TURN_AROUND_TIME">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Turn Around Time(TAT) </th>
+                      <td mat-cell *matCellDef="let element"> {{(getDate(element.EXIT_TIME,element.ENTRY_TIME) )}} </td>
+                    </ng-container>
+                  
+                  <!-- <ng-container matColumnDef="COLOR">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Color </th>
+                    <td mat-cell *matCellDef="let element">
+                      <p class="status text-truncate h6 p-4" style="width: 50px;"
+                        [ngStyle]="{'background-color':element.COLOR}">
+  
+                      </p>
+                    </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="IS_DAMAGE">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Is Damage </th>
+                    <td mat-cell *matCellDef="let element"> {{element.IS_DAMAGE}} </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="CLEAN_TYPE">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Clean Type </th>
+                    <td mat-cell *matCellDef="let element"> {{element.CLEAN_TYPE}} </td>
+                  </ng-container> -->
+  
+                  <!-- <ng-container matColumnDef="ACTION">
+                            <th mat-header-cell *matHeaderCellDef> Action </th>
+                            <td mat-cell *matCellDef="let element"> <mat-icon >arrow_upward
+                              </mat-icon> </td>
+                          </ng-container> -->
+                  <!-- <mat-header-cell *matHeaderCellDef mat-sort-header>Action</mat-header-cell>
+                          <mat-cell *matCellDef="let product" (click)="loadSelectedTransactionDetails(product)">
+                            <mat-icon >arrow_upward
+                            </mat-icon>
+                          </mat-cell> -->
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns;sticky: true"></tr>
+                  <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;" matRipple (click)="moveSelectedItemDetailsAbove(row)"></tr> -->
+                  <tr class="product" mat-row *matRowDef="let row; columns: displayedColumns;" matRipple></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons></mat-paginator>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

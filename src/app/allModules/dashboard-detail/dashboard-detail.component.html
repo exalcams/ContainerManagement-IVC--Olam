@@ -1,0 +1,22 @@
+<div id="containers" class="page-layout blank p-24">
+  <div class="container" fxLayoutAlign="center">
+
+    <div style="cursor:pointer;" *ngFor="let list of SRowData; let i =index">
+      <div class="cont1">
+        <img *ngIf="i==0" (click)="loadContainerdetails(list)" src="assets/images/dashboard/Container 1.png">
+      </div>
+      <div class="cont2">
+        <img *ngIf="i==1" (click)="loadContainerdetails(list)" src="assets/images/dashboard/Container 2.png">
+      </div>
+      <div class="cont3">
+        <img *ngIf="i==2" (click)="loadContainerdetails(list)" src="assets/images/dashboard/Container 3.png">
+      </div>
+      <div class="cont4">
+        <img *ngIf="i==3" (click)="loadContainerdetails(list)" src="assets/images/dashboard/Container 4.png">
+      </div>
+      <div class="cont5">
+        <img *ngIf="i==4" (click)="loadContainerdetails(list)" src="assets/images/dashboard/Container 2.png">
+      </div>
+    </div>
+  </div>
+</div>

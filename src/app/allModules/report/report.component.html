@@ -1,0 +1,373 @@
+<div class="page-layout blank p-24" fusePerfectScrollbar>
+  <div class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="30px" fxLayoutGap.xs="30">
+    <div fxFlex>
+      <div class="container" fxLayout fxLayout.xs="column" fxLayout.sm="column" fxLayoutAlign="center"
+        fxLayoutGap="10px" fxLayoutGap.xs="10px">
+        <mat-card style="background-color:#5fa25f ;cursor: pointer;" (click)="loadSelectedReportDetails('All')" fxFlex>
+          <div class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="5px">
+            <div fxFlex fxLayout fxLayoutAlign="center center">
+              <div class="pt-8">
+                <div class="pl-8 Title">
+                  {{'report.All' | translate}}
+                </div>
+              </div>
+            </div>
+            <div fxFlex fxLayout fxLayoutAlign="center center">
+              <div class="pt-8">
+                <div class="SubTitle pl-8">
+                  {{AllCount}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+        <mat-card style="background-color:#d8c057 ;" fxFlex>
+          <div class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="5px">
+            <div fxFlex fxLayout fxLayoutAlign="center center">
+              <div class="pt-8">
+                <span class="pl-8 Title" style="cursor: pointer;" (click)="loadSelectedReportDetails('Empty')">      
+                  {{'report.Empties' | translate}}
+                </span>
+              </div>
+            </div>
+            <div fxFlex>
+              <div fxLayout="column" fxLayoutGap="5px">
+                <div fxFlex fxLayoutAlign="center center">
+                  <div class="pt-8">
+                    <span class="SubTitle pl-8" style="cursor: pointer;"
+                      (click)="loadSelectedReportDetails('TwentyEmpty')">
+                      20'- {{TwentyEmptyCount}}
+                    </span>
+                  </div>
+                  <!-- <div class="pt-8">
+                          <div class="SubTitle pl-8">
+                            {{EmptyCount}}
+                          </div>
+                        </div> -->
+                </div>
+                <div fxFlex fxLayoutAlign="center center">
+                  <div class="pt-8">
+                    <span class="SubTitle pl-8" style="cursor: pointer;"
+                      (click)="loadSelectedReportDetails('FourtyEmpty')">
+                      40'- {{FourtyEmptyCount}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+        <mat-card style="background-color:#6da0a2 ;" fxFlex>
+          <div class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="5px">
+            <div fxFlex fxLayout fxLayoutAlign="center center">
+              <div class="pt-8">
+                <span class="pl-8 Title" style="cursor: pointer;" (click)="loadSelectedReportDetails('Full')">
+                  
+                  {{'report.Full' | translate}}
+                </span>
+              </div>
+            </div>
+            <div fxFlex>
+              <div fxLayout="column" fxLayoutGap="5px">
+                <div fxFlex fxLayoutAlign="center center">
+                  <div class="pt-8">
+                    <span class="SubTitle pl-8" style="cursor: pointer;"
+                      (click)="loadSelectedReportDetails('TwentyFilled')">
+                      20'- {{TwentyFilledCount}}
+                    </span>
+                  </div>
+                  <!-- <div class="pt-8">
+                          <div class="SubTitle pl-8">
+                            {{EmptyCount}}
+                          </div>
+                        </div> -->
+                </div>
+                <div fxFlex fxLayoutAlign="center center">
+                  <div class="pt-8">
+                    <span class="SubTitle pl-8" style="cursor: pointer;"
+                      (click)="loadSelectedReportDetails('FourtyFilled')">
+                      40'- {{FourtyFilledCount}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+        <mat-card style="background-color:#bf5d5d ;" fxFlex>
+          <div class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="5px">
+            <div fxFlex fxLayout fxLayoutAlign="center center">
+              <div class="pt-8">
+                <span class="pl-8 Title" style="cursor: pointer;" (click)="loadSelectedReportDetails('Damage')">
+                  
+                  {{'report.Damaged' | translate}}
+                </span>
+              </div>
+            </div>
+            <div fxFlex>
+              <div fxLayout="column" fxLayoutGap="5px">
+                <div fxFlex fxLayoutAlign="center center">
+                  <div class="pt-8">
+                    <span class="SubTitle pl-8" style="cursor: pointer;"
+                      (click)="loadSelectedReportDetails('TwentyDamagedEmpty')">
+                      20'- {{TwentyDamagedEmptyCount}}
+                    </span>
+                  </div>
+                  <!-- <div class="pt-8">
+                          <div class="SubTitle pl-8">
+                            {{EmptyCount}}
+                          </div>
+                        </div> -->
+                </div>
+                <div fxFlex fxLayoutAlign="center center">
+                  <div class="pt-8">
+                    <div class="SubTitle pl-8" style="cursor: pointer;"
+                      (click)="loadSelectedReportDetails('FourtyDamagedEmpty')">
+                      40'- {{FourtyDamagedEmptyCount}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+
+        <!-- <mat-card style="background-color:#e5f9fa ;cursor: pointer;" (click)="loadSelectedReportDetails('Full')"
+            fxFlex>
+            <div class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="5px">
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <span class="pl-8 Title">
+                    Full
+                  </span>
+                </div>
+              </div>
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <div class="SubTitle pl-8">
+                    {{FullCount}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+          <mat-card style="background-color:#bf5d5d ;cursor: pointer;" (click)="loadSelectedReportDetails('Damage')"
+            fxFlex>
+            <div class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="5px">
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <span class="pl-8 Title">
+                    Damage
+                  </span>
+                </div>
+              </div>
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <div class="SubTitle pl-8">
+                    {{DamageCount}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-card> -->
+        <!-- <mat-card style="background-color:#bf5d5d ;cursor: pointer;"
+            (click)="loadSelectedReportDetails('TwentyDamagedEmpty')" fxFlex>
+            <div class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="5px">
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <span class="pl-8 Title">
+                    20 Damaged Empty
+                  </span>
+                </div>
+              </div>
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <div class="SubTitle pl-8">
+                    {{TwentyDamagedEmptyCount}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+          <mat-card style="background-color:#bf5d5d ;cursor: pointer;"
+            (click)="loadSelectedReportDetails('FourtyDamagedEmpty')" fxFlex>
+            <div class="container" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="5px">
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <span class="pl-8 Title">
+                    40 Damaged Empty
+                  </span>
+                </div>
+              </div>
+              <div fxFlex fxLayout fxLayoutAlign="center center">
+                <div class="pt-8">
+                  <div class="SubTitle pl-8">
+                    {{FourtyDamagedEmptyCount}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-card> -->
+      </div>
+    </div>
+    <!-- <div fxFlex>
+          <div class="container">
+            <form style="margin-bottom:20px; margin-right: 22px;" class="mat-card mat-elevation-z4" autocomplete="off"
+            fxLayout="column" fxLayoutAlign="start" fxFlex="1 0 auto" name="form" [formGroup]="reportFormGroup" novalidate>
+            <div class="px-16 py-8" fxLayout="row" fxLayoutAlign="space-between center" fxFlex="1 0 auto">
+    
+              <mat-form-field class=" px-16 py-4  formField">
+                <mat-select placeholder="Select Container" formControlName="CONTAINER">
+                  <mat-option *ngFor="let container of AllContainers" [value]="container">
+                    {{container}}
+                  </mat-option>
+                </mat-select>
+                <mat-error
+                  *ngIf="reportFormGroup.get('CONTAINER').touched && reportFormGroup.get('CONTAINER').hasError('required')">
+                  Container is required
+                </mat-error>
+              </mat-form-field>
+    
+              <mat-form-field color="accent" class=" px-16 py-4  formField">
+                <mat-label>From date</mat-label>
+                <input matInput [matDatepicker]="picker1" formControlName="FROMDATE">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+                <mat-error
+                  *ngIf="reportFormGroup.get('FROMDATE').touched && reportFormGroup.get('FROMDATE').hasError('required')">
+                  From date is required
+                </mat-error>
+              </mat-form-field>
+    
+              <mat-form-field color="accent" class="px-16 py-4 formField">
+                <mat-label>To Date</mat-label>
+                <input matInput [matDatepicker]="picker2" formControlName="TODATE">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                <mat-error
+                  *ngIf="reportFormGroup.get('TODATE').touched && reportFormGroup.get('TODATE').hasError('required')">
+                  To date is required
+                </mat-error>
+              </mat-form-field>
+    
+              <mat-form-field class=" px-16 py-4  formField">
+                <mat-select placeholder="Select Vehicle No" formControlName="VEHICLE_NO">
+                  <mat-option *ngFor="let vehicle of AllVehicleNos" [value]="vehicle">
+                    {{vehicle}}
+                  </mat-option>
+                </mat-select>
+                <mat-error
+                  *ngIf="reportFormGroup.get('VEHICLE_NO').touched && reportFormGroup.get('VEHICLE_NO').hasError('required')">
+                  Vehicle No is required
+                </mat-error>
+              </mat-form-field>
+    
+              <button mat-raised-button color="accent" (click)="GetAllReportsBasedOnFilter()">Get Reports</button>
+    
+            </div>
+          </form>
+         </div>
+     </div> -->
+    <div fxFlex>
+      <div class="">
+        <div class="">
+          <div class="content-card">
+            <mat-form-field style="width:25% ; float:right;margin: 20px;">
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+            </mat-form-field>
+            <div class="example-container mat-elevation-z8">
+              <h1 style="width:25% ; float:left;margin: 20px;">{{content1ShowName}} Reports</h1>
+              <table class="report-table" mat-table [dataSource]="dataSource" matSort [@animateStagger]="{value:'50'}"
+                fusePerfectScrollbar>
+
+                <ng-container matColumnDef="CONTAINER_NO">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>   {{'report.CONTAINER_NO' | translate}} </th>
+                  <td mat-cell *matCellDef="let element"> {{element.CONTAINER_NO}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="CONTAINER_SIZE">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>  {{'report.CONTAINER_SIZE' | translate}} </th>
+                  <td mat-cell *matCellDef="let element"> {{element.CONTAINER_SIZE}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="BLE_ID">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> BLE Id </th>
+                  <td mat-cell *matCellDef="let element"> {{element.BLE_ID}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="CUSTOMER_NO">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>  {{'report.CUSTOMER_NO' | translate}} </th>
+                  <td mat-cell *matCellDef="let element"> {{element.CUSTOMER_NO}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="CUSTOMER_NAME">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>  {{'report.CUSTOMER_NAME' | translate}}  </th>
+                  <td mat-cell *matCellDef="let element"> {{element.CUSTOMER_NAME}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="SALES_CONTRACT_NO">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'report.SALES_CONTRACT_NO' | translate}}  </th>
+                  <td mat-cell *matCellDef="let element"> {{element.SALES_CONTRACT_NO}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="BOOKING_REFERENCE">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'report.BOOKING_REFERENCE' | translate}}  </th>
+                  <td mat-cell *matCellDef="let element"> {{element.BOOKING_REFERENCE}} </td>
+                </ng-container>
+
+                <!-- <ng-container matColumnDef="PLANT">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Plant </th>
+                        <td mat-cell *matCellDef="let element"> {{element.PLANT}} </td>
+                      </ng-container> -->
+
+                <ng-container matColumnDef="CONTAINER_TYPE">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>  {{'report.CONTAINER_TYPE' | translate}}  </th>
+                  <td mat-cell *matCellDef="let element"> {{element.CONTAINER_TYPE}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="TYPE">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>  {{'report.TYPE' | translate}}  </th>
+                  <td mat-cell *matCellDef="let element"> {{element.TYPE}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="COLOR">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>  {{'report.COLOR' | translate}}  </th>
+                  <td mat-cell *matCellDef="let element">
+                    <p class="status text-truncate h6 p-4" style="width: 30px;"
+                      [ngStyle]="{'background-color':element.COLOR}">
+
+                    </p>
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="IS_DAMAGE">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>  {{'report.IS_DAMAGE' | translate}}  </th>
+                  <td mat-cell *matCellDef="let element"> {{element.IS_DAMAGE}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="CLEAN_TYPE">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>  {{'report.CLEAN_TYPE' | translate}}  </th>
+                  <td mat-cell *matCellDef="let element"> {{element.CLEAN_TYPE}} </td>
+                </ng-container>
+
+                <!-- <ng-container matColumnDef="ACTION">
+                              <th mat-header-cell *matHeaderCellDef> Action </th>
+                              <td mat-cell *matCellDef="let element"> <mat-icon >arrow_upward
+                                </mat-icon> </td>
+                            </ng-container> -->
+                <!-- <mat-header-cell *matHeaderCellDef mat-sort-header>Action</mat-header-cell>
+                            <mat-cell *matCellDef="let product" (click)="loadSelectedTransactionDetails(product)">
+                              <mat-icon >arrow_upward
+                              </mat-icon>
+                            </mat-cell> -->
+                <tr mat-header-row *matHeaderRowDef="displayedColumns;sticky: true"></tr>
+                <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;" matRipple (click)="moveSelectedItemDetailsAbove(row)"></tr> -->
+                <tr class="product" mat-row *matRowDef="let row; columns: displayedColumns;" matRipple></tr>
+              </table>
+              <mat-paginator [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons></mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

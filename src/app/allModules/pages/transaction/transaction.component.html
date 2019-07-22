@@ -1,0 +1,243 @@
+<div id="products" class="page-layout carded fullwidth inner-scroll">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg accent"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- CENTER -->
+    <div class="center">
+
+        <!-- HEADER -->
+        <div class="header accent" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row"
+            fxLayoutAlign.gt-xs="space-between center">
+
+            <!-- APP TITLE -->
+            <div class="logo my-12 m-sm-0" fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon class="logo-icon mr-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
+                    shopping_basket
+                </mat-icon>
+                <span class="logo-text h1" [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
+                    Report
+                </span>
+            </div>
+            <!-- / APP TITLE -->
+
+            <!-- SEARCH -->
+            <div class="search-input-wrapper mx-24 m-md-0" fxFlex="1 0 auto" fxLayout="row" fxLayoutAlign="start center">
+                <label for="search" class="mr-8">
+                    <mat-icon class="secondary-text">search</mat-icon>
+                </label>
+                <mat-form-field floatLabel="never" fxFlex="1 0 auto">
+                    <input id="search" matInput #filter placeholder="Search">
+                </mat-form-field>
+            </div>
+            <!-- / SEARCH -->
+
+            <!-- <button mat-raised-button
+                  [routerLink]="'/apps/e-commerce/products/new'"
+                  class="add-product-button fuse-white my-12 mt-sm-0">
+              <span>ADD NEW PRODUCT</span>
+          </button> -->
+
+        </div>
+        <!-- / HEADER -->
+
+        <!-- CONTENT CARD -->
+        <div class="content-card">
+
+            <mat-table class="products-table" #table [dataSource]="dataSource" matSort [@animateStagger]="{value:'50'}"
+                fusePerfectScrollbar>
+
+                <!-- ID Column -->
+                <!-- <ng-container matColumnDef="TRANS_ID">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Trans Id</mat-header-cell>
+                    <mat-cell *matCellDef="let product">
+                        <p class="text-truncate">{{product.TRANS_ID}}</p>
+                    </mat-cell>
+                </ng-container> -->
+
+                <ng-container matColumnDef="VEHICLE_NO">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Vehicle No</mat-header-cell>
+                    <mat-cell *matCellDef="let product">
+                        <p class="text-truncate">{{product.VEHICLE_NO}}</p>
+                    </mat-cell>
+                </ng-container>
+                <!-- <ng-container matColumnDef="TRUCK_ID">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Truck Id</mat-header-cell>
+                    <mat-cell *matCellDef="let product">
+                        <p class="text-truncate">{{product.TRUCK_ID}}</p>
+                    </mat-cell>
+                </ng-container> -->
+                <ng-container matColumnDef="VENDOR">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Vendor</mat-header-cell>
+                    <mat-cell *matCellDef="let product">
+                        <p class="text-truncate">{{product.VENDOR}}</p>
+                    </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="DRIVER_DETAILS">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Driver No</mat-header-cell>
+                    <mat-cell *matCellDef="let product">
+                        <p class="text-truncate">{{product.DRIVER_NO}}</p>
+                    </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="MATERIAL">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Material</mat-header-cell>
+                    <mat-cell *matCellDef="let product">
+                        <p class="text-truncate">{{product.MATERIAL}}</p>
+                    </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="BAY">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Bay</mat-header-cell>
+                    <mat-cell *matCellDef="let product">
+                        <p class="text-truncate">{{product.BAY}}</p>
+                    </mat-cell>
+                </ng-container>
+                <!-- <ng-container matColumnDef="GENTRY_DATE">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Gate Entry Date</mat-header-cell>
+                    <mat-cell [style.color]="product.GENTRY_TIME" *matCellDef="let product">
+                        <p class="text-truncate">{{product.GENTRY_TIME?(product.GENTRY_TIME |
+                            date:'dd/MM/yyyy'):''}} </p>
+                    </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="GENTRY_TIME">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Gate Entry Time</mat-header-cell>
+                    <mat-cell [style.color]="product.GENTRY_TIME" *matCellDef="let product">
+                        <p class="text-truncate">{{product.GENTRY_TIME?(product.GENTRY_TIME |
+                            date:'hh:mm:ss a'):''}} </p>
+                    </mat-cell>
+                </ng-container> -->
+
+                <!-- <ng-container matColumnDef="Gate Entry Time">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Gate Entry Time</th>
+                    <td mat-cell *matCellDef="let row" [style.color]="row.GENTRY_TIME"> {{row.GENTRY_TIME?(row.GENTRY_TIME |
+                      date:'hh:mm:ss a'):''}} </td>
+                  </ng-container> -->
+
+                <!-- Image Column -->
+                <!-- <ng-container matColumnDef="image">
+                  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                  <mat-cell *matCellDef="let product">
+                      <img class="product-image"
+                           *ngIf="product.images[0]" [alt]="product.name"
+                           [src]="product.images[0].url"/>
+                      <img *ngIf="!product.images[0]" [src]="'assets/images/ecommerce/product-image-placeholder.png'">
+                  </mat-cell>
+              </ng-container> -->
+
+                <!-- <ng-container matColumnDef="TYPE">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Type</mat-header-cell>
+                    <mat-cell *matCellDef="let product">
+                        <p class="text-truncate"> {{product.TYPE=='L'?'Loading':
+                            product.TYPE=='UL'?'Unloading': product.TYPE=='ULL'?'Unloading And Loading':''}}</p>
+                    </mat-cell>
+                </ng-container> -->
+
+                <!-- Name Column -->
+                <!-- <ng-container matColumnDef="CUR_STATUS">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Current Status</mat-header-cell>
+                    <mat-cell *matCellDef="let product">
+                        <p class="text-truncate">{{product.CUR_STATUS}}</p>
+                    </mat-cell>
+                </ng-container> -->
+
+                <!-- Image Column -->
+                <ng-container matColumnDef="CUR_STATUS">
+                    <mat-header-cell *matHeaderCellDef>Current Status</mat-header-cell>
+                    <mat-cell *matCellDef="let product" (click)="loadSelectedTransactionDetails(product)">
+                        <img width="30" class="product-image" *ngIf="product.CUR_STATUS" style="cursor: pointer;color: blue !important"
+                            [src]="product.CUR_STATUS==='GENTRY' ?'assets/images/gateEntry.png':
+                           product.CUR_STATUS==='LENTRY' ?'assets/images/vehicleLoading.png':
+                           product.CUR_STATUS==='ULENTRY' ?'assets/images/vehicleUnloading.png':
+                           product.CUR_STATUS==='LEXIT' ?'assets/images/vehicleLoading.png':
+                           product.CUR_STATUS==='ULEXIT' ?'assets/images/vehicleUnloading.png':
+                           product.CUR_STATUS==='GEXIT' ?'assets/images/gateExit.jpg':'assets/images/gateEntry.png'"
+                            [matTooltip]="product.CUR_STATUS==='GENTRY' ?'Gate Entry':
+              product.CUR_STATUS==='PENTRY' ?'Parking Entry':
+              product.CUR_STATUS==='LENTRY' ?'Loading Entry':
+              product.CUR_STATUS==='ULENTRY' ?'Unloading Entry':
+              product.CUR_STATUS==='LEXIT' ?'Loading Exit':
+              product.CUR_STATUS==='ULEXIT' ?'Loading Exit':
+              product.CUR_STATUS==='GEXIT' ?'Completed':''" />
+                        <!-- <img *ngIf="!product.images[0]" [src]="'assets/images/ecommerce/product-image-placeholder.png'"> -->
+                    </mat-cell>
+                </ng-container>
+
+
+                <!-- 
+                <ng-container matColumnDef="Area">
+                    <th mat-header-cell *matHeaderCellDef> Area </th>
+                    <td mat-cell *matCellDef="let row" (click)="loadSelectedTransactionDetails(row)">
+
+                        <img width="30" *ngIf="row.CUR_STATUS" style="cursor: pointer;color: blue !important" 
+                        [src]="row.CUR_STATUS==='GENTRY' ?'assets/images/gateEntry.png':
+                                      row.CUR_STATUS==='GENTRY' ?'assets/images/gateEntry.png':
+                                      row.CUR_STATUS==='LENTRY' ?'assets/images/vehicleLoading.png':
+                                      row.CUR_STATUS==='ULENTRY' ?'assets/images/vehicleUnloading.png':
+                                      row.CUR_STATUS==='GEXIT' ?'assets/images/gateExit.jpg':'assets/images/gateEntry.png'"
+                            [matTooltip]="row.CUR_STATUS==='GENTRY' ?'Gate Entry':
+                                      row.CUR_STATUS==='PENTRY' ?'Parking Entry':
+                                      row.CUR_STATUS==='LENTRY' ?'Loading':
+                                      row.CUR_STATUS==='ULENTRY' ?'Unloading':
+                                      row.CUR_STATUS==='GEXIT' ?'Completed':''">
+                    </td>
+                </ng-container> -->
+
+                <!-- Category Column -->
+                <!-- <ng-container matColumnDef="category">
+                  <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Category</mat-header-cell>
+                  <mat-cell *matCellDef="let product" fxHide fxShow.gt-md>
+                      <p class="category text-truncate">
+                          {{product.categories[0]}}
+                      </p>
+                  </mat-cell>
+              </ng-container> -->
+
+                <!-- Price Column -->
+                <!-- <ng-container matColumnDef="price">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Price</mat-header-cell>
+                  <mat-cell *matCellDef="let product" fxHide fxShow.gt-xs>
+                      <p class="price text-truncate">
+                          {{product.priceTaxIncl | currency:'USD':'symbol'}}
+                      </p>
+                  </mat-cell>
+              </ng-container> -->
+
+                <!-- Quantity Column -->
+                <!-- <ng-container matColumnDef="quantity">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-sm>Quantity</mat-header-cell>
+                  <mat-cell *matCellDef="let product" fxHide fxShow.gt-sm>
+
+                      <span class="quantity-indicator text-truncate"
+                            [ngClass]="{'red-500':product.quantity <= 5, 'amber-500':product.quantity > 5 && product.quantity <= 25,'green-600':product.quantity > 25}">
+                      </span>
+                      <span>
+                          {{product.quantity}}
+                      </span>
+
+                  </mat-cell>
+              </ng-container> -->
+
+                <!-- Active Column -->
+                <!-- <ng-container matColumnDef="active">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Active</mat-header-cell>
+                  <mat-cell *matCellDef="let product" fxHide fxShow.gt-xs>
+                      <mat-icon *ngIf="product.active" class="active-icon green-600 s-16">check</mat-icon>
+                      <mat-icon *ngIf="!product.active" class="active-icon red-500 s-16">close</mat-icon>
+                  </mat-cell>
+              </ng-container> -->
+                <mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></mat-header-row>
+
+                <mat-row *matRowDef="let product; columns: displayedColumns;" class="product" matRipple [routerLink]="'/transactionDetails/'+product.TRANS_ID">
+                </mat-row>
+
+            </mat-table>
+
+            <mat-paginator #paginator [length]="dataSource.filteredData.length" [pageIndex]="0" [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 25, 100]">
+            </mat-paginator>
+
+        </div>
+        <!-- / CONTENT CARD -->
+    </div>
+    <!-- / CENTER -->
+</div>
