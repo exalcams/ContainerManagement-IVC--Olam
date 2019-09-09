@@ -15,6 +15,8 @@ export class DashboardDetailComponent implements OnInit {
   container: ContainerDetails[];
   containerDetails: any;
   SRowData: TransactionDetailsByLocationID[];
+  SRowDataStackName: string;
+  SRowDataStackNameLength:number;
   public LOGO = require('assets/images/dashboard/Container 1.png');
 
   @ViewChild('containerInfo')
@@ -39,9 +41,15 @@ export class DashboardDetailComponent implements OnInit {
   // tslint:disable-next-line:typedef
   ngOnInit() {
     // console.log(this.container);
-    this.SRowData = this._transactionDetailsService.SRowData;
-    this.SRowData.sort((a, b) => a.LOCATION_ID.localeCompare(b.LOCATION_ID));
-    console.log(this.SRowData);
+    if (this._transactionDetailsService.SRowData != null) {
+      this.SRowData = this._transactionDetailsService.SRowData;
+      this.SRowDataStackNameLength=this.SRowData.length;
+      this.SRowData.forEach(x => {
+        this.SRowDataStackName = x.LOCATION_ID.substr(0, 4);
+      });
+      this.SRowData.sort((a, b) => a.LOCATION_ID.localeCompare(b.LOCATION_ID));
+      console.log(this.SRowData);
+    }
   }
 
   loadContainerdetails(containerData: any): void {

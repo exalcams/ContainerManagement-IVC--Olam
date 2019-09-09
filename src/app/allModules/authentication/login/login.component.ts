@@ -183,6 +183,7 @@ export class LoginComponent implements OnInit {
         }
       );
     }
+
     if (this.MenuItems.indexOf('QRequest') >= 0) {
       this.children.push(
         {
@@ -320,6 +321,18 @@ export class LoginComponent implements OnInit {
         icon: 'view_list',
         children: this.subChildren
       }
+      );
+    }
+    if (this.MenuItems.indexOf('GatewayStatus') >= 0) {
+      this.children.push(
+        {
+          id: 'gatewayStatus',
+          title: 'Gateway Status',
+          translate: 'NAV.STACK_UPDATE',
+          type: 'item',
+          icon: 'build',
+          url: '/gatewayStatus',
+        }
       );
     }
     this.navigation.push({

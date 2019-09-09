@@ -86,7 +86,10 @@ const appRoutes: Routes = [
         path: 'dashboardDetail',
         loadChildren: './allModules/dashboard-detail/dashboard-detail.module#DashboardDetailModule'
     },
-
+    {
+        path: 'gatewayStatus',
+        loadChildren: './allModules/gatewayStatus/gatewayStatus.module#GatewayStatusModule'
+    },
     {
         path: '**',
         redirectTo: 'auth/login'
