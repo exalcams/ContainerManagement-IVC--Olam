@@ -16,6 +16,8 @@ import { locale as navigationEnglish } from 'app/navigation/i18n/en';
 import { locale as navigationTurkish } from 'app/navigation/i18n/tr';
 import { locale as navigationFrenchCoast } from 'app/navigation/i18n/fr';
 import { MenuUpdataionService } from './services/menu-update.service';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material';
 
 @Component({
     selector   : 'app',
@@ -51,9 +53,15 @@ export class AppComponent implements OnInit, OnDestroy
         private _fuseTranslationLoaderService: FuseTranslationLoaderService,
         private _translateService: TranslateService,
         private _menuUpdationService: MenuUpdataionService,
-        private _platform: Platform
+        private _platform: Platform,
+        iconRegistry: MatIconRegistry, sanitizer: DomSanitizer
     )
     {
+
+        iconRegistry.addSvgIcon(
+            'excel',
+            sanitizer.bypassSecurityTrustResourceUrl('assets/icons/excel.svg'));
+
         // Get default navigation
         this.navigation = navigation;
 

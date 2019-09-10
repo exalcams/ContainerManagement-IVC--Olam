@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy, ElementRef } from '@angular/core';
 import { AuthenticationDetails } from 'app/models/authentication_details';
 import { NotificationSnackBarComponent } from 'app/notifications/notification-snack-bar/notification-snack-bar.component';
 import { MatSnackBar, MatIconRegistry, MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
@@ -10,6 +10,7 @@ import { ReportDetails, ReportFilters } from 'app/models/report';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { Guid } from 'guid-typescript';
+import { ExcelExtractService } from 'app/services/excelExtract.Service';
 
 @Component({
   selector: 'app-report',
@@ -53,6 +54,7 @@ export class ReportComponent implements OnInit, OnDestroy {
     public snackBar: MatSnackBar,
     private _reportService: ReportService,
     private _formBuilder: FormBuilder,
+    private excelService: ExcelExtractService
   ) {
     this.authenticationDetails = new AuthenticationDetails();
     this.notificationSnackBarComponent = new NotificationSnackBarComponent(this.snackBar);
@@ -105,6 +107,11 @@ export class ReportComponent implements OnInit, OnDestroy {
   // tslint:disable-next-line:typedef
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  @ViewChild('TABLE') table: ElementRef;
+  exportAsXLSX(contentName: any ): void {
+    this.excelService.exportAsExcelOnlyTable(this.table.nativeElement, contentName);
   }
 
   GetAllReports(): void {

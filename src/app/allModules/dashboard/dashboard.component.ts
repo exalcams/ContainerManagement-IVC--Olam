@@ -33,10 +33,10 @@ export class DashboardComponent implements OnInit {
   completedTransactionsCount: number;
   availableSpaceCount: string;
   diagramShow = true;
-  content1Show = false;
-  content1ShowName: string;
+  tableShow = false;
+  tableShowName: string;
   exceptionTableShow = false;
-  otherTableShow = false;
+  commonTableShow = false;
 
   S001R1: TransactionDetailsByLocationID[];
   S003R1: TransactionDetailsByLocationID[];
@@ -427,17 +427,18 @@ export class DashboardComponent implements OnInit {
   S099R7: TransactionDetailsByLocationID[];
   S101R7: TransactionDetailsByLocationID[];
   S103R7: TransactionDetailsByLocationID[];
-  // 'CUSTOMER_NO', 'CUSTOMER_NAME', 'SALES_CONTRACT_NO',  'BOOKING_REFERENCE'
+
   // tslint:disable-next-line:max-line-length
-  displayedColumns = ['BLE_ID', 'CONTAINER_NO', 'CONTAINER_SIZE', 'CUSTOMER_NO', 'CUSTOMER_NAME', 'SALES_CONTRACT_NO', 'LOCATION_ID', 'BOOKING_REFERENCE', 'CONTAINER_TYPE', 'TYPE', 'COLOR', 'IS_DAMAGE', 'CLEAN_TYPE'];
-  dataSource: MatTableDataSource<TransactionDetails>;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-  // 'CUSTOMER_NO', 'CUSTOMER_NAME', 'SALES_CONTRACT_NO',  'BOOKING_REFERENCE', 
-  displayedColumns1 = ['CONTAINER_NO', 'CONTAINER_SIZE', 'LOCATION_ID', 'RGATEWAY_ID', 'CUSTOMER_NO', 'CUSTOMER_NAME', 'EXCEPTION_MESSAGE'];
-  dataSource1: MatTableDataSource<TransactionDetails>;
-  @ViewChild(MatPaginator) paginator1: MatPaginator;
-  @ViewChild(MatSort) sort1: MatSort;
+  commonDisplayedColumns = ['BLE_ID', 'CONTAINER_NO', 'CONTAINER_SIZE', 'CUSTOMER_NO', 'CUSTOMER_NAME', 'SALES_CONTRACT_NO', 'LOCATION_ID', 'BOOKING_REFERENCE', 'CONTAINER_TYPE', 'TYPE', 'COLOR', 'IS_DAMAGE', 'CLEAN_TYPE'];
+  commonDataSource: MatTableDataSource<TransactionDetails>;
+  @ViewChild(MatPaginator) commonPaginator: MatPaginator;
+  @ViewChild(MatSort) commonSort: MatSort;
+
+
+  exceptionDisplayedColumns = ['CONTAINER_NO', 'CONTAINER_SIZE', 'LOCATION_ID', 'RGATEWAY_ID', 'CUSTOMER_NO', 'CUSTOMER_NAME', 'EXCEPTION_MESSAGE'];
+  exceptionDataSource: MatTableDataSource<TransactionDetails>;
+  @ViewChild(MatPaginator) exceptionPaginator: MatPaginator;
+  @ViewChild(MatSort) exceptionSort: MatSort;
 
   constructor(
     private _router: Router,
@@ -483,21 +484,19 @@ export class DashboardComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  applyCommonFilter(filterValue: string) {
+    this.commonDataSource.filter = filterValue.trim().toLowerCase();
   }
 
   // tslint:disable-next-line:typedef
-  applyFilter1(filterValue: string) {
-    this.dataSource1.filter = filterValue.trim().toLowerCase();
+  applyExceptionFilter(filterValue: string) {
+    this.exceptionDataSource.filter = filterValue.trim().toLowerCase();
   }
 
   goBackToDashboard(): void {
     this.diagramShow = true;
-    this.content1Show = false;
+    this.tableShow = false;
   }
-
-
 
   GetAllTransactionDetailsCount(ID: Guid): void {
     this._dashboardService.GetAllTransactionDetailsCount(ID).subscribe(
@@ -516,9 +515,9 @@ export class DashboardComponent implements OnInit {
     this._dashboardService.GetAllTransactionDetails(ID).subscribe(
       (data) => {
         this.AllTransactionDetails = data as TransactionDetails[];
-        this.dataSource = new MatTableDataSource(this.AllTransactionDetails);
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
+        this.commonDataSource = new MatTableDataSource(this.AllTransactionDetails);
+        this.commonDataSource.paginator = this.commonPaginator;
+        this.commonDataSource.sort = this.commonSort;
         this.IsProgressBarVisibile = false;
       },
       (err) => {
@@ -569,9 +568,9 @@ export class DashboardComponent implements OnInit {
       (data) => {
         this.AllExceptionDetails = data as TransactionDetails[];
         this.exceptionDetailsCount = this.AllExceptionDetails.length;
-        this.dataSource1 = new MatTableDataSource(this.AllExceptionDetails);
-        this.dataSource1.paginator = this.paginator1;
-        this.dataSource1.sort = this.sort1;
+        this.exceptionDataSource = new MatTableDataSource(this.AllExceptionDetails);
+        this.exceptionDataSource.paginator = this.exceptionPaginator;
+        this.exceptionDataSource.sort = this.exceptionSort;
         this.IsProgressBarVisibile = false;
       },
       (err) => {
@@ -600,9 +599,9 @@ export class DashboardComponent implements OnInit {
       (data) => {
         this.AllCompletedTransactionDetails = data as TransactionDetails[];
         this.completedTransactionsCount = this.AllCompletedTransactionDetails.length;
-        this.dataSource = new MatTableDataSource(this.AllCompletedTransactionDetails);
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
+        this.commonDataSource = new MatTableDataSource(this.AllCompletedTransactionDetails);
+        this.commonDataSource.paginator = this.commonPaginator;
+        this.commonDataSource.sort = this.commonSort;
         this.IsProgressBarVisibile = false;
       },
       (err) => {
@@ -998,30 +997,30 @@ export class DashboardComponent implements OnInit {
   loadSelectedTransactionDetails(value: string): void {
     if (value === 'total') {
       this.diagramShow = false;
-      this.content1ShowName = 'Total Containers';
-      this.content1Show = true;
-      this.otherTableShow = true;
+      this.tableShowName = 'Total Containers';
+      this.tableShow = true;
+      this.commonTableShow = true;
       this.exceptionTableShow = false;
       // const onlyTotalTrucks: any[] = this.AllTransactionDetails.filter(x => x.CUR_STATUS !== 'EXIT');
-      this.dataSource = null;
+      this.commonDataSource = null;
       this.GetAllTransactionDetails(this.authenticationDetails.userID);
     }
     else if (value === 'completed') {
       this.diagramShow = false;
-      this.content1ShowName = 'Containers handled';
-      this.content1Show = true;
-      this.otherTableShow = true;
+      this.tableShowName = 'Containers handled';
+      this.tableShow = true;
+      this.commonTableShow = true;
       this.exceptionTableShow = false;
-      this.dataSource = null;
+      this.commonDataSource = null;
       this.GetAllCompletedTransactionDetails(this.authenticationDetails.userID);
     }
     else if (value === 'exception') {
       this.diagramShow = false;
-      this.content1ShowName = 'Exceptions';
-      this.content1Show = true;
-      this.otherTableShow = false;
+      this.tableShowName = 'Exceptions';
+      this.tableShow = true;
+      this.commonTableShow = false;
       this.exceptionTableShow = true;
-      this.dataSource1 = null;
+      this.exceptionDataSource = null;
       this.GetAllExceptionDetails(this.authenticationDetails.userID);
     }
   }
