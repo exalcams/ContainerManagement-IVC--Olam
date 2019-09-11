@@ -37,8 +37,8 @@ export class StackDetailsService {
       return throwError(error.error || error.message || 'Server Error');
     }
  
-    GetAllStackWithContainerDetails(ID: Guid): Observable<ReportDetails[] | string> {
-    return this._httpClient.get<ReportDetails[]>(`${this.baseAddress}api/TransactionDetails/GetAllStackWithContainerDetails?UserID=${ID}`)
+    GetAllStackWithContainerDetails(ID: Guid): Observable<StackDetails[] | string> {
+    return this._httpClient.get<StackDetails[]>(`${this.baseAddress}api/TransactionDetails/GetAllStackWithContainerDetails?UserID=${ID}`)
       .pipe(catchError(this.errorHandler));
   }
 
@@ -103,13 +103,13 @@ export class StackDetailsService {
 
   
        
-  GetAllReportsBasedOnCustomerFilter(reportFilters: ReportFilters): Observable<ReportDetails[] | string> {
-    return this._httpClient.post<ReportDetails[]>(`${this.baseAddress}api/Report/GetAllReportsBasedOnCustomerFilter`, reportFilters)
+  GetAllReportsBasedOnCustomerFilter(reportFilters: ReportFilters): Observable<StackDetails[] | string> {
+    return this._httpClient.post<StackDetails[]>(`${this.baseAddress}api/Report/GetAllReportsBasedOnCustomerFilter`, reportFilters)
       .pipe(catchError(this.errorHandler));
   }
 
-  GetAllReportsBasedOnContainerFilter(reportFilters: ReportFilters): Observable<ReportDetails[] | string> {
-    return this._httpClient.post<ReportDetails[]>(`${this.baseAddress}api/Report/GetAllReportsBasedOnContainerFilter`, reportFilters)
+  GetAllReportsBasedOnContainerFilter(reportFilters: ReportFilters): Observable<StackDetails[] | string> {
+    return this._httpClient.post<StackDetails[]>(`${this.baseAddress}api/Report/GetAllReportsBasedOnContainerFilter`, reportFilters)
       .pipe(catchError(this.errorHandler));
   }
 

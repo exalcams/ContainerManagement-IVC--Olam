@@ -9,6 +9,7 @@ import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseWidgetModule } from '@fuse/components/widget/widget.module';
 import { CReportComponent } from './creport.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { ExcelExtractService } from 'app/services/excelExtract.Service';
 
 
 const authRoutes: Routes = [
@@ -46,5 +47,8 @@ const authRoutes: Routes = [
     MatSelectModule,
     TranslateModule
   ],
+  providers: [
+    ExcelExtractService
+]
 })
 export class CReportModule { }

@@ -53,6 +53,7 @@ export class DashboardDetailComponent implements OnInit {
   }
 
   loadContainerdetails(containerData: any): void {
+    //console.log("containerData:------");
     console.log(containerData);
     const dialogConfig = new MatDialogConfig();
 
@@ -72,7 +73,7 @@ export class DashboardDetailComponent implements OnInit {
       ENTRY_TIME: containerData.ENTRY_TIME,
       EXIT_TIME: containerData.EXIT_TIME,
       SEAL_NUMBER: containerData.SEAL_NUMBER,
-      // LINE_NUMBER: containerData.LINE_NUMBER,
+      TRANSPORT_VENDOR: containerData.TRANSPORT_VENDOR,
       LOCATION_ID: containerData.LOCATION_ID,
       CUSTOMER_NO: containerData.CUSTOMER_NO
 

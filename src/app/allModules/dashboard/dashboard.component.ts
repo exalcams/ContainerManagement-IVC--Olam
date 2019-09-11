@@ -428,6 +428,7 @@ export class DashboardComponent implements OnInit {
   S101R7: TransactionDetailsByLocationID[];
   S103R7: TransactionDetailsByLocationID[];
 
+  S007R1CONTAINERSIZE: string;
   // tslint:disable-next-line:max-line-length
   commonDisplayedColumns = ['BLE_ID', 'CONTAINER_NO', 'CONTAINER_SIZE', 'CUSTOMER_NO', 'CUSTOMER_NAME', 'SALES_CONTRACT_NO', 'LOCATION_ID', 'BOOKING_REFERENCE', 'CONTAINER_TYPE', 'TYPE', 'COLOR', 'IS_DAMAGE', 'CLEAN_TYPE'];
   commonDataSource: MatTableDataSource<TransactionDetails>;
@@ -619,6 +620,9 @@ export class DashboardComponent implements OnInit {
         this.S003R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S003R1') || x.LOCATION_ID.match('S004R1') || x.LOCATION_ID.match('S002R1'));
         this.S005R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S005R1') || x.LOCATION_ID.match('S006R1') || x.LOCATION_ID.match('S004R1'));
         this.S007R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S007R1') || x.LOCATION_ID.match('S008R1') || x.LOCATION_ID.match('S006R1'));
+        this.S007R1.forEach(x => {
+          this.S007R1CONTAINERSIZE = x.CONTAINER_SIZE;
+        });
         this.S009R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S009R1') || x.LOCATION_ID.match('S010R1') || x.LOCATION_ID.match('S008R1'));
         this.S011R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S011R1') || x.LOCATION_ID.match('S012R1') || x.LOCATION_ID.match('S010R1'));
         this.S013R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S013R1') || x.LOCATION_ID.match('S014R1') || x.LOCATION_ID.match('S012R1'));

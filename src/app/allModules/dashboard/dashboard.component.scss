@@ -30,6 +30,10 @@ margin-bottom: -23px;
   .zeroClass {
     background-color: #5dc15d !important;
   }
+  
+  .blackClass {
+    background-color: black !important;
+  }
   .firstClass {
     background-image: linear-gradient(to right, #5dc15d, #efdc43);
   }
@@ -167,7 +171,7 @@ margin-bottom: -23px;
     min-height: 33vh !important;
     // max-height: 33vh !important;
     .table {
-      width: 77vw;
+      width: 100%;
       max-width: 100%;
       overflow: auto;
       margin-bottom: 10px;

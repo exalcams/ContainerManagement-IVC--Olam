@@ -47,7 +47,7 @@ export const locale = {
             'IS_DAMAGE': 'Is Damage',
             'CLEAN_TYPE': 'Clean Type',
             'RGATEWAY_ID': 'Reciever Gateway Id',
-            'Between_Containers_Handled': '(26h to 25h)',
+            'Between_Containers_Handled': '(26th to 25th)',
             'content1ShowName': 'content1ShowName'
 
         },
