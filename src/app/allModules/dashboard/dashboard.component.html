@@ -61,7 +61,7 @@
                 </div>
             </mat-card>
             <mat-card fxFlex (click)="loadSelectedTransactionDetails('exception')"
-                style="cursor: pointer; background-color:#cc2323">
+                style="cursor: pointer; background-color:#cc2381">
                 <div class="" fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="center center">
                     <div fxFlex fxLayout fxLayoutAlign="center center">
                         <div class="pt-8">
@@ -4918,12 +4918,12 @@
                             </div>
                         </div>
                         <div fxFlex (click)="loadSelectedContainer(S011R7)" [ngClass]="{
-                            'secondClass' : S011R7?.length == 2,
+                            'secondClass' : S011R7?.length == 2 ,
                             'zeroClass' : S011R7?.length == 0,
                             'firstClass' : S011R7?.length == 1,
                             'thirdClass' : S011R7?.length == 3,
                             'fourthClass' : S011R7?.length == 4,
-                            'fifthClass' : S011R7?.length == 5
+                            'fifthClass' : S011R7?.length == 5                
                          }" class="" fxLayoutAlign="center end">
                             <div class="">
                                 <div class="">

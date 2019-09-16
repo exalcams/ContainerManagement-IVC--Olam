@@ -1,31 +1,57 @@
 <div id="containers" class="page-layout carded" fusePerfectScrollbar>
   <div fxLayout="column">
     <div fxFlex>
-      <h1 style="align-content: left ; margin-left: 20px; font-size: 32px !important ; font-weight: 500 !important">Stack {{SRowDataStackName}} </h1>
+      <h1 style="align-content: left ; margin-left: 20px; font-size: 32px !important ; font-weight: 500 !important">
+        Stack {{SRowDataStackName}} </h1>
     </div>
-    <div fxFlex>
-      <div fxLayout="column" fxLayoutGap="2px" fxLayoutAlign="end center">
-        <div fxFlex *ngFor="let data of SRowData; let i =index" class="slotContainer">
-          <div style="padding: 16px">
-            <div class="slot">
-              <!-- {{data.BLE_ID}} -->
-              <img *ngIf="i==0" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 1.png">
+    <div style="height: 600px !important;">
+      <!-- <div fxFlex> -->
+      <div fxLayout="column" style="height: 100% ;margin-bottom: 10px !important;" fxLayoutAlign="end center">
+        <!-- <div fxFlex *ngFor="let data of SRowData; let i =index" >
+            <div style="padding: 16px">
+              <div class="slot">
+                <img *ngIf="i==0" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 1.png">
+              </div>
+              <div class="slot">
+                <img *ngIf="i==1" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 2.png">
+              </div>
+              <div class="slot">
+                <img *ngIf="i==2" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 3.png">
+              </div>
+              <div class="slot">
+                <img *ngIf="i==3" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 4.png">
+              </div>
+              <div class="slot">
+                <img *ngIf="i==4" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 2.png">
+              </div>
             </div>
-            <div class="slot">
-              <img *ngIf="i==1" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 2.png">
-            </div>
-            <div class="slot">
-              <img *ngIf="i==2" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 3.png">
-            </div>
-            <div class="slot">
-              <img *ngIf="i==3" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 4.png">
-            </div>
-            <div class="slot">
-              <img *ngIf="i==4" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 2.png">
-            </div>
+          </div> -->
+
+        <div class="slotContainer" *ngFor="let data of SRowData; let i =index">
+          <div class="slot">
+            <img *ngIf="i==0" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 1.png">
+          </div>
+          <div class="slot">
+            <img *ngIf="i==1" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 2.png">
+          </div>
+          <div class="slot">
+            <img *ngIf="i==2" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 3.png">
+          </div>
+          <div class="slot">
+            <img *ngIf="i==3" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 4.png">
+          </div>
+          <div class="slot">
+            <img *ngIf="i==4" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 2.png">
           </div>
         </div>
+        <!-- <div
+          style="min-width: 200px !important;min-height: 50px !important;border-radius: 3px; background-color: rgb(24, 109, 109) ; ">
+          <div>
+            ABC
+          </div>
+        </div> -->
       </div>
+      <!-- </div> -->
     </div>
   </div>
 
