@@ -86,7 +86,30 @@
         <div class="card">
             <div fxLayout="row" style="padding-left: 15px;" fxLayoutGap="32px">
                 <div fxFlex>
-
+                    <div fxLayout="column" fxLayoutGap="3px">
+                        <div fxFlex>
+                            <div fxLayout="row" fxLayoutGap="-8px">
+                                <div fxFlex fxLayoutAlign="center center"><span style="font-size:13px;">40'
+                                        {{ 'dash.Containers' | translate }} </span>
+                                </div>
+                                <div fxFlex fxLayoutAlign="center center">
+                                    <span class="h3 fourtyFeetContainerClass"
+                                        style="width: 16px;height: 16px; display: block; border-radius: 50%;"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div fxFlex>
+                            <!-- <div fxLayout="row" fxLayoutGap="-8px">
+                                <div fxFlex fxLayoutAlign="center center"><span style="font-size:13px;">1
+                                        {{ 'dash.Containers' | translate }} </span>
+                                </div>
+                                <div fxFlex fxLayoutAlign="center center">
+                                    <span class="h3 firstClass"
+                                        style="width: 16px;height: 16px; display: block; border-radius: 50%;"></span>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
                 </div>
                 <div fxFlex>
                     <div fxLayout="column" fxLayoutGap="3px">
@@ -266,7 +289,8 @@
                                                             'thirdClass' : S061R1?.length == 3,
                                                             'fourthClass' : S061R1?.length == 4,
                                                             'fifthClass' : S061R1?.length == 5                                                               
-                                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S061R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S061R1?.length != 0? S061R1?.length:''}}
@@ -280,7 +304,8 @@
                                                             'thirdClass' : S061R2?.length == 3,
                                                             'fourthClass' : S061R2?.length == 4,
                                                             'fifthClass' : S061R2?.length == 5
-                                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S061R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S061R2?.length != 0? S061R2?.length:''}}
@@ -294,7 +319,8 @@
                                                         'thirdClass' : S061R3?.length == 3,
                                                         'fourthClass' : S061R3?.length == 4,
                                                         'fifthClass' : S061R3?.length == 5              
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S061R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S061R3?.length != 0? S061R3?.length:''}}
@@ -308,7 +334,8 @@
                                                         'thirdClass' : S061R4?.length == 3,
                                                         'fourthClass' : S061R4?.length == 4,
                                                         'fifthClass' : S061R4?.length == 5
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S061R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S061R4?.length != 0? S061R4?.length:''}}
@@ -322,7 +349,8 @@
                                                     'thirdClass' : S061R5?.length == 3,
                                                     'fourthClass' : S061R5?.length == 4,
                                                     'fifthClass' : S061R5?.length == 5              
-                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S061R5)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S061R5?.length != 0? S061R5?.length:''}}
@@ -336,7 +364,8 @@
                                                     'thirdClass' : S061R6?.length == 3,
                                                     'fourthClass' : S061R6?.length == 4,
                                                     'fifthClass' : S061R6?.length == 5
-                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S061R6)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S061R6?.length != 0? S061R6?.length:''}}
@@ -350,7 +379,8 @@
                                                         'thirdClass' : S061R7?.length == 3,
                                                         'fourthClass' : S061R7?.length == 4,
                                                         'fifthClass' : S061R7?.length == 5
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S061R7)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S061R7?.length != 0? S061R7?.length:''}}
@@ -374,7 +404,8 @@
                                                             'thirdClass' : S063R1?.length == 3,
                                                             'fourthClass' : S063R1?.length == 4,
                                                             'fifthClass' : S063R1?.length == 5              
-                                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S063R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S063R1?.length != 0? S063R1?.length:''}}
@@ -388,7 +419,8 @@
                                                             'thirdClass' : S063R2?.length == 3,
                                                             'fourthClass' : S063R2?.length == 4,
                                                             'fifthClass' : S063R2?.length == 5
-                                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S063R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S063R2?.length != 0? S063R2?.length:''}}
@@ -402,7 +434,8 @@
                                                         'thirdClass' : S063R3?.length == 3,
                                                         'fourthClass' : S063R3?.length == 4,
                                                         'fifthClass' : S063R3?.length == 5              
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S063R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S063R3?.length != 0? S063R3?.length:''}}
@@ -416,7 +449,8 @@
                                                         'thirdClass' : S063R4?.length == 3,
                                                         'fourthClass' : S063R4?.length == 4,
                                                         'fifthClass' : S063R4?.length == 5
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S063R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S063R4?.length != 0? S063R4?.length:''}}
@@ -430,7 +464,8 @@
                                                     'thirdClass' : S063R5?.length == 3,
                                                     'fourthClass' : S063R5?.length == 4,
                                                     'fifthClass' : S063R5?.length == 5              
-                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S063R5)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S063R5?.length != 0? S063R5?.length:''}}
@@ -444,7 +479,8 @@
                                                     'thirdClass' : S063R6?.length == 3,
                                                     'fourthClass' : S063R6?.length == 4,
                                                     'fifthClass' : S063R6?.length == 5
-                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S063R6)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S063R6?.length != 0? S063R6?.length:''}}
@@ -458,7 +494,8 @@
                                                         'thirdClass' : S063R7?.length == 3,
                                                         'fourthClass' : S063R7?.length == 4,
                                                         'fifthClass' : S063R7?.length == 5
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S063R7)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S063R7?.length != 0? S063R7?.length:''}}
@@ -482,7 +519,8 @@
                                                             'thirdClass' : S065R1?.length == 3,
                                                             'fourthClass' : S065R1?.length == 4,
                                                             'fifthClass' : S065R1?.length == 5              
-                                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S065R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S065R1?.length != 0? S065R1?.length:''}}
@@ -496,7 +534,8 @@
                                                             'thirdClass' : S065R2?.length == 3,
                                                             'fourthClass' : S065R2?.length == 4,
                                                             'fifthClass' : S065R2?.length == 5
-                                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S065R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S065R2?.length != 0? S065R2?.length:''}}
@@ -510,7 +549,8 @@
                                                         'thirdClass' : S065R3?.length == 3,
                                                         'fourthClass' : S065R3?.length == 4,
                                                         'fifthClass' : S065R3?.length == 5              
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S065R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S065R3?.length != 0? S065R3?.length:''}}
@@ -524,7 +564,8 @@
                                                         'thirdClass' : S065R4?.length == 3,
                                                         'fourthClass' : S065R4?.length == 4,
                                                         'fifthClass' : S065R4?.length == 5
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S065R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S065R4?.length != 0? S065R4?.length:''}}
@@ -538,7 +579,8 @@
                                                     'thirdClass' : S065R5?.length == 3,
                                                     'fourthClass' : S065R5?.length == 4,
                                                     'fifthClass' : S065R5?.length == 5              
-                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S065R5)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S065R5?.length != 0? S065R5?.length:''}}
@@ -552,7 +594,8 @@
                                                     'thirdClass' : S065R6?.length == 3,
                                                     'fourthClass' : S065R6?.length == 4,
                                                     'fifthClass' : S065R6?.length == 5
-                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S065R6)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S065R6?.length != 0? S065R6?.length:''}}
@@ -566,7 +609,8 @@
                                                         'thirdClass' : S065R7?.length == 3,
                                                         'fourthClass' : S065R7?.length == 4,
                                                         'fifthClass' : S065R7?.length == 5
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S065R7)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S065R7?.length != 0? S065R7?.length:''}}
@@ -590,7 +634,8 @@
                                                             'thirdClass' : S067R1?.length == 3,
                                                             'fourthClass' : S067R1?.length == 4,
                                                             'fifthClass' : S067R1?.length == 5              
-                                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S067R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S067R1?.length != 0? S067R1?.length:''}}
@@ -604,7 +649,8 @@
                                                             'thirdClass' : S067R2?.length == 3,
                                                             'fourthClass' : S067R2?.length == 4,
                                                             'fifthClass' : S067R2?.length == 5
-                                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S067R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S067R2?.length != 0? S067R2?.length:''}}
@@ -618,7 +664,8 @@
                                                         'thirdClass' : S067R3?.length == 3,
                                                         'fourthClass' : S067R3?.length == 4,
                                                         'fifthClass' : S067R3?.length == 5              
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S067R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S067R3?.length != 0? S067R3?.length:''}}
@@ -632,7 +679,8 @@
                                                         'thirdClass' : S067R4?.length == 3,
                                                         'fourthClass' : S067R4?.length == 4,
                                                         'fifthClass' : S067R4?.length == 5
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S067R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S067R4?.length != 0? S067R4?.length:''}}
@@ -646,7 +694,8 @@
                                                     'thirdClass' : S067R5?.length == 3,
                                                     'fourthClass' : S067R5?.length == 4,
                                                     'fifthClass' : S067R5?.length == 5              
-                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S067R5)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S067R5?.length != 0? S067R5?.length:''}}
@@ -660,7 +709,8 @@
                                                     'thirdClass' : S067R6?.length == 3,
                                                     'fourthClass' : S067R6?.length == 4,
                                                     'fifthClass' : S067R6?.length == 5
-                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S067R6)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S067R6?.length != 0? S067R6?.length:''}}
@@ -674,7 +724,8 @@
                                                         'thirdClass' : S067R7?.length == 3,
                                                         'fourthClass' : S067R7?.length == 4,
                                                         'fifthClass' : S067R7?.length == 5
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S067R7)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S067R7?.length != 0? S067R7?.length:''}}
@@ -698,7 +749,8 @@
                                                             'thirdClass' : S069R1?.length == 3,
                                                             'fourthClass' : S069R1?.length == 4,
                                                             'fifthClass' : S069R1?.length == 5              
-                                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S069R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S069R1?.length != 0? S069R1?.length:''}}
@@ -712,7 +764,8 @@
                                                             'thirdClass' : S069R2?.length == 3,
                                                             'fourthClass' : S069R2?.length == 4,
                                                             'fifthClass' : S069R2?.length == 5
-                                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S069R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S069R2?.length != 0? S069R2?.length:''}}
@@ -726,7 +779,8 @@
                                                         'thirdClass' : S069R3?.length == 3,
                                                         'fourthClass' : S069R3?.length == 4,
                                                         'fifthClass' : S069R3?.length == 5              
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S069R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S069R3?.length != 0? S069R3?.length:''}}
@@ -740,7 +794,8 @@
                                                         'thirdClass' : S069R4?.length == 3,
                                                         'fourthClass' : S069R4?.length == 4,
                                                         'fifthClass' : S069R4?.length == 5
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S069R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S069R4?.length != 0? S069R4?.length:''}}
@@ -754,7 +809,8 @@
                                                     'thirdClass' : S069R5?.length == 3,
                                                     'fourthClass' : S069R5?.length == 4,
                                                     'fifthClass' : S069R5?.length == 5              
-                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S069R5)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S069R5?.length != 0? S069R5?.length:''}}
@@ -768,7 +824,8 @@
                                                     'thirdClass' : S069R6?.length == 3,
                                                     'fourthClass' : S069R6?.length == 4,
                                                     'fifthClass' : S069R6?.length == 5
-                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S069R6)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S069R6?.length != 0? S069R6?.length:''}}
@@ -782,7 +839,8 @@
                                                         'thirdClass' : S069R7?.length == 3,
                                                         'fourthClass' : S069R7?.length == 4,
                                                         'fifthClass' : S069R7?.length == 5
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S069R7)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S069R7?.length != 0? S069R7?.length:''}}
@@ -806,7 +864,8 @@
                                                             'thirdClass' : S071R1?.length == 3,
                                                             'fourthClass' : S071R1?.length == 4,
                                                             'fifthClass' : S071R1?.length == 5              
-                                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S071R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S071R1?.length != 0? S071R1?.length:''}}
@@ -820,7 +879,8 @@
                                                             'thirdClass' : S071R2?.length == 3,
                                                             'fourthClass' : S071R2?.length == 4,
                                                             'fifthClass' : S071R2?.length == 5
-                                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S071R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S071R2?.length != 0? S071R2?.length:''}}
@@ -834,7 +894,8 @@
                                                         'thirdClass' : S071R3?.length == 3,
                                                         'fourthClass' : S071R3?.length == 4,
                                                         'fifthClass' : S071R3?.length == 5              
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S071R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S071R3?.length != 0? S071R3?.length:''}}
@@ -848,7 +909,8 @@
                                                         'thirdClass' : S071R4?.length == 3,
                                                         'fourthClass' : S071R4?.length == 4,
                                                         'fifthClass' : S071R4?.length == 5
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S071R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S071R4?.length != 0? S071R4?.length:''}}
@@ -862,7 +924,8 @@
                                                     'thirdClass' : S071R5?.length == 3,
                                                     'fourthClass' : S071R5?.length == 4,
                                                     'fifthClass' : S071R5?.length == 5              
-                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S071R5)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S071R5?.length != 0? S071R5?.length:''}}
@@ -876,7 +939,8 @@
                                                     'thirdClass' : S071R6?.length == 3,
                                                     'fourthClass' : S071R6?.length == 4,
                                                     'fifthClass' : S071R6?.length == 5
-                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S071R6)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S071R6?.length != 0? S071R6?.length:''}}
@@ -890,7 +954,8 @@
                                                         'thirdClass' : S071R7?.length == 3,
                                                         'fourthClass' : S071R7?.length == 4,
                                                         'fifthClass' : S071R7?.length == 5
-                                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S071R7)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S071R7?.length != 0? S071R7?.length:''}}
@@ -915,7 +980,7 @@
                                                                             'fourthClass' : S073R1?.length == 4,
                                                                             'fifthClass' : S073R1?.length == 5              
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S073R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S073R1?.length != 0? S073R1?.length:''}}
@@ -930,7 +995,7 @@
                                                                             'fourthClass' : S073R2?.length == 4,
                                                                             'fifthClass' : S073R2?.length == 5
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S073R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S073R2?.length != 0? S073R2?.length:''}}
@@ -945,7 +1010,7 @@
                                                                         'fourthClass' : S073R3?.length == 4,
                                                                         'fifthClass' : S073R3?.length == 5              
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S073R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S073R3?.length != 0? S073R3?.length:''}}
@@ -960,7 +1025,7 @@
                                                                         'fourthClass' : S073R4?.length == 4,
                                                                         'fifthClass' : S073R4?.length == 5
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S073R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S073R4?.length != 0? S073R4?.length:''}}
@@ -1027,7 +1092,7 @@
                                                                             'fourthClass' : S075R1?.length == 4,
                                                                             'fifthClass' : S075R1?.length == 5              
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S075R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S075R1?.length != 0? S075R1?.length:''}}
@@ -1042,7 +1107,7 @@
                                                                             'fourthClass' : S075R2?.length == 4,
                                                                             'fifthClass' : S075R2?.length == 5
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S075R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S075R2?.length != 0? S075R2?.length:''}}
@@ -1057,7 +1122,7 @@
                                                                         'fourthClass' : S075R3?.length == 4,
                                                                         'fifthClass' : S075R3?.length == 5              
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S075R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S075R3?.length != 0? S075R3?.length:''}}
@@ -1072,7 +1137,7 @@
                                                                         'fourthClass' : S075R4?.length == 4,
                                                                         'fifthClass' : S075R4?.length == 5
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S075R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S075R4?.length != 0? S075R4?.length:''}}
@@ -1139,7 +1204,7 @@
                                                                             'fourthClass' : S077R1?.length == 4,
                                                                             'fifthClass' : S077R1?.length == 5              
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S077R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S077R1?.length != 0? S077R1?.length:''}}
@@ -1154,7 +1219,7 @@
                                                                             'fourthClass' : S077R2?.length == 4,
                                                                             'fifthClass' : S077R2?.length == 5
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S077R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S077R2?.length != 0? S077R2?.length:''}}
@@ -1169,7 +1234,7 @@
                                                                         'fourthClass' : S077R3?.length == 4,
                                                                         'fifthClass' : S077R3?.length == 5              
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S077R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S077R3?.length != 0? S077R3?.length:''}}
@@ -1184,7 +1249,7 @@
                                                                         'fourthClass' : S077R4?.length == 4,
                                                                         'fifthClass' : S077R4?.length == 5
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S077R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S077R4?.length != 0? S077R4?.length:''}}
@@ -1251,7 +1316,7 @@
                                                                             'fourthClass' : S079R1?.length == 4,
                                                                             'fifthClass' : S079R1?.length == 5              
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S079R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S079R1?.length != 0? S079R1?.length:''}}
@@ -1266,7 +1331,7 @@
                                                                             'fourthClass' : S079R2?.length == 4,
                                                                             'fifthClass' : S079R2?.length == 5
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S079R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S079R2?.length != 0? S079R2?.length:''}}
@@ -1281,7 +1346,7 @@
                                                                         'fourthClass' : S079R3?.length == 4,
                                                                         'fifthClass' : S079R3?.length == 5              
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S079R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S079R3?.length != 0? S079R3?.length:''}}
@@ -1296,7 +1361,7 @@
                                                                         'fourthClass' : S079R4?.length == 4,
                                                                         'fifthClass' : S079R4?.length == 5
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S079R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S079R4?.length != 0? S079R4?.length:''}}
@@ -1363,7 +1428,7 @@
                                                                             'fourthClass' : S081R1?.length == 4,
                                                                             'fifthClass' : S081R1?.length == 5              
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S081R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S081R1?.length != 0? S081R1?.length:''}}
@@ -1378,7 +1443,7 @@
                                                                             'fourthClass' : S081R2?.length == 4,
                                                                             'fifthClass' : S081R2?.length == 5
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S081R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S081R2?.length != 0? S081R2?.length:''}}
@@ -1393,7 +1458,7 @@
                                                                         'fourthClass' : S081R3?.length == 4,
                                                                         'fifthClass' : S081R3?.length == 5              
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S081R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S081R3?.length != 0? S081R3?.length:''}}
@@ -1408,7 +1473,7 @@
                                                                         'fourthClass' : S081R4?.length == 4,
                                                                         'fifthClass' : S081R4?.length == 5
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S081R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S081R4?.length != 0? S081R4?.length:''}}
@@ -1475,7 +1540,7 @@
                                                                             'fourthClass' : S083R1?.length == 4,
                                                                             'fifthClass' : S083R1?.length == 5              
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S083R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S083R1?.length != 0? S083R1?.length:''}}
@@ -1490,7 +1555,7 @@
                                                                             'fourthClass' : S083R2?.length == 4,
                                                                             'fifthClass' : S083R2?.length == 5
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S083R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S083R2?.length != 0? S083R2?.length:''}}
@@ -1505,7 +1570,7 @@
                                                                         'fourthClass' : S083R3?.length == 4,
                                                                         'fifthClass' : S083R3?.length == 5              
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S083R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S083R3?.length != 0? S083R3?.length:''}}
@@ -1520,7 +1585,7 @@
                                                                         'fourthClass' : S083R4?.length == 4,
                                                                         'fifthClass' : S083R4?.length == 5
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S083R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S083R4?.length != 0? S083R4?.length:''}}
@@ -1587,7 +1652,7 @@
                                                                             'fourthClass' : S085R1?.length == 4,
                                                                             'fifthClass' : S085R1?.length == 5              
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S085R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S085R1?.length != 0? S085R1?.length:''}}
@@ -1602,7 +1667,7 @@
                                                                             'fourthClass' : S085R2?.length == 4,
                                                                             'fifthClass' : S085R2?.length == 5
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S085R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S085R2?.length != 0? S085R2?.length:''}}
@@ -1617,7 +1682,7 @@
                                                                         'fourthClass' : S085R3?.length == 4,
                                                                         'fifthClass' : S085R3?.length == 5              
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S085R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S085R3?.length != 0? S085R3?.length:''}}
@@ -1632,7 +1697,7 @@
                                                                         'fourthClass' : S085R4?.length == 4,
                                                                         'fifthClass' : S085R4?.length == 5
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S085R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S085R4?.length != 0? S085R4?.length:''}}
@@ -1699,7 +1764,7 @@
                                                                             'fourthClass' : S087R1?.length == 4,
                                                                             'fifthClass' : S087R1?.length == 5              
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S087R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S087R1?.length != 0? S087R1?.length:''}}
@@ -1714,7 +1779,7 @@
                                                                             'fourthClass' : S087R2?.length == 4,
                                                                             'fifthClass' : S087R2?.length == 5
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S087R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S087R2?.length != 0? S087R2?.length:''}}
@@ -1729,7 +1794,7 @@
                                                                         'fourthClass' : S087R3?.length == 4,
                                                                         'fifthClass' : S087R3?.length == 5              
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S087R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S087R3?.length != 0? S087R3?.length:''}}
@@ -1744,7 +1809,7 @@
                                                                         'fourthClass' : S087R4?.length == 4,
                                                                         'fifthClass' : S087R4?.length == 5
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S087R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S087R4?.length != 0? S087R4?.length:''}}
@@ -1811,7 +1876,7 @@
                                                                             'fourthClass' : S089R1?.length == 4,
                                                                             'fifthClass' : S089R1?.length == 5              
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S089R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S089R1?.length != 0? S089R1?.length:''}}
@@ -1826,7 +1891,7 @@
                                                                             'fourthClass' : S089R2?.length == 4,
                                                                             'fifthClass' : S089R2?.length == 5
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S089R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S089R2?.length != 0? S089R2?.length:''}}
@@ -1841,7 +1906,7 @@
                                                                         'fourthClass' : S089R3?.length == 4,
                                                                         'fifthClass' : S089R3?.length == 5              
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S089R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S089R3?.length != 0? S089R3?.length:''}}
@@ -1856,7 +1921,7 @@
                                                                         'fourthClass' : S089R4?.length == 4,
                                                                         'fifthClass' : S089R4?.length == 5
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S089R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S089R4?.length != 0? S089R4?.length:''}}
@@ -1923,7 +1988,7 @@
                                                                             'fourthClass' : S091R1?.length == 4,
                                                                             'fifthClass' : S091R1?.length == 5              
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S091R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S091R1?.length != 0? S091R1?.length:''}}
@@ -1938,7 +2003,7 @@
                                                                             'fourthClass' : S091R2?.length == 4,
                                                                             'fifthClass' : S091R2?.length == 5
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S091R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S091R2?.length != 0? S091R2?.length:''}}
@@ -1953,7 +2018,7 @@
                                                                         'fourthClass' : S091R3?.length == 4,
                                                                         'fifthClass' : S091R3?.length == 5              
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S091R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S091R3?.length != 0? S091R3?.length:''}}
@@ -1968,7 +2033,7 @@
                                                                         'fourthClass' : S091R4?.length == 4,
                                                                         'fifthClass' : S091R4?.length == 5
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S091R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S091R4?.length != 0? S091R4?.length:''}}
@@ -2035,7 +2100,7 @@
                                                                             'fourthClass' : S093R1?.length == 4,
                                                                             'fifthClass' : S093R1?.length == 5              
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S093R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S093R1?.length != 0? S093R1?.length:''}}
@@ -2050,7 +2115,7 @@
                                                                             'fourthClass' : S093R2?.length == 4,
                                                                             'fifthClass' : S093R2?.length == 5
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S093R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S093R2?.length != 0? S093R2?.length:''}}
@@ -2065,7 +2130,7 @@
                                                                         'fourthClass' : S093R3?.length == 4,
                                                                         'fifthClass' : S093R3?.length == 5              
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S093R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S093R3?.length != 0? S093R3?.length:''}}
@@ -2080,7 +2145,7 @@
                                                                         'fourthClass' : S093R4?.length == 4,
                                                                         'fifthClass' : S093R4?.length == 5
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S093R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S093R4?.length != 0? S093R4?.length:''}}
@@ -2147,7 +2212,7 @@
                                                                             'fourthClass' : S095R1?.length == 4,
                                                                             'fifthClass' : S095R1?.length == 5              
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S095R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S095R1?.length != 0? S095R1?.length:''}}
@@ -2162,7 +2227,7 @@
                                                                             'fourthClass' : S095R2?.length == 4,
                                                                             'fifthClass' : S095R2?.length == 5
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S095R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S095R2?.length != 0? S095R2?.length:''}}
@@ -2177,7 +2242,7 @@
                                                                         'fourthClass' : S095R3?.length == 4,
                                                                         'fifthClass' : S095R3?.length == 5              
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S095R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S095R3?.length != 0? S095R3?.length:''}}
@@ -2192,7 +2257,7 @@
                                                                         'fourthClass' : S095R4?.length == 4,
                                                                         'fifthClass' : S095R4?.length == 5
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S095R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S095R4?.length != 0? S095R4?.length:''}}
@@ -2259,7 +2324,7 @@
                                                                             'fourthClass' : S097R1?.length == 4,
                                                                             'fifthClass' : S097R1?.length == 5              
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S097R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S097R1?.length != 0? S097R1?.length:''}}
@@ -2274,7 +2339,7 @@
                                                                             'fourthClass' : S097R2?.length == 4,
                                                                             'fifthClass' : S097R2?.length == 5
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S097R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S097R2?.length != 0? S097R2?.length:''}}
@@ -2289,7 +2354,7 @@
                                                                         'fourthClass' : S097R3?.length == 4,
                                                                         'fifthClass' : S097R3?.length == 5              
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S097R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S097R3?.length != 0? S097R3?.length:''}}
@@ -2304,7 +2369,7 @@
                                                                         'fourthClass' : S097R4?.length == 4,
                                                                         'fifthClass' : S097R4?.length == 5
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S097R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S097R4?.length != 0? S097R4?.length:''}}
@@ -2371,7 +2436,7 @@
                                                                             'fourthClass' : S099R1?.length == 4,
                                                                             'fifthClass' : S099R1?.length == 5              
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S099R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S099R1?.length != 0? S099R1?.length:''}}
@@ -2386,7 +2451,7 @@
                                                                             'fourthClass' : S099R2?.length == 4,
                                                                             'fifthClass' : S099R2?.length == 5
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S099R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S099R2?.length != 0? S099R2?.length:''}}
@@ -2401,7 +2466,7 @@
                                                                         'fourthClass' : S099R3?.length == 4,
                                                                         'fifthClass' : S099R3?.length == 5              
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S099R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S099R3?.length != 0? S099R3?.length:''}}
@@ -2416,7 +2481,7 @@
                                                                         'fourthClass' : S099R4?.length == 4,
                                                                         'fifthClass' : S099R4?.length == 5
                                                                      }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S099R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S099R4?.length != 0? S099R4?.length:''}}
@@ -2483,7 +2548,7 @@
                                                                             'fourthClass' : S101R1?.length == 4,
                                                                             'fifthClass' : S101R1?.length == 5              
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S101R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S101R1?.length != 0? S101R1?.length:''}}
@@ -2498,7 +2563,7 @@
                                                                             'fourthClass' : S101R2?.length == 4,
                                                                             'fifthClass' : S101R2?.length == 5
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S101R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S101R2?.length != 0? S101R2?.length:''}}
@@ -2593,7 +2658,7 @@
                                                                             'fourthClass' : S103R1?.length == 4,
                                                                             'fifthClass' : S103R1?.length == 5              
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S103R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S103R1?.length != 0? S103R1?.length:''}}
@@ -2608,7 +2673,7 @@
                                                                             'fourthClass' : S103R2?.length == 4,
                                                                             'fifthClass' : S103R2?.length == 5
                                                                          }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S103R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S103R2?.length != 0? S103R2?.length:''}}
@@ -2770,7 +2835,8 @@
                                                                     'thirdClass' : S033R1?.length == 3,
                                                                     'fourthClass' : S033R1?.length == 4,
                                                                     'fifthClass' : S033R1?.length == 5              
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S033R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S033R1?.length != 0? S033R1?.length:''}}
@@ -2784,7 +2850,8 @@
                                                                     'thirdClass' : S033R2?.length == 3,
                                                                     'fourthClass' : S033R2?.length == 4,
                                                                     'fifthClass' : S033R2?.length == 5
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S033R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S033R2?.length != 0? S033R2?.length:''}}
@@ -2798,7 +2865,8 @@
                                                                 'thirdClass' : S033R3?.length == 3,
                                                                 'fourthClass' : S033R3?.length == 4,
                                                                 'fifthClass' : S033R3?.length == 5              
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S033R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S033R3?.length != 0? S033R3?.length:''}}
@@ -2812,7 +2880,8 @@
                                                                 'thirdClass' : S033R4?.length == 3,
                                                                 'fourthClass' : S033R4?.length == 4,
                                                                 'fifthClass' : S033R4?.length == 5
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S033R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S033R4?.length != 0? S033R4?.length:''}}
@@ -2879,7 +2948,7 @@
                                                                                     'fourthClass' : S035R1?.length == 4,
                                                                                     'fifthClass' : S035R1?.length == 5              
                                                                                  }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S035R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S035R1?.length != 0? S035R1?.length:''}}
@@ -2894,7 +2963,7 @@
                                                                                     'fourthClass' : S035R2?.length == 4,
                                                                                     'fifthClass' : S035R2?.length == 5
                                                                                  }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S035R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S035R2?.length != 0? S035R2?.length:''}}
@@ -2909,7 +2978,7 @@
                                                                                 'fourthClass' : S035R3?.length == 4,
                                                                                 'fifthClass' : S035R3?.length == 5              
                                                                              }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S035R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S035R3?.length != 0? S035R3?.length:''}}
@@ -2924,7 +2993,7 @@
                                                                                 'fourthClass' : S035R4?.length == 4,
                                                                                 'fifthClass' : S035R4?.length == 5
                                                                              }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S035R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S035R4?.length != 0? S035R4?.length:''}}
@@ -2990,7 +3059,8 @@
                                                                     'thirdClass' : S037R1?.length == 3,
                                                                     'fourthClass' : S037R1?.length == 4,
                                                                     'fifthClass' : S037R1?.length == 5              
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S037R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S037R1?.length != 0? S037R1?.length:''}}
@@ -3004,7 +3074,8 @@
                                                                     'thirdClass' : S037R2?.length == 3,
                                                                     'fourthClass' : S037R2?.length == 4,
                                                                     'fifthClass' : S037R2?.length == 5
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S037R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S037R2?.length != 0? S037R2?.length:''}}
@@ -3018,7 +3089,8 @@
                                                                 'thirdClass' : S037R3?.length == 3,
                                                                 'fourthClass' : S037R3?.length == 4,
                                                                 'fifthClass' : S037R3?.length == 5              
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S037R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S037R3?.length != 0? S037R3?.length:''}}
@@ -3032,7 +3104,8 @@
                                                                 'thirdClass' : S037R4?.length == 3,
                                                                 'fourthClass' : S037R4?.length == 4,
                                                                 'fifthClass' : S037R4?.length == 5
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S037R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S037R4?.length != 0? S037R4?.length:''}}
@@ -3099,7 +3172,7 @@
                                                                                     'fourthClass' : S039R1?.length == 4,
                                                                                     'fifthClass' : S039R1?.length == 5              
                                                                                  }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S039R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S039R1?.length != 0? S039R1?.length:''}}
@@ -3114,7 +3187,7 @@
                                                                                     'fourthClass' : S039R2?.length == 4,
                                                                                     'fifthClass' : S039R2?.length == 5
                                                                                  }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S039R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S039R2?.length != 0? S039R2?.length:''}}
@@ -3129,7 +3202,7 @@
                                                                                 'fourthClass' : S039R3?.length == 4,
                                                                                 'fifthClass' : S039R3?.length == 5              
                                                                              }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S039R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S039R3?.length != 0? S039R3?.length:''}}
@@ -3144,7 +3217,7 @@
                                                                                 'fourthClass' : S039R4?.length == 4,
                                                                                 'fifthClass' : S039R4?.length == 5
                                                                              }" class="slotContainer"
-                            fxLayoutAlign="center end">
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S039R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S039R4?.length != 0? S039R4?.length:''}}
@@ -3210,7 +3283,8 @@
                                                                     'thirdClass' : S041R1?.length == 3,
                                                                     'fourthClass' : S041R1?.length == 4,
                                                                     'fifthClass' : S041R1?.length == 5              
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S041R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S041R1?.length != 0? S041R1?.length:''}}
@@ -3224,7 +3298,8 @@
                                                                     'thirdClass' : S041R2?.length == 3,
                                                                     'fourthClass' : S041R2?.length == 4,
                                                                     'fifthClass' : S041R2?.length == 5
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S041R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S041R2?.length != 0? S041R2?.length:''}}
@@ -3238,7 +3313,8 @@
                                                                 'thirdClass' : S041R3?.length == 3,
                                                                 'fourthClass' : S041R3?.length == 4,
                                                                 'fifthClass' : S041R3?.length == 5              
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S041R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S041R3?.length != 0? S041R3?.length:''}}
@@ -3252,7 +3328,8 @@
                                                                 'thirdClass' : S041R4?.length == 3,
                                                                 'fourthClass' : S041R4?.length == 4,
                                                                 'fifthClass' : S041R4?.length == 5
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S041R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S041R4?.length != 0? S041R4?.length:''}}
@@ -3318,7 +3395,8 @@
                                                                     'thirdClass' : S043R1?.length == 3,
                                                                     'fourthClass' : S043R1?.length == 4,
                                                                     'fifthClass' : S043R1?.length == 5              
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S043R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S043R1?.length != 0? S043R1?.length:''}}
@@ -3332,7 +3410,8 @@
                                                                     'thirdClass' : S043R2?.length == 3,
                                                                     'fourthClass' : S043R2?.length == 4,
                                                                     'fifthClass' : S043R2?.length == 5
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S043R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S043R2?.length != 0? S043R2?.length:''}}
@@ -3346,7 +3425,8 @@
                                                                 'thirdClass' : S043R3?.length == 3,
                                                                 'fourthClass' : S043R3?.length == 4,
                                                                 'fifthClass' : S043R3?.length == 5              
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S043R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S043R3?.length != 0? S043R3?.length:''}}
@@ -3360,7 +3440,8 @@
                                                                 'thirdClass' : S043R4?.length == 3,
                                                                 'fourthClass' : S043R4?.length == 4,
                                                                 'fifthClass' : S043R4?.length == 5
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S043R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S043R4?.length != 0? S043R4?.length:''}}
@@ -3426,7 +3507,8 @@
                                                                     'thirdClass' : S045R1?.length == 3,
                                                                     'fourthClass' : S045R1?.length == 4,
                                                                     'fifthClass' : S045R1?.length == 5              
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S045R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S045R1?.length != 0? S045R1?.length:''}}
@@ -3440,7 +3522,8 @@
                                                                     'thirdClass' : S045R2?.length == 3,
                                                                     'fourthClass' : S045R2?.length == 4,
                                                                     'fifthClass' : S045R2?.length == 5
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S045R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S045R2?.length != 0? S045R2?.length:''}}
@@ -3454,7 +3537,8 @@
                                                                 'thirdClass' : S045R3?.length == 3,
                                                                 'fourthClass' : S045R3?.length == 4,
                                                                 'fifthClass' : S045R3?.length == 5              
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S045R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S045R3?.length != 0? S045R3?.length:''}}
@@ -3468,7 +3552,8 @@
                                                                 'thirdClass' : S045R4?.length == 3,
                                                                 'fourthClass' : S045R4?.length == 4,
                                                                 'fifthClass' : S045R4?.length == 5
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S045R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S045R4?.length != 0? S045R4?.length:''}}
@@ -3534,7 +3619,8 @@
                                                                     'thirdClass' : S047R1?.length == 3,
                                                                     'fourthClass' : S047R1?.length == 4,
                                                                     'fifthClass' : S047R1?.length == 5              
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S047R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S047R1?.length != 0? S047R1?.length:''}}
@@ -3548,7 +3634,8 @@
                                                                     'thirdClass' : S047R2?.length == 3,
                                                                     'fourthClass' : S047R2?.length == 4,
                                                                     'fifthClass' : S047R2?.length == 5
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S047R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S047R2?.length != 0? S047R2?.length:''}}
@@ -3562,7 +3649,8 @@
                                                                 'thirdClass' : S047R3?.length == 3,
                                                                 'fourthClass' : S047R3?.length == 4,
                                                                 'fifthClass' : S047R3?.length == 5              
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S047R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S047R3?.length != 0? S047R3?.length:''}}
@@ -3576,7 +3664,8 @@
                                                                 'thirdClass' : S047R4?.length == 3,
                                                                 'fourthClass' : S047R4?.length == 4,
                                                                 'fifthClass' : S047R4?.length == 5
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S047R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S047R4?.length != 0? S047R4?.length:''}}
@@ -3642,7 +3731,8 @@
                                                                     'thirdClass' : S049R1?.length == 3,
                                                                     'fourthClass' : S049R1?.length == 4,
                                                                     'fifthClass' : S049R1?.length == 5              
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S049R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S049R1?.length != 0? S049R1?.length:''}}
@@ -3656,7 +3746,8 @@
                                                                     'thirdClass' : S049R2?.length == 3,
                                                                     'fourthClass' : S049R2?.length == 4,
                                                                     'fifthClass' : S049R2?.length == 5
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S049R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S049R2?.length != 0? S049R2?.length:''}}
@@ -3670,7 +3761,8 @@
                                                                 'thirdClass' : S049R3?.length == 3,
                                                                 'fourthClass' : S049R3?.length == 4,
                                                                 'fifthClass' : S049R3?.length == 5              
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S049R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S049R3?.length != 0? S049R3?.length:''}}
@@ -3684,7 +3776,8 @@
                                                                 'thirdClass' : S049R4?.length == 3,
                                                                 'fourthClass' : S049R4?.length == 4,
                                                                 'fifthClass' : S049R4?.length == 5
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S049R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S049R4?.length != 0? S049R4?.length:''}}
@@ -3750,7 +3843,8 @@
                                                                     'thirdClass' : S051R1?.length == 3,
                                                                     'fourthClass' : S051R1?.length == 4,
                                                                     'fifthClass' : S051R1?.length == 5              
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S051R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S051R1?.length != 0? S051R1?.length:''}}
@@ -3764,7 +3858,8 @@
                                                                     'thirdClass' : S051R2?.length == 3,
                                                                     'fourthClass' : S051R2?.length == 4,
                                                                     'fifthClass' : S051R2?.length == 5
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S051R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S051R2?.length != 0? S051R2?.length:''}}
@@ -3778,7 +3873,8 @@
                                                                 'thirdClass' : S051R3?.length == 3,
                                                                 'fourthClass' : S051R3?.length == 4,
                                                                 'fifthClass' : S051R3?.length == 5              
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S051R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S051R3?.length != 0? S051R3?.length:''}}
@@ -3792,7 +3888,8 @@
                                                                 'thirdClass' : S051R4?.length == 3,
                                                                 'fourthClass' : S051R4?.length == 4,
                                                                 'fifthClass' : S051R4?.length == 5
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S051R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S051R4?.length != 0? S051R4?.length:''}}
@@ -3858,7 +3955,8 @@
                                                                     'thirdClass' : S053R1?.length == 3,
                                                                     'fourthClass' : S053R1?.length == 4,
                                                                     'fifthClass' : S053R1?.length == 5              
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S053R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S053R1?.length != 0? S053R1?.length:''}}
@@ -3872,7 +3970,8 @@
                                                                     'thirdClass' : S053R2?.length == 3,
                                                                     'fourthClass' : S053R2?.length == 4,
                                                                     'fifthClass' : S053R2?.length == 5
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S053R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S053R2?.length != 0? S053R2?.length:''}}
@@ -3886,7 +3985,8 @@
                                                                 'thirdClass' : S053R3?.length == 3,
                                                                 'fourthClass' : S053R3?.length == 4,
                                                                 'fifthClass' : S053R3?.length == 5              
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S053R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S053R3?.length != 0? S053R3?.length:''}}
@@ -3900,7 +4000,8 @@
                                                                 'thirdClass' : S053R4?.length == 3,
                                                                 'fourthClass' : S053R4?.length == 4,
                                                                 'fifthClass' : S053R4?.length == 5
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S053R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S053R4?.length != 0? S053R4?.length:''}}
@@ -3966,7 +4067,8 @@
                                                                     'thirdClass' : S055R1?.length == 3,
                                                                     'fourthClass' : S055R1?.length == 4,
                                                                     'fifthClass' : S055R1?.length == 5              
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S055R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S055R1?.length != 0? S055R1?.length:''}}
@@ -3980,7 +4082,8 @@
                                                                     'thirdClass' : S055R2?.length == 3,
                                                                     'fourthClass' : S055R2?.length == 4,
                                                                     'fifthClass' : S055R2?.length == 5
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S055R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S055R2?.length != 0? S055R2?.length:''}}
@@ -3994,7 +4097,8 @@
                                                                 'thirdClass' : S055R3?.length == 3,
                                                                 'fourthClass' : S055R3?.length == 4,
                                                                 'fifthClass' : S055R3?.length == 5              
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S055R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S055R3?.length != 0? S055R3?.length:''}}
@@ -4008,7 +4112,8 @@
                                                                 'thirdClass' : S055R4?.length == 3,
                                                                 'fourthClass' : S055R4?.length == 4,
                                                                 'fifthClass' : S055R4?.length == 5
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S055R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S055R4?.length != 0? S055R4?.length:''}}
@@ -4074,7 +4179,8 @@
                                                                     'thirdClass' : S057R1?.length == 3,
                                                                     'fourthClass' : S057R1?.length == 4,
                                                                     'fifthClass' : S057R1?.length == 5              
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S057R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S057R1?.length != 0? S057R1?.length:''}}
@@ -4088,7 +4194,8 @@
                                                                     'thirdClass' : S057R2?.length == 3,
                                                                     'fourthClass' : S057R2?.length == 4,
                                                                     'fifthClass' : S057R2?.length == 5
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S057R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S057R2?.length != 0? S057R2?.length:''}}
@@ -4102,7 +4209,8 @@
                                                                 'thirdClass' : S057R3?.length == 3,
                                                                 'fourthClass' : S057R3?.length == 4,
                                                                 'fifthClass' : S057R3?.length == 5              
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S057R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S057R3?.length != 0? S057R3?.length:''}}
@@ -4116,7 +4224,8 @@
                                                                 'thirdClass' : S057R4?.length == 3,
                                                                 'fourthClass' : S057R4?.length == 4,
                                                                 'fifthClass' : S057R4?.length == 5
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S057R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S057R4?.length != 0? S057R4?.length:''}}
@@ -4182,7 +4291,8 @@
                                                                     'thirdClass' : S059R1?.length == 3,
                                                                     'fourthClass' : S059R1?.length == 4,
                                                                     'fifthClass' : S059R1?.length == 5              
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S059R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S059R1?.length != 0? S059R1?.length:''}}
@@ -4196,7 +4306,8 @@
                                                                     'thirdClass' : S059R2?.length == 3,
                                                                     'fourthClass' : S059R2?.length == 4,
                                                                     'fifthClass' : S059R2?.length == 5
-                                                                 }" class="slotContainer" fxLayoutAlign="center end">
+                                                                 }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S059R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S059R2?.length != 0? S059R2?.length:''}}
@@ -4210,7 +4321,8 @@
                                                                 'thirdClass' : S059R3?.length == 3,
                                                                 'fourthClass' : S059R3?.length == 4,
                                                                 'fifthClass' : S059R3?.length == 5              
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S059R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S059R3?.length != 0? S059R3?.length:''}}
@@ -4224,7 +4336,8 @@
                                                                 'thirdClass' : S059R4?.length == 3,
                                                                 'fourthClass' : S059R4?.length == 4,
                                                                 'fifthClass' : S059R4?.length == 5
-                                                             }" class="slotContainer" fxLayoutAlign="center end">
+                                                             }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S059R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S059R4?.length != 0? S059R4?.length:''}}
@@ -4716,7 +4829,8 @@
                     'thirdClass' : S007R6?.length == 3,
                     'fourthClass' : S007R6?.length == 4,
                     'fifthClass' : S007R6?.length == 5
-                 }" class="slotContainer" fxLayoutAlign="center end">
+                 }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S007R6)"
+                            fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S007R6?.length != 0? S007R6?.length:''}}
@@ -4730,7 +4844,8 @@
                 'thirdClass' : S007R5?.length == 3,
                 'fourthClass' : S007R5?.length == 4,
                 'fifthClass' : S007R5?.length == 5              
-             }" class="slotContainer" fxLayoutAlign="center end">
+             }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S007R5)"
+                            fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S007R5?.length != 0? S007R5?.length:''}}
@@ -4744,7 +4859,8 @@
             'thirdClass' : S007R4?.length == 3,
             'fourthClass' : S007R4?.length == 4,
             'fifthClass' : S007R4?.length == 5
-         }" class="slotContainer" fxLayoutAlign="center end">
+         }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S007R4)"
+                            fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S007R4?.length != 0? S007R4?.length:''}}
@@ -4758,7 +4874,7 @@
     'thirdClass' : S007R3?.length == 3,
     'fourthClass' : S007R3?.length == 4,
     'fifthClass' : S007R3?.length == 5              
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S007R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S007R3?.length != 0? S007R3?.length:''}}
@@ -4772,7 +4888,7 @@
     'thirdClass' : S007R2?.length == 3,
     'fourthClass' : S007R2?.length == 4,
     'fifthClass' : S007R2?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S007R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S007R2?.length != 0? S007R2?.length:''}}
@@ -4785,8 +4901,9 @@
                                         'secondClass' : S007R1?.length == 2,
                                         'thirdClass' : S007R1?.length == 3,
                                         'fourthClass' : S007R1?.length == 4,
-                                        'fifthClass' : S007R1?.length == 5                                                                                 
-                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                        'fifthClass' : S007R1?.length == 5                                                                         
+                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S007R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S007R1?.length != 0? S007R1?.length:''}}
@@ -4824,7 +4941,7 @@
         'thirdClass' : S009R6?.length == 3,
         'fourthClass' : S009R6?.length == 4,
         'fifthClass' : S009R6?.length == 5
-     }" class="slotContainer" fxLayoutAlign="center end">
+     }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S009R6)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S009R6?.length != 0? S009R6?.length:''}}
@@ -4838,7 +4955,7 @@
     'thirdClass' : S009R5?.length == 3,
     'fourthClass' : S009R5?.length == 4,
     'fifthClass' : S009R5?.length == 5              
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S009R5)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S009R5?.length != 0? S009R5?.length:''}}
@@ -4852,7 +4969,7 @@
     'thirdClass' : S009R4?.length == 3,
     'fourthClass' : S009R4?.length == 4,
     'fifthClass' : S009R4?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S009R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S009R4?.length != 0? S009R4?.length:''}}
@@ -4866,7 +4983,7 @@
     'thirdClass' : S009R3?.length == 3,
     'fourthClass' : S009R3?.length == 4,
     'fifthClass' : S009R3?.length == 5              
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S009R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S009R3?.length != 0? S009R3?.length:''}}
@@ -4880,7 +4997,7 @@
     'thirdClass' : S009R2?.length == 3,
     'fourthClass' : S009R2?.length == 4,
     'fifthClass' : S009R2?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S009R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S009R2?.length != 0? S009R2?.length:''}}
@@ -4894,18 +5011,14 @@
                                         'thirdClass' : S009R1?.length == 3,
                                         'fourthClass' : S009R1?.length == 4,
                                         'fifthClass' : S009R1?.length == 5              
-                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S009R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S009R1?.length != 0? S009R1?.length:''}}
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
 
                     </div>
                     <!-- S011 -->
@@ -4938,7 +5051,8 @@
                 'thirdClass' : S011R6?.length == 3,
                 'fourthClass' : S011R6?.length == 4,
                 'fifthClass' : S011R6?.length == 5
-             }" class="slotContainer" fxLayoutAlign="center end">
+             }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S011R6)"
+                            fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S011R6?.length != 0? S011R6?.length:''}}
@@ -4952,7 +5066,7 @@
         'thirdClass' : S011R5?.length == 3,
         'fourthClass' : S011R5?.length == 4,
         'fifthClass' : S011R5?.length == 5              
-     }" class="slotContainer" fxLayoutAlign="center end">
+     }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S011R5)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S011R5?.length != 0? S011R5?.length:''}}
@@ -4966,7 +5080,7 @@
     'thirdClass' : S011R4?.length == 3,
     'fourthClass' : S011R4?.length == 4,
     'fifthClass' : S011R4?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S011R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S011R4?.length != 0? S011R4?.length:''}}
@@ -4980,7 +5094,7 @@
     'thirdClass' : S011R3?.length == 3,
     'fourthClass' : S011R3?.length == 4,
     'fifthClass' : S011R3?.length == 5              
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S011R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S011R3?.length != 0? S011R3?.length:''}}
@@ -4988,13 +5102,13 @@
                             </div>
                         </div>
                         <div fxFlex (click)="loadSelectedContainer(S011R2)" [ngClass]="{
-    'secondClass' : S011R2?.length == 2,
-    'zeroClass' : S011R2?.length == 0,
-    'firstClass' : S011R2?.length == 1,
-    'thirdClass' : S011R2?.length == 3,
-    'fourthClass' : S011R2?.length == 4,
-    'fifthClass' : S011R2?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+                                          'secondClass' : S011R2?.length == 2,
+                                          'zeroClass' : S011R2?.length == 0,
+                                         'firstClass' : S011R2?.length == 1,
+                                        'thirdClass' : S011R2?.length == 3,
+                                        'fourthClass' : S011R2?.length == 4,
+                                      'fifthClass' : S011R2?.length == 5
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S011R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S011R2?.length != 0? S011R2?.length:''}}
@@ -5008,7 +5122,8 @@
                                             'thirdClass' : S011R1?.length == 3,
                                             'fourthClass' : S011R1?.length == 4,
                                             'fifthClass' : S011R1?.length == 5              
-                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S011R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S011R1?.length != 0? S011R1?.length:''}}
@@ -5052,7 +5167,8 @@
                 'thirdClass' : S013R6?.length == 3,
                 'fourthClass' : S013R6?.length == 4,
                 'fifthClass' : S013R6?.length == 5
-             }" class="slotContainer" fxLayoutAlign="center end">
+             }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S013R6)"
+                            fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S013R6?.length != 0? S013R6?.length:''}}
@@ -5066,7 +5182,7 @@
         'thirdClass' : S013R5?.length == 3,
         'fourthClass' : S013R5?.length == 4,
         'fifthClass' : S013R5?.length == 5              
-     }" class="slotContainer" fxLayoutAlign="center end">
+     }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S013R5)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S013R5?.length != 0? S013R5?.length:''}}
@@ -5080,7 +5196,7 @@
     'thirdClass' : S013R4?.length == 3,
     'fourthClass' : S013R4?.length == 4,
     'fifthClass' : S013R4?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S013R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S013R4?.length != 0? S013R4?.length:''}}
@@ -5094,7 +5210,7 @@
     'thirdClass' : S013R3?.length == 3,
     'fourthClass' : S013R3?.length == 4,
     'fifthClass' : S013R3?.length == 5              
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S013R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S013R3?.length != 0? S013R3?.length:''}}
@@ -5108,7 +5224,7 @@
     'thirdClass' : S013R2?.length == 3,
     'fourthClass' : S013R2?.length == 4,
     'fifthClass' : S013R2?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S013R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S013R2?.length != 0? S013R2?.length:''}}
@@ -5122,18 +5238,14 @@
                                             'thirdClass' : S013R1?.length == 3,
                                             'fourthClass' : S013R1?.length == 4,
                                             'fifthClass' : S013R1?.length == 5              
-                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S013R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S013R1?.length != 0? S013R1?.length:''}}
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
 
                     </div>
                     <!-- S015 -->
@@ -5166,7 +5278,8 @@
                 'thirdClass' : S015R6?.length == 3,
                 'fourthClass' : S015R6?.length == 4,
                 'fifthClass' : S015R6?.length == 5
-             }" class="slotContainer" fxLayoutAlign="center end">
+             }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S015R6)"
+                            fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S015R6?.length != 0? S015R6?.length:''}}
@@ -5180,7 +5293,7 @@
         'thirdClass' : S015R5?.length == 3,
         'fourthClass' : S015R5?.length == 4,
         'fifthClass' : S015R5?.length == 5              
-     }" class="slotContainer" fxLayoutAlign="center end">
+     }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S015R5)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S015R5?.length != 0? S015R5?.length:''}}
@@ -5194,7 +5307,7 @@
     'thirdClass' : S015R4?.length == 3,
     'fourthClass' : S015R4?.length == 4,
     'fifthClass' : S015R4?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S015R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S015R4?.length != 0? S015R4?.length:''}}
@@ -5208,7 +5321,7 @@
     'thirdClass' : S015R3?.length == 3,
     'fourthClass' : S015R3?.length == 4,
     'fifthClass' : S015R3?.length == 5              
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S015R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S015R3?.length != 0? S015R3?.length:''}}
@@ -5222,7 +5335,7 @@
     'thirdClass' : S015R2?.length == 3,
     'fourthClass' : S015R2?.length == 4,
     'fifthClass' : S015R2?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S015R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S015R2?.length != 0? S015R2?.length:''}}
@@ -5236,18 +5349,14 @@
                                             'thirdClass' : S015R1?.length == 3,
                                             'fourthClass' : S015R1?.length == 4,
                                             'fifthClass' : S015R1?.length == 5              
-                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S015R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S015R1?.length != 0? S015R1?.length:''}}
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
 
                     </div>
                     <!-- S017 -->
@@ -5280,7 +5389,8 @@
                 'thirdClass' : S017R6?.length == 3,
                 'fourthClass' : S017R6?.length == 4,
                 'fifthClass' : S017R6?.length == 5
-             }" class="slotContainer" fxLayoutAlign="center end">
+             }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S017R6)"
+                            fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S017R6?.length != 0? S017R6?.length:''}}
@@ -5294,7 +5404,7 @@
         'thirdClass' : S017R5?.length == 3,
         'fourthClass' : S017R5?.length == 4,
         'fifthClass' : S017R5?.length == 5              
-     }" class="slotContainer" fxLayoutAlign="center end">
+     }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S017R5)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S017R5?.length != 0? S017R5?.length:''}}
@@ -5308,7 +5418,7 @@
     'thirdClass' : S017R4?.length == 3,
     'fourthClass' : S017R4?.length == 4,
     'fifthClass' : S017R4?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S017R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S017R4?.length != 0? S017R4?.length:''}}
@@ -5322,7 +5432,7 @@
     'thirdClass' : S017R3?.length == 3,
     'fourthClass' : S017R3?.length == 4,
     'fifthClass' : S017R3?.length == 5              
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S017R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S017R3?.length != 0? S017R3?.length:''}}
@@ -5336,7 +5446,7 @@
     'thirdClass' : S017R2?.length == 3,
     'fourthClass' : S017R2?.length == 4,
     'fifthClass' : S017R2?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S017R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S017R2?.length != 0? S017R2?.length:''}}
@@ -5350,18 +5460,14 @@
                                             'thirdClass' : S017R1?.length == 3,
                                             'fourthClass' : S017R1?.length == 4,
                                             'fifthClass' : S017R1?.length == 5              
-                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S017R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S017R1?.length != 0? S017R1?.length:''}}
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
 
                     </div>
                     <!-- S019 -->
@@ -5394,7 +5500,8 @@
                 'thirdClass' : S019R6?.length == 3,
                 'fourthClass' : S019R6?.length == 4,
                 'fifthClass' : S019R6?.length == 5
-             }" class="slotContainer" fxLayoutAlign="center end">
+             }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S019R6)"
+                            fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S019R6?.length != 0? S019R6?.length:''}}
@@ -5408,7 +5515,7 @@
         'thirdClass' : S019R5?.length == 3,
         'fourthClass' : S019R5?.length == 4,
         'fifthClass' : S019R5?.length == 5              
-     }" class="slotContainer" fxLayoutAlign="center end">
+     }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S019R5)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S019R5?.length != 0? S019R5?.length:''}}
@@ -5422,7 +5529,7 @@
     'thirdClass' : S019R4?.length == 3,
     'fourthClass' : S019R4?.length == 4,
     'fifthClass' : S019R4?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S019R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S019R4?.length != 0? S019R4?.length:''}}
@@ -5436,7 +5543,7 @@
     'thirdClass' : S019R3?.length == 3,
     'fourthClass' : S019R3?.length == 4,
     'fifthClass' : S019R3?.length == 5              
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S019R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S019R3?.length != 0? S019R3?.length:''}}
@@ -5450,7 +5557,7 @@
     'thirdClass' : S019R2?.length == 3,
     'fourthClass' : S019R2?.length == 4,
     'fifthClass' : S019R2?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S019R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S019R2?.length != 0? S019R2?.length:''}}
@@ -5464,19 +5571,14 @@
                                             'thirdClass' : S019R1?.length == 3,
                                             'fourthClass' : S019R1?.length == 4,
                                             'fifthClass' : S019R1?.length == 5              
-                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S019R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S019R1?.length != 0? S019R1?.length:''}}
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
                     </div>
                     <!-- S021 -->
                     <div fxLayout="row" fxLayoutAlign="center start">
@@ -5508,7 +5610,8 @@
                 'thirdClass' : S021R6?.length == 3,
                 'fourthClass' : S021R6?.length == 4,
                 'fifthClass' : S021R6?.length == 5
-             }" class="slotContainer" fxLayoutAlign="center end">
+             }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S021R6)"
+                            fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S021R6?.length != 0? S021R6?.length:''}}
@@ -5522,7 +5625,7 @@
         'thirdClass' : S021R5?.length == 3,
         'fourthClass' : S021R5?.length == 4,
         'fifthClass' : S021R5?.length == 5              
-     }" class="slotContainer" fxLayoutAlign="center end">
+     }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S021R5)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S021R5?.length != 0? S021R5?.length:''}}
@@ -5536,7 +5639,7 @@
     'thirdClass' : S021R4?.length == 3,
     'fourthClass' : S021R4?.length == 4,
     'fifthClass' : S021R4?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S021R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S021R4?.length != 0? S021R4?.length:''}}
@@ -5550,7 +5653,7 @@
     'thirdClass' : S021R3?.length == 3,
     'fourthClass' : S021R3?.length == 4,
     'fifthClass' : S021R3?.length == 5              
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S021R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S021R3?.length != 0? S021R3?.length:''}}
@@ -5564,7 +5667,7 @@
     'thirdClass' : S021R2?.length == 3,
     'fourthClass' : S021R2?.length == 4,
     'fifthClass' : S021R2?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S021R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S021R2?.length != 0? S021R2?.length:''}}
@@ -5578,19 +5681,14 @@
                                             'thirdClass' : S021R1?.length == 3,
                                             'fourthClass' : S021R1?.length == 4,
                                             'fifthClass' : S021R1?.length == 5              
-                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S021R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S021R1?.length != 0? S021R1?.length:''}}
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
                     </div>
                     <!-- S023 -->
                     <div fxLayout="row" fxLayoutAlign="center start">
@@ -5622,7 +5720,8 @@
                 'thirdClass' : S023R6?.length == 3,
                 'fourthClass' : S023R6?.length == 4,
                 'fifthClass' : S023R6?.length == 5
-             }" class="slotContainer" fxLayoutAlign="center end">
+             }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S023R6)"
+                            fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S023R6?.length != 0? S023R6?.length:''}}
@@ -5636,7 +5735,7 @@
         'thirdClass' : S023R5?.length == 3,
         'fourthClass' : S023R5?.length == 4,
         'fifthClass' : S023R5?.length == 5              
-     }" class="slotContainer" fxLayoutAlign="center end">
+     }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S023R5)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S023R5?.length != 0? S023R5?.length:''}}
@@ -5650,7 +5749,7 @@
     'thirdClass' : S023R4?.length == 3,
     'fourthClass' : S023R4?.length == 4,
     'fifthClass' : S023R4?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S023R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S023R4?.length != 0? S023R4?.length:''}}
@@ -5664,7 +5763,7 @@
     'thirdClass' : S023R3?.length == 3,
     'fourthClass' : S023R3?.length == 4,
     'fifthClass' : S023R3?.length == 5              
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S023R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S023R3?.length != 0? S023R3?.length:''}}
@@ -5678,7 +5777,7 @@
     'thirdClass' : S023R2?.length == 3,
     'fourthClass' : S023R2?.length == 4,
     'fifthClass' : S023R2?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S023R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S023R2?.length != 0? S023R2?.length:''}}
@@ -5692,7 +5791,8 @@
                                             'thirdClass' : S023R1?.length == 3,
                                             'fourthClass' : S023R1?.length == 4,
                                             'fifthClass' : S023R1?.length == 5              
-                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S023R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S023R1?.length != 0? S023R1?.length:''}}
@@ -5736,7 +5836,8 @@
                 'thirdClass' : S025R6?.length == 3,
                 'fourthClass' : S025R6?.length == 4,
                 'fifthClass' : S025R6?.length == 5
-             }" class="slotContainer" fxLayoutAlign="center end">
+             }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S025R6)"
+                            fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S025R6?.length != 0? S025R6?.length:''}}
@@ -5750,7 +5851,7 @@
         'thirdClass' : S025R5?.length == 3,
         'fourthClass' : S025R5?.length == 4,
         'fifthClass' : S025R5?.length == 5              
-     }" class="slotContainer" fxLayoutAlign="center end">
+     }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S025R5)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S025R5?.length != 0? S025R5?.length:''}}
@@ -5764,7 +5865,7 @@
     'thirdClass' : S025R4?.length == 3,
     'fourthClass' : S025R4?.length == 4,
     'fifthClass' : S025R4?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S025R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S025R4?.length != 0? S025R4?.length:''}}
@@ -5778,7 +5879,7 @@
     'thirdClass' : S025R3?.length == 3,
     'fourthClass' : S025R3?.length == 4,
     'fifthClass' : S025R3?.length == 5              
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S025R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S025R3?.length != 0? S025R3?.length:''}}
@@ -5792,7 +5893,7 @@
     'thirdClass' : S025R2?.length == 3,
     'fourthClass' : S025R2?.length == 4,
     'fifthClass' : S025R2?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S025R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S025R2?.length != 0? S025R2?.length:''}}
@@ -5806,7 +5907,8 @@
                                             'thirdClass' : S025R1?.length == 3,
                                             'fourthClass' : S025R1?.length == 4,
                                             'fifthClass' : S025R1?.length == 5              
-                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S025R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S025R1?.length != 0? S025R1?.length:''}}
@@ -5878,7 +5980,7 @@
     'thirdClass' : S027R4?.length == 3,
     'fourthClass' : S027R4?.length == 4,
     'fifthClass' : S027R4?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S027R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S027R4?.length != 0? S027R4?.length:''}}
@@ -5892,7 +5994,7 @@
     'thirdClass' : S027R3?.length == 3,
     'fourthClass' : S027R3?.length == 4,
     'fifthClass' : S027R3?.length == 5              
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S027R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S027R3?.length != 0? S027R3?.length:''}}
@@ -5906,7 +6008,7 @@
     'thirdClass' : S027R2?.length == 3,
     'fourthClass' : S027R2?.length == 4,
     'fifthClass' : S027R2?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S027R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S027R2?.length != 0? S027R2?.length:''}}
@@ -5920,7 +6022,8 @@
                                             'thirdClass' : S027R1?.length == 3,
                                             'fourthClass' : S027R1?.length == 4,
                                             'fifthClass' : S027R1?.length == 5              
-                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S027R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S027R1?.length != 0? S027R1?.length:''}}
@@ -5992,7 +6095,7 @@
     'thirdClass' : S029R4?.length == 3,
     'fourthClass' : S029R4?.length == 4,
     'fifthClass' : S029R4?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S029R4)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S029R4?.length != 0? S029R4?.length:''}}
@@ -6006,7 +6109,7 @@
     'thirdClass' : S029R3?.length == 3,
     'fourthClass' : S029R3?.length == 4,
     'fifthClass' : S029R3?.length == 5              
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S029R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S029R3?.length != 0? S029R3?.length:''}}
@@ -6020,7 +6123,7 @@
     'thirdClass' : S029R2?.length == 3,
     'fourthClass' : S029R2?.length == 4,
     'fifthClass' : S029R2?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S029R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S029R2?.length != 0? S029R2?.length:''}}
@@ -6034,7 +6137,8 @@
                                             'thirdClass' : S029R1?.length == 3,
                                             'fourthClass' : S029R1?.length == 4,
                                             'fifthClass' : S029R1?.length == 5              
-                                         }" class="slotContainer" fxLayoutAlign="center end">
+                                         }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S029R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S029R1?.length != 0? S029R1?.length:''}}
@@ -6064,7 +6168,8 @@
                             'thirdClass' : S031R7?.length == 3,
                             'fourthClass' : S031R7?.length == 4,
                             'fifthClass' : S031R7?.length == 5
-                         }" class="slotContainer" fxLayoutAlign="center end">
+                         }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S031R7)"
+                            fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S031R7?.length != 0? S031R7?.length:''}}
@@ -6078,7 +6183,8 @@
                     'thirdClass' : S031R6?.length == 3,
                     'fourthClass' : S031R6?.length == 4,
                     'fifthClass' : S031R6?.length == 5
-                 }" class="slotContainer" fxLayoutAlign="center end">
+                 }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S031R6)"
+                            fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S031R6?.length != 0? S031R6?.length:''}}
@@ -6092,7 +6198,8 @@
                 'thirdClass' : S031R5?.length == 3,
                 'fourthClass' : S031R5?.length == 4,
                 'fifthClass' : S031R5?.length == 5              
-             }" class="slotContainer" fxLayoutAlign="center end">
+             }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S031R5)"
+                            fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S031R5?.length != 0? S031R5?.length:''}}
@@ -6106,7 +6213,8 @@
             'thirdClass' : S031R4?.length == 3,
             'fourthClass' : S031R4?.length == 4,
             'fifthClass' : S031R4?.length == 5
-         }" class="slotContainer" fxLayoutAlign="center end">
+         }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S031R4)"
+                            fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S031R4?.length != 0? S031R4?.length:''}}
@@ -6120,7 +6228,7 @@
     'thirdClass' : S031R3?.length == 3,
     'fourthClass' : S031R3?.length == 4,
     'fifthClass' : S031R3?.length == 5              
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S031R3)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S031R3?.length != 0? S031R3?.length:''}}
@@ -6134,7 +6242,7 @@
     'thirdClass' : S031R2?.length == 3,
     'fourthClass' : S031R2?.length == 4,
     'fifthClass' : S031R2?.length == 5
- }" class="slotContainer" fxLayoutAlign="center end">
+ }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S031R2)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S031R2?.length != 0? S031R2?.length:''}}
@@ -6148,7 +6256,8 @@
                                         'thirdClass' : S031R1?.length == 3,
                                         'fourthClass' : S031R1?.length == 4,
                                         'fifthClass' : S031R1?.length == 5              
-                                     }" class="slotContainer" fxLayoutAlign="center end">
+                                     }" class="slotContainer"
+                            [class.fourtyFeetContainerClass]="CheckFourtyFeet(S031R1)" fxLayoutAlign="center end">
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S031R1?.length != 0? S031R1?.length:''}}

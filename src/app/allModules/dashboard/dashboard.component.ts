@@ -428,7 +428,7 @@ export class DashboardComponent implements OnInit {
   S101R7: TransactionDetailsByLocationID[];
   S103R7: TransactionDetailsByLocationID[];
 
-  isException:boolean;
+  isException: boolean;
   S007R1CONTAINERSIZE: string;
   // tslint:disable-next-line:max-line-length
   commonDisplayedColumns = ['BLE_ID', 'CONTAINER_NO', 'CONTAINER_SIZE', 'CUSTOMER_NO', 'CUSTOMER_NAME', 'SALES_CONTRACT_NO', 'LOCATION_ID', 'BOOKING_REFERENCE', 'CONTAINER_TYPE', 'TYPE', 'COLOR', 'IS_DAMAGE', 'CLEAN_TYPE'];
@@ -628,6 +628,7 @@ export class DashboardComponent implements OnInit {
         //   if(x.LOCATION_ID.match('S011R1'))
         //   this.isException = true;
         // })
+
         this.S009R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S009R1') || x.LOCATION_ID.match('S010R1') || x.LOCATION_ID.match('S008R1'));
         this.S011R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S011R1') || x.LOCATION_ID.match('S012R1') || x.LOCATION_ID.match('S010R1'));
         this.S013R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S013R1') || x.LOCATION_ID.match('S014R1') || x.LOCATION_ID.match('S012R1'));
@@ -1033,7 +1034,7 @@ export class DashboardComponent implements OnInit {
       this.GetAllExceptionDetails(this.authenticationDetails.userID);
     }
   }
-
+  // *ngIf="!CheckFourtyFeet(S007R1)"
   loadSelectedContainer(value: any): void {
     if (value !== null) {
       this._dashboardService.SRowData = value;
@@ -1041,5 +1042,15 @@ export class DashboardComponent implements OnInit {
       this._router.navigate(['/dashboardDetail']);
       console.log(value);
     }
+  }
+
+  CheckFourtyFeet(value: TransactionDetailsByLocationID[]): boolean {
+    if (value && value.length) {
+     const filteredValue= value.filter(x=>x.CONTAINER_SIZE==='40');
+     if(filteredValue.length){
+       return true;
+     }
+    }
+    return false;
   }
 }
