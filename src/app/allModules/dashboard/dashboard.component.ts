@@ -617,18 +617,17 @@ export class DashboardComponent implements OnInit {
     this._dashboardService.GetAllTransactionDetailsByLocationID(ID).subscribe(
       (data) => {
         this.AllTransactionDetailsByLocationID = data as TransactionDetailsByLocationID[];
-        this.S001R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S001R1') || x.LOCATION_ID.match('S002R1') || x.LOCATION_ID.match('S000R1'));
-        this.S003R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S003R1') || x.LOCATION_ID.match('S004R1') || x.LOCATION_ID.match('S002R1'));
-        this.S005R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S005R1') || x.LOCATION_ID.match('S006R1') || x.LOCATION_ID.match('S004R1'));
-        this.S007R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S007R1') || x.LOCATION_ID.match('S008R1') || x.LOCATION_ID.match('S006R1'));
-        // this.S007R1.forEach(x => {
+                // this.S007R1.forEach(x => {
         //   this.S007R1CONTAINERSIZE = x.CONTAINER_SIZE;
         // });
         // this.S011R1.forEach(x => {
         //   if(x.LOCATION_ID.match('S011R1'))
         //   this.isException = true;
         // })
-
+        this.S001R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S001R1') || x.LOCATION_ID.match('S002R1') || x.LOCATION_ID.match('S000R1'));
+        this.S003R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S003R1') || x.LOCATION_ID.match('S004R1') || x.LOCATION_ID.match('S002R1'));
+        this.S005R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S005R1') || x.LOCATION_ID.match('S006R1') || x.LOCATION_ID.match('S004R1'));
+        this.S007R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S007R1') || x.LOCATION_ID.match('S008R1') || x.LOCATION_ID.match('S006R1'));
         this.S009R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S009R1') || x.LOCATION_ID.match('S010R1') || x.LOCATION_ID.match('S008R1'));
         this.S011R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S011R1') || x.LOCATION_ID.match('S012R1') || x.LOCATION_ID.match('S010R1'));
         this.S013R1 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S013R1') || x.LOCATION_ID.match('S014R1') || x.LOCATION_ID.match('S012R1'));
@@ -995,6 +994,7 @@ export class DashboardComponent implements OnInit {
         this.S099R7 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S099R7') || x.LOCATION_ID.match('S100R7') || x.LOCATION_ID.match('S098R7'));
         this.S101R7 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S101R7') || x.LOCATION_ID.match('S102R7') || x.LOCATION_ID.match('S100R7'));
         this.S103R7 = this.AllTransactionDetailsByLocationID.filter(x => x.LOCATION_ID.match('S103R7') || x.LOCATION_ID.match('S104R7') || x.LOCATION_ID.match('S102R7'));
+
 
       },
       (err) => {
