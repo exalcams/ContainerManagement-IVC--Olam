@@ -23,22 +23,6 @@ const appRoutes: Routes = [
         loadChildren: './allModules/authentication/authentication.module#AuthenticationModule'
     },
     {
-        path: 'transaction',
-        loadChildren: './allModules/pages/transaction/transaction.module#TransactionModule'
-    },
-    {
-        path: 'transactionDetails',
-        loadChildren: './allModules/pages/transaction-details/transaction-details.module#TransactionDeatilsModule'
-    },
-    {
-        path: 'transactionWizard',
-        loadChildren: './allModules/pages/transaction-details-wizard/transaction-details-wizard.module#TransactionDeatilsWizardModule'
-    },
-    {
-        path: 'gpstracking',
-        loadChildren: './allModules/gpstracking/gpstracking.module#GPSTrackingModule'
-    },
-    {
         path: 'dashboard',
         loadChildren: './allModules/dashboard/dashboard.module#DashboardModule'
     },
@@ -49,18 +33,6 @@ const appRoutes: Routes = [
     {
         path: 'stackupdate',
         loadChildren: './allModules/stackupdate/stackupdate.module#StackUpdateModule'
-    },
-    {
-        path: 'qrequest',
-        loadChildren: './allModules/qrequest/qrequest.module#QRequestModule'
-    },
-    {
-        path: 'qapprove',
-        loadChildren: './allModules/qapprove/qapprove.module#QApproveModule'
-    },
-    {
-        path: 'qvisualization',
-        loadChildren: './allModules/qvisualization/qvisualization.module#QVisualizationModule'
     },
     {
         path: 'master',

@@ -51,6 +51,9 @@ export class ReportDetails {
     CONTAINER_SIZE: string;
     DESIGN: string;
     COLOR: string;
+    TYPE: string;
+    IS_DAMAGE:string;
+    BLE_ID:string;
     ISACTIVE: Boolean;
     LOCATION_ID: string;
     LINE_NUMBER: string;

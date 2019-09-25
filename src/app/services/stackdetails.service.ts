@@ -6,38 +6,38 @@ import { AuthService } from './auth.service';
 import { AuthenticationDetails } from 'app/models/authentication_details';
 import { Guid } from 'guid-typescript';
 import { catchError } from 'rxjs/operators';
-import {StackDetails } from 'app/models/stackdetails';
+import { StackDetails } from 'app/models/stackdetails';
 import { ReportDetails, ReportFilters } from 'app/models/report';
 @Injectable({
-    providedIn: 'root'
-  })
+  providedIn: 'root'
+})
 export class StackDetailsService {
 
-    baseAddress: string;
-    NotificationEvent: Subject<any>;
-    authenticationDetails: AuthenticationDetails;
-    GetNotification(): Observable<any> {
-      return this.NotificationEvent.asObservable();
+  baseAddress: string;
+  NotificationEvent: Subject<any>;
+  authenticationDetails: AuthenticationDetails;
+  GetNotification(): Observable<any> {
+    return this.NotificationEvent.asObservable();
+  }
+
+  TriggerNotification(eventName: string): void {
+    this.NotificationEvent.next(eventName);
+  }
+
+  constructor(private _httpClient: HttpClient, private _authService: AuthService) {
+    this.baseAddress = _authService.baseAddress;
+    this.NotificationEvent = new Subject();
+    const retrievedObject = localStorage.getItem('authorizationData');
+    if (retrievedObject) {
+      this.authenticationDetails = JSON.parse(retrievedObject) as AuthenticationDetails;
     }
-  
-    TriggerNotification(eventName: string): void {
-      this.NotificationEvent.next(eventName);
-    }
-  
-    constructor(private _httpClient: HttpClient, private _authService: AuthService) {
-      this.baseAddress = _authService.baseAddress;
-      this.NotificationEvent = new Subject();
-      const retrievedObject = localStorage.getItem('authorizationData');
-      if (retrievedObject) {
-        this.authenticationDetails = JSON.parse(retrievedObject) as AuthenticationDetails;
-      }
-    }
-    // Error Handler
-    errorHandler(error: HttpErrorResponse): Observable<string> {
-      return throwError(error.error || error.message || 'Server Error');
-    }
- 
-    GetAllStackWithContainerDetails(ID: Guid): Observable<StackDetails[] | string> {
+  }
+  // Error Handler
+  errorHandler(error: HttpErrorResponse): Observable<string> {
+    return throwError(error.error || error.message || 'Server Error');
+  }
+
+  GetAllStackWithContainerDetails(ID: Guid): Observable<StackDetails[] | string> {
     return this._httpClient.get<StackDetails[]>(`${this.baseAddress}api/TransactionDetails/GetAllStackWithContainerDetails?UserID=${ID}`)
       .pipe(catchError(this.errorHandler));
   }
@@ -101,8 +101,8 @@ export class StackDetailsService {
       .pipe(catchError(this.errorHandler));
   }
 
-  
-       
+
+
   GetAllReportsBasedOnCustomerFilter(reportFilters: ReportFilters): Observable<StackDetails[] | string> {
     return this._httpClient.post<StackDetails[]>(`${this.baseAddress}api/Report/GetAllReportsBasedOnCustomerFilter`, reportFilters)
       .pipe(catchError(this.errorHandler));
@@ -117,11 +117,11 @@ export class StackDetailsService {
     return this._httpClient.post<ReportDetails[]>(`${this.baseAddress}api/Report/GetAllReportsBasedOnDateFilter`, reportFilters)
       .pipe(catchError(this.errorHandler));
   }
-     
-//   GetAllReportsBasedOnDate(ID: Guid, customer: String , fromDate: string , toDate: string): Observable<ReportDetails[] | string> {
-//     return this._httpClient.get<ReportDetails[]>(`${this.baseAddress}api/Report/GetAllReportsBasedOnDate?UserID=${ID}`)
-//       .pipe(catchError(this.errorHandler));
-//   }
+
+  //   GetAllReportsBasedOnDate(ID: Guid, customer: String , fromDate: string , toDate: string): Observable<ReportDetails[] | string> {
+  //     return this._httpClient.get<ReportDetails[]>(`${this.baseAddress}api/Report/GetAllReportsBasedOnDate?UserID=${ID}`)
+  //       .pipe(catchError(this.errorHandler));
+  //   }
 
   GetAllCustomers(ID: Guid): Observable<string[] | string> {
     return this._httpClient.get<string[]>(`${this.baseAddress}api/Report/GetAllCustomers?UserID=${ID}`)
@@ -142,5 +142,5 @@ export class StackDetailsService {
       })
       .pipe(catchError(this.errorHandler));
   }
-  }
+}
 

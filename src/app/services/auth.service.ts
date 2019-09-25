@@ -17,7 +17,7 @@ export class AuthService {
   baseAddress: string;
   clientId: string;
   constructor(private _httpClient: HttpClient) {
-     // this.baseAddress = 'http://10.80.0.20:8868/v1/'; // Olam server
+    // this.baseAddress = 'http://10.80.0.20:8868/v1/'; // Olam server
     // this.baseAddress = 'http://106.51.44.153:8868/v1/'; // Exalca Public IP
     // this.baseAddress = 'http://192.168.0.25:7654/v1/';   // Exalca Private IP
     // this.baseAddress = 'http://localhost:7654/';      // local host

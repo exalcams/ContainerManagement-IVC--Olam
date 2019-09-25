@@ -5,7 +5,7 @@ import { NotificationSnackBarComponent } from 'app/notifications/notification-sn
 import { MatSnackBar, MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
 import { TransactionDetails, TransactionDetailsByLocationID } from 'app/models/transaction-details';
-import { TransactionDetailsService } from 'app/services/transaction-details.service';
+import { DashboardService } from 'app/services/dashboard.service';
 import { SnackBarStatus } from 'app/notifications/snackbar-status-enum';
 import { Guid } from 'guid-typescript';
 import { TranslateService, TranslatePipe } from '@ngx-translate/core';
@@ -445,7 +445,7 @@ export class DashboardComponent implements OnInit {
   constructor(
     private _router: Router,
     public snackBar: MatSnackBar,
-    private _dashboardService: TransactionDetailsService,
+    private _dashboardService: DashboardService,
   ) {
     this.authenticationDetails = new AuthenticationDetails();
     this.notificationSnackBarComponent = new NotificationSnackBarComponent(this.snackBar);

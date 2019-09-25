@@ -37,12 +37,12 @@ export class StackUpdateService {
     return this._httpClient.get<string[]>(`${this.baseAddress}api/G_Configuration/GetAllStacksWithContainers?UserID=${ID}`)
       .pipe(catchError(this.errorHandler));
   }
-  GetGateWayIdForStack(stack: string  , ID: Guid): Observable< string | string> {
+  GetGateWayIdForStack(stack: string, ID: Guid): Observable<string | string> {
     return this._httpClient.get<string>(`${this.baseAddress}api/G_Configuration/GetGateWayIdForStack?UserID=${ID}&STACK=${stack}`)
       .pipe(catchError(this.errorHandler));
   }
-  
-  
+
+
   GetIsRangeStatus(ID: Guid): Observable<RANGEOBJ[] | string> {
     return this._httpClient.get<RANGEOBJ[]>(`${this.baseAddress}api/G_StackUpdate/GetIsRangeStatus`)
       .pipe(catchError(this.errorHandler));
@@ -62,7 +62,7 @@ export class StackUpdateService {
     return this._httpClient.get<StackUpdateObj[]>(`${this.baseAddress}api/G_Configuration/GetAllConfigurations`)
       .pipe(catchError(this.errorHandler));
   }
-  
+
   PutStackUpdate(stackupdate: StackUpdateObj): Observable<any> {
     return this._httpClient.post<any>(`${this.baseAddress}api/G_Configuration/UpdateSelectedStackGatewayId`,
       stackupdate,

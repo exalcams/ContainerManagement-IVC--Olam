@@ -42,9 +42,8 @@ export class ReportComponent implements OnInit, OnDestroy {
   diagramShow = true;
   content1Show = false;
   content1ShowName: string;
-
-  // tslint:disable-next-line:max-line-length
-  displayedColumns: string[] = ['CONTAINER_NO', 'CONTAINER_SIZE', 'BLE_ID', 'CUSTOMER_NO', 'CUSTOMER_NAME', 'SALES_CONTRACT_NO', 'BOOKING_REFERENCE', 'CONTAINER_TYPE', 'TYPE', 'COLOR', 'IS_DAMAGE', 'CLEAN_TYPE'];
+  displayedColumns: string[] = ['CONTAINER_NO', 'CONTAINER_SIZE', 'BLE_ID', 'CUSTOMER_NO', 'CUSTOMER_NAME', 'SALES_CONTRACT_NO',
+    'BOOKING_REFERENCE', 'CONTAINER_TYPE', 'TYPE', 'COLOR', 'IS_DAMAGE', 'CLEAN_TYPE'];
   dataSource: MatTableDataSource<ReportDetails>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -110,8 +109,39 @@ export class ReportComponent implements OnInit, OnDestroy {
   }
 
   @ViewChild('TABLE') table: ElementRef;
-  exportAsXLSX(contentName: any ): void {
+  exportAsXLSX(contentName: any): void {
     this.excelService.exportAsExcelOnlyTable(this.table.nativeElement, contentName);
+  }
+
+  exportReportToExcel(content1ShowName: string): void {
+    const startIndex: number = this.paginator.pageSize * this.paginator.pageIndex;
+    const endIndex: number = this.paginator.pageSize + startIndex;
+    let array: ReportDetails[] = [];
+    const ExcelArray: any[] = [];
+    if (this.dataSource) {
+      if (this.dataSource.filteredData.length) {
+        array = this.dataSource.filteredData;
+      } else {
+        array = this.dataSource.data;
+      }
+    }
+
+    const itemsShowed1 = array.slice(startIndex, endIndex);
+    itemsShowed1.forEach(x => {
+      ExcelArray.push(
+        {
+          'Container No': x.CONTAINER_NO, 'Container Size': x.CONTAINER_SIZE, 'BLE Id': x.BLE_ID,
+          'Customer No': x.CUSTOMER_NO, 'Customer Name ': x.CUSTOMER_NAME,
+          'Sales Contract No': x.SALES_CONTRACT_NO, 'Booking Reference': x.BOOKING_REFERENCE,
+          'Container Type': x.CONTAINER_TYPE, 'Full/Empty': x.TYPE,
+          'Color': x.COLOR, 'Is Damage': x.IS_DAMAGE, 'Clean Type': x.CLEAN_TYPE
+        });
+    });
+    if (ExcelArray.length > 0) {
+      this.excelService.exportAsExcelFile(ExcelArray, content1ShowName);
+    } else {
+      this.notificationSnackBarComponent.openSnackBar('No records found', SnackBarStatus.warning);
+    }
   }
 
   GetAllReports(): void {
@@ -595,59 +625,51 @@ export class ReportComponent implements OnInit, OnDestroy {
     }
     else if (value === 'TwentyEmpty') {
       // this.diagramShow = false;
-      this.content1ShowName = 'Only 20\' Empty';
+      //this.content1ShowName = 'Only 20\' Empty';
+      this.content1ShowName = '20s Empty'
       this.dataSource = null;
       // this.content1Show = true;
       this.GetAll20EmptyReports();
     }
     else if (value === 'FourtyEmpty') {
       // this.diagramShow = false;
-      this.content1ShowName = 'Only 40\' Empty';
+      //this.content1ShowName = 'Only 40\' Empty';
+      this.content1ShowName = '40s Empty'
       this.dataSource = null;
       // this.content1Show = true;
       this.GetAll40EmptyReports();
     }
     else if (value === 'TwentyFilled') {
       // this.diagramShow = false;
-      this.content1ShowName = 'Only 20\' Filled';
+      //this.content1ShowName = 'Only 20\' Filled';
+      this.content1ShowName = '20s Full'
       this.dataSource = null;
       // this.content1Show = true;
       this.GetAll20FilledReports();
     }
     else if (value === 'FourtyFilled') {
       // this.diagramShow = false;
-      this.content1ShowName = 'Only 40\' Filled';
+      //this.content1ShowName = 'Only 40\' Filled';
+      this.content1ShowName = '40s Full'
       this.dataSource = null;
       // this.content1Show = true;
       this.GetAll40FilledReports();
     }
     else if (value === 'TwentyDamagedEmpty') {
       // this.diagramShow = false;
-      this.content1ShowName = 'Only 20\' Damaged';
+      // this.content1ShowName = 'Only 20\' Damaged';
+      this.content1ShowName = '20s Damaged'
       this.dataSource = null;
       // this.content1Show = true;
       this.GetAll20DamagedEmptyReports();
     }
     else if (value === 'FourtyDamagedEmpty') {
       // this.diagramShow = false;
-      this.content1ShowName = 'Only 40\' Damaged';
+      //this.content1ShowName = 'Only 40\' Damaged';
+      this.content1ShowName = '40s Damaged'
       this.dataSource = null;
       // this.content1Show = true;
       this.GetAll40DamagedEmptyReports();
     }
   }
-
-  // moveSelectedItemDetailsAbove(row: ReportDetails): void {
-  //   console.log(row);
-  //   this._reportService.moveSelectedItemDetailsAbove(row).subscribe(
-  //     (data) => {
-  //       this.IsProgressBarVisibile = false;
-  //     },
-  //     (err) => {      
-  //       this.IsProgressBarVisibile = false;
-  //       this.notificationSnackBarComponent.openSnackBar(err instanceof Object ? 'Something went wrong' : err, SnackBarStatus.danger);
-  //     }
-  //   );
-  // }
-
 }

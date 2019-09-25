@@ -37,7 +37,7 @@ export class ConfigurationService {
     return this._httpClient.get<string[]>(`${this.baseAddress}api/G_Configuration/GetAllStacksWithContainers?UserID=${ID}`)
       .pipe(catchError(this.errorHandler));
   }
-  
+
   GetIsRangeStatus(ID: Guid): Observable<RANGEOBJ[] | string> {
     return this._httpClient.get<RANGEOBJ[]>(`${this.baseAddress}api/G_Configuration/GetIsRangeStatus`)
       .pipe(catchError(this.errorHandler));
@@ -57,7 +57,7 @@ export class ConfigurationService {
     return this._httpClient.get<ConfigurationObj[]>(`${this.baseAddress}api/G_Configuration/GetAllConfigurations`)
       .pipe(catchError(this.errorHandler));
   }
-  
+
   PutConfiguration(configuration: ConfigurationObj): Observable<any> {
     return this._httpClient.post<any>(`${this.baseAddress}api/G_Configuration/PutConfigurations`,
       configuration,

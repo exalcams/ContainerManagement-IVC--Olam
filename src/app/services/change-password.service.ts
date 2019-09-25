@@ -12,7 +12,7 @@ import { EMailModel } from 'app/models/email-model';
 })
 export class ChangePasswordService {
   baseAddress: string;
-  constructor(private _httpClient: HttpClient, private _authService: AuthService) { 
+  constructor(private _httpClient: HttpClient, private _authService: AuthService) {
     this.baseAddress = _authService.baseAddress;
   }
 
@@ -24,7 +24,7 @@ export class ChangePasswordService {
 
   ChangePassword(changePassword: ChangePassword): Observable<any> {
     return this._httpClient.post<any>(`${this.baseAddress}api/Account/ChangePassword`,
-    changePassword,
+      changePassword,
       {
         headers: new HttpHeaders({
           'Content-Type': 'application/json'
@@ -35,7 +35,7 @@ export class ChangePasswordService {
 
   ForgotPassword(forgotPassword: ForgotPassword): Observable<any> {
     return this._httpClient.post<any>(`${this.baseAddress}api/Account/ForgotPassword`,
-    forgotPassword,
+      forgotPassword,
       {
         headers: new HttpHeaders({
           'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ export class ChangePasswordService {
 
   SendLinkToMail(eMailModelmail: EMailModel): Observable<any> {
     return this._httpClient.post<any>(`${this.baseAddress}api/Account/SendLinkToMail`,
-    eMailModelmail,
+      eMailModelmail,
       {
         headers: new HttpHeaders({
           'Content-Type': 'application/json'

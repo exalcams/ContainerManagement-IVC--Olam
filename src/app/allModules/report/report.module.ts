@@ -10,6 +10,7 @@ import { FuseWidgetModule } from '@fuse/components/widget/widget.module';
 import { ReportComponent } from './report.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { ExcelExtractService } from 'app/services/excelExtract.Service';
+import { DatePipe } from '@angular/common';
 
 
 const authRoutes: Routes = [
@@ -48,6 +49,7 @@ const authRoutes: Routes = [
       TranslateModule
   ],
   providers: [
+    DatePipe,
     ExcelExtractService
 ]
 

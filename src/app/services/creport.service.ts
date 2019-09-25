@@ -10,35 +10,35 @@ import { QueueDetails, StackDetails } from 'app/models/transaction-details';
 import { QRequestObj, QApproveObj } from 'app/models/GatewayModel';
 import { ReportDetails, ReportFilters } from 'app/models/report';
 @Injectable({
-    providedIn: 'root'
-  })
+  providedIn: 'root'
+})
 export class CReportService {
 
-    baseAddress: string;
-    NotificationEvent: Subject<any>;
-    authenticationDetails: AuthenticationDetails;
-    GetNotification(): Observable<any> {
-      return this.NotificationEvent.asObservable();
+  baseAddress: string;
+  NotificationEvent: Subject<any>;
+  authenticationDetails: AuthenticationDetails;
+  GetNotification(): Observable<any> {
+    return this.NotificationEvent.asObservable();
+  }
+
+  TriggerNotification(eventName: string): void {
+    this.NotificationEvent.next(eventName);
+  }
+
+  constructor(private _httpClient: HttpClient, private _authService: AuthService) {
+    this.baseAddress = _authService.baseAddress;
+    this.NotificationEvent = new Subject();
+    const retrievedObject = localStorage.getItem('authorizationData');
+    if (retrievedObject) {
+      this.authenticationDetails = JSON.parse(retrievedObject) as AuthenticationDetails;
     }
-  
-    TriggerNotification(eventName: string): void {
-      this.NotificationEvent.next(eventName);
-    }
-  
-    constructor(private _httpClient: HttpClient, private _authService: AuthService) {
-      this.baseAddress = _authService.baseAddress;
-      this.NotificationEvent = new Subject();
-      const retrievedObject = localStorage.getItem('authorizationData');
-      if (retrievedObject) {
-        this.authenticationDetails = JSON.parse(retrievedObject) as AuthenticationDetails;
-      }
-    }
-    // Error Handler
-    errorHandler(error: HttpErrorResponse): Observable<string> {
-      return throwError(error.error || error.message || 'Server Error');
-    }
-   
-   GetAllReports(ID: Guid): Observable<ReportDetails[] | string> {
+  }
+  // Error Handler
+  errorHandler(error: HttpErrorResponse): Observable<string> {
+    return throwError(error.error || error.message || 'Server Error');
+  }
+
+  GetAllReports(ID: Guid): Observable<ReportDetails[] | string> {
     return this._httpClient.get<ReportDetails[]>(`${this.baseAddress}api/CReport/GetAllReports?UserID=${ID}`)
       .pipe(catchError(this.errorHandler));
   }
@@ -135,8 +135,6 @@ export class CReportService {
       .pipe(catchError(this.errorHandler));
   }
 
-  
-       
   GetAllReportsBasedOnCustomerFilter(reportFilters: ReportFilters): Observable<ReportDetails[] | string> {
     return this._httpClient.post<ReportDetails[]>(`${this.baseAddress}api/Report/GetAllReportsBasedOnCustomerFilter`, reportFilters)
       .pipe(catchError(this.errorHandler));
@@ -151,11 +149,11 @@ export class CReportService {
     return this._httpClient.post<ReportDetails[]>(`${this.baseAddress}api/Report/GetAllReportsBasedOnDateFilter`, reportFilters)
       .pipe(catchError(this.errorHandler));
   }
-     
-//   GetAllReportsBasedOnDate(ID: Guid, customer: String , fromDate: string , toDate: string): Observable<ReportDetails[] | string> {
-//     return this._httpClient.get<ReportDetails[]>(`${this.baseAddress}api/Report/GetAllReportsBasedOnDate?UserID=${ID}`)
-//       .pipe(catchError(this.errorHandler));
-//   }
+
+  //   GetAllReportsBasedOnDate(ID: Guid, customer: String , fromDate: string , toDate: string): Observable<ReportDetails[] | string> {
+  //     return this._httpClient.get<ReportDetails[]>(`${this.baseAddress}api/Report/GetAllReportsBasedOnDate?UserID=${ID}`)
+  //       .pipe(catchError(this.errorHandler));
+  //   }
 
   GetAllCustomers(ID: Guid): Observable<string[] | string> {
     return this._httpClient.get<string[]>(`${this.baseAddress}api/Report/GetAllCustomers?UserID=${ID}`)
@@ -176,5 +174,5 @@ export class CReportService {
       })
       .pipe(catchError(this.errorHandler));
   }
-  }
+}
 

@@ -9,7 +9,7 @@ import { Guid } from 'guid-typescript';
 @Injectable({
   providedIn: 'root'
 })
-export class TransactionDetailsService {
+export class DashboardService {
   baseAddress: string;
   SRowData: TransactionDetailsByLocationID[];
 
@@ -50,27 +50,27 @@ export class TransactionDetailsService {
     return this._httpClient.get<TransactionDetails[]>(`${this.baseAddress}api/TransactionDetails/GetAllTransactionDetails?UserID=${ID}`)
       .pipe(catchError(this.errorHandler));
   }
-  GetAllTransactionDetailsCount(ID: Guid): Observable<number  | string> {
+  GetAllTransactionDetailsCount(ID: Guid): Observable<number | string> {
     return this._httpClient.get<number>(`${this.baseAddress}api/TransactionDetails/GetAllTransactionDetailsCount?UserID=${ID}`)
       .pipe(catchError(this.errorHandler));
   }
-  
+
   GetLastTransactionDetails(ID: Guid): Observable<TransactionDetails | string> {
     return this._httpClient.get<TransactionDetails>(`${this.baseAddress}api/TransactionDetails/GetLastTransactionDetails?UserID=${ID}`)
       .pipe(catchError(this.errorHandler));
   }
-  
+
   GetAllExceptionDetails(ID: Guid): Observable<TransactionDetails[] | string> {
     return this._httpClient.get<TransactionDetails[]>(`${this.baseAddress}api/TransactionDetails/GetAllExceptionDetails?UserID=${ID}`)
       .pipe(catchError(this.errorHandler));
   }
 
-  GetAllExceptionDetailsCount(ID: Guid): Observable<number  | string> {
+  GetAllExceptionDetailsCount(ID: Guid): Observable<number | string> {
     return this._httpClient.get<number>(`${this.baseAddress}api/TransactionDetails/GetAllExceptionDetailsCount?UserID=${ID}`)
       .pipe(catchError(this.errorHandler));
   }
 
-  GetAllCompletedTransactionDetailsCount(ID: Guid): Observable<number  | string> {
+  GetAllCompletedTransactionDetailsCount(ID: Guid): Observable<number | string> {
     return this._httpClient.get<number>(`${this.baseAddress}api/TransactionDetails/GetAllCompletedTransactionDetailsCount?UserID=${ID}`)
       .pipe(catchError(this.errorHandler));
   }
@@ -89,12 +89,12 @@ export class TransactionDetailsService {
     return this._httpClient.get<TransDetailsByID>(`${this.baseAddress}api/TransactionDetails/GetTransactionDetailsByID?ID=${ID}&UserID=${GID}`)
       .pipe(catchError(this.errorHandler));
   }
-  
+
   GetTransactionDetailsByValue(Value: string, GID: Guid): Observable<TransactionDetails[] | string> {
     return this._httpClient.get<TransactionDetails[]>(`${this.baseAddress}api/TransactionDetails/GetTransactionDetailsByValue?Value=${Value}&UserID=${GID}`)
       .pipe(catchError(this.errorHandler));
   }
-  
+
   UpdateTransactionDetails(transactionDetails: TransactionDetails): Observable<any> {
     return this._httpClient.post<any>(`${this.baseAddress}api/Account/UpdateApp`,
       transactionDetails,

@@ -14,9 +14,8 @@
   // background-repeat: no-repeat; /* Do not repeat the image */
   // background-size: cover;
   margin-top: 20px;
-margin-bottom: -23px;
+  margin-bottom: -23px;
 }
-
 
 .dashBackGround1 {
   background-image: url("/assets/images/backgrounds/dashBackgroundPart3.png"); /* The image used */
@@ -30,7 +29,7 @@ margin-bottom: -23px;
   .zeroClass {
     background-color: #5dc15d !important;
   }
-  exceptionClass{
+  exceptionClass {
     background-color: rgb(218, 6, 87) !important;
   }
   .fourtyFeetContainerClass {
@@ -70,7 +69,7 @@ margin-bottom: -23px;
   }
   .column1 {
     margin-bottom: 362px !important;
-   // margin-right: 222px !important;
+    // margin-right: 222px !important;
   }
 
   .contentForTiles {
@@ -109,7 +108,7 @@ margin-bottom: -23px;
     //margin-right: 32px;
   }
   .contentForContent {
-   //@at-root padding: 0px 32px 32px 32px;
+    //@at-root padding: 0px 32px 32px 32px;
     padding: 0px 2px 2px 2px;
     margin-top: -32px;
   }

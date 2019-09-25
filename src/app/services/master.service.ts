@@ -15,13 +15,13 @@ export class MasterService {
   baseAddress: string;
   NotificationEvent: Subject<any>;
 
-    GetNotification(): Observable<any> {
-        return this.NotificationEvent.asObservable();
-    }
+  GetNotification(): Observable<any> {
+    return this.NotificationEvent.asObservable();
+  }
 
-    TriggerNotification(eventName: string): void {
-        this.NotificationEvent.next(eventName);
-    }
+  TriggerNotification(eventName: string): void {
+    this.NotificationEvent.next(eventName);
+  }
 
   constructor(private _httpClient: HttpClient, private _authService: AuthService) {
     this.baseAddress = _authService.baseAddress;
@@ -93,13 +93,13 @@ export class MasterService {
       .pipe(catchError(this.errorHandler));
   }
 
-  GetAllSalesContractNumber(ID: Guid , customer: string): Observable<string | string> {
+  GetAllSalesContractNumber(ID: Guid, customer: string): Observable<string | string> {
     return this._httpClient.get<string>(`${this.baseAddress}api/Master/GetAllSalesContractNumber?UserID=${ID}&CUSTOMER_NO=${customer}`)
       .pipe(catchError(this.errorHandler));
   }
 
-  
-  
+
+
 
   UpdateRole(role: RoleWithApp): Observable<any> {
     return this._httpClient.post<any>(`${this.baseAddress}api/Master/UpdateRole`,
@@ -156,8 +156,7 @@ export class MasterService {
       const con = '+225-' + user.ContactNumber;
       formData.append('ContactNumber', con);
     }
-    else
-    {
+    else {
       formData.append('ContactNumber', user.ContactNumber);
     }
     formData.append('Password', user.Password);
@@ -228,10 +227,10 @@ export class MasterService {
   UpdateNotification(SelectedNotification: UserNotification): Observable<any> {
     return this._httpClient.post<any>(`${this.baseAddress}api/Notification/UpdateNotification`,
       SelectedNotification, {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json'
-        })
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
       })
+    })
       .pipe(catchError(this.errorHandler));
   }
 

@@ -57,12 +57,12 @@
 // // .mat-row {
 // //   cursor: pointer;
 // // }
-// .mat-row, .mat-header-row {  
-//   min-width: 2800px;  
+// .mat-row, .mat-header-row {
+//   min-width: 2800px;
 //   cursor: pointer;
-//   width: 100%;  
+//   width: 100%;
 //   min-height: 64px;
-// } 
+// }
 // .mat-row:hover {
 //   background-color: lightgrey;
 // }
@@ -99,7 +99,7 @@
     margin: 0px;
     // background-color: rgb(238, 238, 238);
   }
-  
+
   .row,
   .header-row {
     display: table-row;
@@ -110,7 +110,7 @@
   .header-cell {
     word-wrap: initial;
     display: table-cell;
-        padding: 0px 10px;
+    padding: 0px 10px;
     line-break: unset;
     width: fit-content;
     white-space: nowrap;

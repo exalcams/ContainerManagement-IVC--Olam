@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {
   MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule,
   // tslint:disable-next-line:max-line-length
-  MatStepperModule, MatListModule, MatMenuModule, MatRadioModule, MatSidenavModule, MatToolbarModule, MatSpinner, MatProgressSpinnerModule, MatDividerModule, MatTableModule, MatTabsModule, MatPaginator, MatPaginatorModule
+  MatStepperModule, MatListModule, MatMenuModule, MatRadioModule, MatSidenavModule, MatToolbarModule, MatSpinner, MatProgressSpinnerModule, MatDividerModule, MatTableModule, MatTabsModule, MatPaginator, MatPaginatorModule, MatSortModule
 } from '@angular/material';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { DashboardComponent } from './dashboard.component';
@@ -12,8 +12,8 @@ import { FuseSidebarModule, FuseWidgetModule } from '@fuse/components';
 import { TranslateModule } from '@ngx-translate/core';
 export const menuRoutes: Routes = [
   {
-      path: '',
-      component: DashboardComponent,
+    path: '',
+    component: DashboardComponent,
   }];
 @NgModule({
   imports: [
@@ -39,6 +39,7 @@ export const menuRoutes: Routes = [
     MatMenuModule,
     MatSelectModule,
     MatTableModule,
+    MatSortModule,
     MatTabsModule,
     MatPaginatorModule,
 

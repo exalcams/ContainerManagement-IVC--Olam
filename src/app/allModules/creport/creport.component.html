@@ -321,15 +321,15 @@
             <mat-card style="padding: 10px 24px 10px 24px">
               <mat-card-content>
                 <div fxLayout="row">
-                  <div fxFlex="40">
-                    <h1 style="float:left; margin-left: 20px;">{{content1ShowName}} Reports</h1>
+                  <div fxFlex="20">
+                    <h1 style="float:left; margin-left: 20px;">{{content1ShowName}} Containers</h1>
                   </div>
-                  <!-- <div fxFlex="20" style="padding-top:10px; margin-left: 50px;">
-                    <button mat-raised-button color="accent" (click)="exportAsXLSX(content1ShowName)">
+                  <div fxFlex="20" style="padding-top:10px; margin-left: 50px;">
+                    <button mat-raised-button color="accent" (click)="exportReportToExcel(content1ShowName)">
                       <mat-icon svgIcon="excel" style="margin-right: 8px;" aria-hidden="false" aria-label="Excel SVG icon">
                       </mat-icon>Export XLSX
                     </button>
-                  </div> -->
+                  </div>
                   <div fxFlex="60">
                     <mat-form-field style="width: 70%; float: right;">
                       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
@@ -339,7 +339,7 @@
                 <!-- <mat-divider></mat-divider> -->
                 <div fxLayout="column" class="mt-10">
                   <div flex class="mt-10">
-                    <div class="data" #TABLE>
+                    <div class="data">
                       <table class="table" mat-table [dataSource]="dataSource" matSort [@animateStagger]="{value:'50'}">
                         <ng-container matColumnDef="CONTAINER_NO">
                           <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'report.CONTAINER_NO' | translate}}

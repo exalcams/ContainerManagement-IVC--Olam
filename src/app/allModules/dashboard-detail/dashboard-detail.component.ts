@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ContainerDetailsComponent } from './container-details/container-details.component';
 import { ContainerDetails } from 'app/models/container-model';
-import { TransactionDetailsService } from 'app/services/transaction-details.service';
+import { DashboardService } from 'app/services/dashboard.service';
 import { TransactionDetailsByLocationID } from 'app/models/transaction-details';
 
 @Component({
@@ -23,7 +23,7 @@ export class DashboardDetailComponent implements OnInit {
   containerInfo: ContainerDetailsComponent;
 
   constructor(public _matDialog: MatDialog,
-    private _transactionDetailsService: TransactionDetailsService) {
+    private _dashboardService: DashboardService) {
     // this.
     // tslint:disable-next-line:max-line-length
     //  this.container = [{ containerNo: 1001, transpoter: 'Alok', containerType: 'Type', containerSize: 'Small Size', sealNumber: 3444, exittime: '6:30 Pm', currentStatus: 'Entry', releaseOrderNumber: 7335 },
@@ -41,8 +41,8 @@ export class DashboardDetailComponent implements OnInit {
   // tslint:disable-next-line:typedef
   ngOnInit() {
     // console.log(this.container);
-    if (this._transactionDetailsService.SRowData != null) {
-      this.SRowData = this._transactionDetailsService.SRowData;
+    if (this._dashboardService.SRowData != null) {
+      this.SRowData = this._dashboardService.SRowData;
       this.SRowDataStackNameLength=this.SRowData.length;
       this.SRowData.forEach(x => {
         this.SRowDataStackName = x.LOCATION_ID.substr(0, 4);

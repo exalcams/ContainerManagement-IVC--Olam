@@ -146,19 +146,6 @@ export class LoginComponent implements OnInit {
         }
       );
     }
-    if (this.MenuItems.indexOf('Transaction') >= 0) {
-      this.children.push(
-        {
-          id: 'transaction',
-          title: 'Report',
-          translate: 'NAV.SAMPLE.TITLE',
-          type: 'item',
-          icon: ' shopping_basket ',
-          url: '/transaction',
-
-        }
-      );
-    }
     if (this.MenuItems.indexOf('Configuration') >= 0) {
       this.children.push(
         {
@@ -184,45 +171,6 @@ export class LoginComponent implements OnInit {
       );
     }
 
-    if (this.MenuItems.indexOf('QRequest') >= 0) {
-      this.children.push(
-        {
-          id: 'qrequest',
-          title: 'Q-Request',
-          translate: 'NAV.SAMPLE.TITLE',
-          type: 'item',
-          icon: 'playlist_add',
-          url: '/qrequest',
-
-        }
-      );
-    }
-    if (this.MenuItems.indexOf('QApprove') >= 0) {
-      this.children.push(
-        {
-          id: 'qapprove',
-          title: 'Q-Approve',
-          translate: 'NAV.SAMPLE.TITLE',
-          type: 'item',
-          icon: 'playlist_add_check',
-          url: '/qapprove',
-
-        }
-      );
-    }
-    if (this.MenuItems.indexOf('QVisualization') >= 0) {
-      this.children.push(
-        {
-          id: 'qvisualization',
-          title: 'Q-Visualization',
-          translate: 'NAV.SAMPLE.TITLE',
-          type: 'item',
-          icon: 'playlist_play',
-          url: '/qvisualization',
-
-        }
-      );
-    }
     if (this.MenuItems.indexOf('Report') >= 0) {
       this.children.push(
         {
