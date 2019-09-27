@@ -5,28 +5,7 @@
         Stack {{SRowDataStackName}} </h1>
     </div>
     <div style="height: 600px !important;">
-      <!-- <div fxFlex> -->
-      <div fxLayout="column" style="height: 100% ;margin-bottom: 10px !important;" fxLayoutAlign="end center">
-        <!-- <div fxFlex *ngFor="let data of SRowData; let i =index" >
-            <div style="padding: 16px">
-              <div class="slot">
-                <img *ngIf="i==0" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 1.png">
-              </div>
-              <div class="slot">
-                <img *ngIf="i==1" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 2.png">
-              </div>
-              <div class="slot">
-                <img *ngIf="i==2" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 3.png">
-              </div>
-              <div class="slot">
-                <img *ngIf="i==3" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 4.png">
-              </div>
-              <div class="slot">
-                <img *ngIf="i==4" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 2.png">
-              </div>
-            </div>
-          </div> -->
-
+      <div fxLayout="column" style="height: 100% ;margin-bottom: 24px !important;" fxLayoutAlign="end center">
         <div class="slotContainer" *ngFor="let data of SRowData; let i =index">
           <div class="slot">
             <img *ngIf="i==0" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 1.png">
@@ -44,39 +23,7 @@
             <img *ngIf="i==4" (click)="loadContainerdetails(data)" src="assets/images/dashboard/Container 2.png">
           </div>
         </div>
-        <!-- <div
-          style="min-width: 200px !important;min-height: 50px !important;border-radius: 3px; background-color: rgb(24, 109, 109) ; ">
-          <div>
-            ABC
-          </div>
-        </div> -->
       </div>
-      <!-- </div> -->
     </div>
   </div>
-
-  <!-- <h4>Has {{SRowDataStackNameLength}} Containers</h4>
-      <h4>Maximum {{5-SRowDataStackNameLength}} Can be allowed</h4> -->
-  <!-- <ul>
-        <li *ngFor="let list of SRowData; let i =index">
-          <span>Container No: </span> {{ list.CONTAINER_NO }} <span>LocationID:</span>{{ list.LOCATION_ID }}
-        </li>
-      </ul> -->
-  <!-- <div style="cursor:pointer;" *ngFor="let list of SRowData; let i =index">
-      <div class="cont1">
-        <img *ngIf="i==0" (click)="loadContainerdetails(list)" src="assets/images/dashboard/Container 1.png">
-      </div>
-      <div class="cont2">
-        <img *ngIf="i==1" (click)="loadContainerdetails(list)" src="assets/images/dashboard/Container 2.png">
-      </div>
-      <div class="cont3">
-        <img *ngIf="i==2" (click)="loadContainerdetails(list)" src="assets/images/dashboard/Container 3.png">
-      </div>
-      <div class="cont4">
-        <img *ngIf="i==3" (click)="loadContainerdetails(list)" src="assets/images/dashboard/Container 4.png">
-      </div>
-      <div class="cont5">
-        <img *ngIf="i==4" (click)="loadContainerdetails(list)" src="assets/images/dashboard/Container 2.png">
-      </div>
-    </div> -->
 </div>

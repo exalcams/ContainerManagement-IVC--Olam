@@ -16,7 +16,7 @@ export class DashboardDetailComponent implements OnInit {
   containerDetails: any;
   SRowData: TransactionDetailsByLocationID[];
   SRowDataStackName: string;
-  SRowDataStackNameLength:number;
+  SRowDataStackNameLength: number;
   public LOGO = require('assets/images/dashboard/Container 1.png');
 
   @ViewChild('containerInfo')
@@ -43,11 +43,20 @@ export class DashboardDetailComponent implements OnInit {
     // console.log(this.container);
     if (this._dashboardService.SRowData != null) {
       this.SRowData = this._dashboardService.SRowData;
-      this.SRowDataStackNameLength=this.SRowData.length;
+      this.SRowDataStackNameLength = this.SRowData.length;
       this.SRowData.forEach(x => {
         this.SRowDataStackName = x.LOCATION_ID.substr(0, 4);
       });
-      this.SRowData.sort((a, b) => a.LOCATION_ID.localeCompare(b.LOCATION_ID));
+      // this.SRowData.sort((a, b) => a.LOCATION_ID.localeCompare(b.LOCATION_ID));
+      this.SRowData.sort((n1, n2) => {
+        if (n1.LOCATION_ID < n2.LOCATION_ID) {
+          return 1;
+        }
+        if (n1.LOCATION_ID > n2.LOCATION_ID) {
+          return -1;
+        }
+        return 0;
+      });
       console.log(this.SRowData);
     }
   }
