@@ -102,6 +102,12 @@
     font-weight: 500;
     color: whitesmoke;
   }
+  .SubTitle1{
+    @extend .CardFont;
+    font-size: 20px;
+    font-weight: 500;
+    color: whitesmoke;
+  }
   .contentForDiagram {
     padding: 32px 10px 10px 10px;
     // background: url("/assets/images/backgrounds/dashBackground.png") no-repeat;

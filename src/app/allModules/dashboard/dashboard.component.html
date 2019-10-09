@@ -19,23 +19,43 @@
                     </div>
                 </div>
             </mat-card>
-            <mat-card fxFlex (click)="loadSelectedTransactionDetails('total')"
+            <mat-card fxFlex 
                 style="cursor: pointer; background-color:#337375">
                 <div class="" fxLayout="column" fxLayoutGap="5px" fxLayoutAlign="center center">
                     <div fxFlex fxLayout fxLayoutAlign="center center">
                         <div class="pt-8">
-                            <div class="pl-8 Title">
+                            <div class="pl-8 Title" (click)="loadSelectedTransactionDetails('total')">
                                 {{ 'dash.Total_Containers' | translate }}
                             </div>
                         </div>
                     </div>
-                    <div fxFlex fxLayout fxLayoutAlign="center center">
+                    <!-- <div fxFlex fxLayout fxLayoutAlign="center center">
                         <div class="pt-8">
                             <div class="SubTitle pl-8">
                                 {{totalTransactionDetailsCount}}
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+                    <div fxFlex>
+                        <div fxLayout="column" fxLayoutGap="5px">
+                          <div fxFlex fxLayoutAlign="center center">
+                            <div class="pt-8">
+                              <span class="SubTitle1 pl-8" style="cursor: pointer;"
+                                (click)="loadSelectedTransactionDetails('twentyFeetTotalTrans')">
+                                20'- {{twentyFeetTotalTransCount}}
+                              </span>
+                            </div>
+                          </div>
+                          <div fxFlex fxLayoutAlign="center center">
+                            <div class="pt-8">
+                              <span class="SubTitle1 pl-8" style="cursor: pointer;"
+                                (click)="loadSelectedTransactionDetails('fourtyFeetTotalTrans')">
+                                40'- {{fourtyFeetTotalTransCount}}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                 </div>
             </mat-card>
             <mat-card fxFlex (click)="loadSelectedTransactionDetails('completed')"
@@ -2794,6 +2814,13 @@
                                 </div>
                             </div>
                         </div>
+                        <div fxFlex style=" height: 60px;" class="pr-16" fxLayoutAlign="center end">
+                            <div class="pbdiv-16">
+                                <div class="font-size-16  line-height-1 mt-8" style="text-align: center; color: black">
+                                    R5
+                                </div>
+                            </div>
+                        </div>
                         <!-- <div fxFlex style=" height: 60px;" class="pr-16" fxLayoutAlign="center end">
                                                     <div class="pbdiv-16">
                                                         <div class="font-size-16  line-height-1 mt-8" style="text-align: center; color: black">
@@ -2885,6 +2912,21 @@
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S033R4?.length != 0? S033R4?.length:''}}
+                                </div>
+                            </div>
+                        </div>
+                        <div fxFlex (click)="loadSelectedContainer(S033R5)" [ngClass]="{
+                            'secondClass' : S033R5?.length == 2,
+                            'zeroClass' : S033R5?.length == 0,
+                            'firstClass' : S033R5?.length == 1,
+                            'thirdClass' : S033R5?.length == 3,
+                            'fourthClass' : S033R5?.length == 4,
+                            'fifthClass' : S033R5?.length == 5
+                         }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S033R5)"
+                            fxLayoutAlign="center end">
+                            <div class="pbdiv-16">
+                                <div class="slot">
+                                    {{S033R5?.length != 0? S033R5?.length:''}}
                                 </div>
                             </div>
                         </div>
@@ -3000,6 +3042,21 @@
                                 </div>
                             </div>
                         </div>
+                        <div fxFlex (click)="loadSelectedContainer(S035R5)" [ngClass]="{
+                            'secondClass' : S035R5?.length == 2,
+                            'zeroClass' : S035R5?.length == 0,
+                            'firstClass' : S035R5?.length == 1,
+                            'thirdClass' : S035R5?.length == 3,
+                            'fourthClass' : S035R5?.length == 4,
+                            'fifthClass' : S035R5?.length == 5
+                         }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S035R5)"
+                            fxLayoutAlign="center end">
+                            <div class="pbdiv-16">
+                                <div class="slot">
+                                    {{S035R5?.length != 0? S035R5?.length:''}}
+                                </div>
+                            </div>
+                        </div>
                         <!-- <div fxFlex (click)="loadSelectedContainer(S035R5)" [ngClass]="{
                                                                             'zeroClass' : S035R5?.length == 0,
                                                                             'firstClass' : S035R5?.length == 1,
@@ -3109,6 +3166,21 @@
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S037R4?.length != 0? S037R4?.length:''}}
+                                </div>
+                            </div>
+                        </div>
+                        <div fxFlex (click)="loadSelectedContainer(S037R5)" [ngClass]="{
+                            'secondClass' : S037R5?.length == 2,
+                            'zeroClass' : S037R5?.length == 0,
+                            'firstClass' : S037R5?.length == 1,
+                            'thirdClass' : S037R5?.length == 3,
+                            'fourthClass' : S037R5?.length == 4,
+                            'fifthClass' : S037R5?.length == 5
+                         }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S037R5)"
+                            fxLayoutAlign="center end">
+                            <div class="pbdiv-16">
+                                <div class="slot">
+                                    {{S037R5?.length != 0? S037R5?.length:''}}
                                 </div>
                             </div>
                         </div>
@@ -3224,6 +3296,21 @@
                                 </div>
                             </div>
                         </div>
+                        <div fxFlex (click)="loadSelectedContainer(S039R5)" [ngClass]="{
+                            'secondClass' : S039R5?.length == 2,
+                            'zeroClass' : S039R5?.length == 0,
+                            'firstClass' : S039R5?.length == 1,
+                            'thirdClass' : S039R5?.length == 3,
+                            'fourthClass' : S039R5?.length == 4,
+                            'fifthClass' : S039R5?.length == 5
+                         }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S039R5)"
+                            fxLayoutAlign="center end">
+                            <div class="pbdiv-16">
+                                <div class="slot">
+                                    {{S039R5?.length != 0? S039R5?.length:''}}
+                                </div>
+                            </div>
+                        </div>
                         <!-- <div fxFlex (click)="loadSelectedContainer(S039R5)" [ngClass]="{
                                                                             'zeroClass' : S039R5?.length == 0,
                                                                             'firstClass' : S039R5?.length == 1,
@@ -3333,6 +3420,21 @@
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S041R4?.length != 0? S041R4?.length:''}}
+                                </div>
+                            </div>
+                        </div>
+                        <div fxFlex (click)="loadSelectedContainer(S041R5)" [ngClass]="{
+                            'secondClass' : S041R5?.length == 2,
+                            'zeroClass' : S041R5?.length == 0,
+                            'firstClass' : S041R5?.length == 1,
+                            'thirdClass' : S041R5?.length == 3,
+                            'fourthClass' : S041R5?.length == 4,
+                            'fifthClass' : S041R5?.length == 5
+                         }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S041R5)"
+                            fxLayoutAlign="center end">
+                            <div class="pbdiv-16">
+                                <div class="slot">
+                                    {{S041R5?.length != 0? S041R5?.length:''}}
                                 </div>
                             </div>
                         </div>
@@ -3448,6 +3550,21 @@
                                 </div>
                             </div>
                         </div>
+                        <div fxFlex (click)="loadSelectedContainer(S043R5)" [ngClass]="{
+                            'secondClass' : S043R5?.length == 2,
+                            'zeroClass' : S043R5?.length == 0,
+                            'firstClass' : S043R5?.length == 1,
+                            'thirdClass' : S043R5?.length == 3,
+                            'fourthClass' : S043R5?.length == 4,
+                            'fifthClass' : S043R5?.length == 5
+                         }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S043R5)"
+                            fxLayoutAlign="center end">
+                            <div class="pbdiv-16">
+                                <div class="slot">
+                                    {{S043R5?.length != 0? S043R5?.length:''}}
+                                </div>
+                            </div>
+                        </div>
                         <!-- <div fxFlex (click)="loadSelectedContainer(S043R5)" [ngClass]="{
                                                             'zeroClass' : S043R5?.length == 0,
                                                             'firstClass' : S043R5?.length == 1,
@@ -3557,6 +3674,21 @@
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S045R4?.length != 0? S045R4?.length:''}}
+                                </div>
+                            </div>
+                        </div>
+                        <div fxFlex (click)="loadSelectedContainer(S045R5)" [ngClass]="{
+                            'secondClass' : S045R5?.length == 2,
+                            'zeroClass' : S045R5?.length == 0,
+                            'firstClass' : S045R5?.length == 1,
+                            'thirdClass' : S045R5?.length == 3,
+                            'fourthClass' : S045R5?.length == 4,
+                            'fifthClass' : S045R5?.length == 5
+                         }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S045R5)"
+                            fxLayoutAlign="center end">
+                            <div class="pbdiv-16">
+                                <div class="slot">
+                                    {{S045R5?.length != 0? S045R5?.length:''}}
                                 </div>
                             </div>
                         </div>
@@ -3672,6 +3804,21 @@
                                 </div>
                             </div>
                         </div>
+                        <div fxFlex (click)="loadSelectedContainer(S047R5)" [ngClass]="{
+                            'secondClass' : S047R5?.length == 2,
+                            'zeroClass' : S047R5?.length == 0,
+                            'firstClass' : S047R5?.length == 1,
+                            'thirdClass' : S047R5?.length == 3,
+                            'fourthClass' : S047R5?.length == 4,
+                            'fifthClass' : S047R5?.length == 5
+                         }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S047R5)"
+                            fxLayoutAlign="center end">
+                            <div class="pbdiv-16">
+                                <div class="slot">
+                                    {{S047R5?.length != 0? S047R5?.length:''}}
+                                </div>
+                            </div>
+                        </div>
                         <!-- <div fxFlex (click)="loadSelectedContainer(S047R5)" [ngClass]="{
                                                             'zeroClass' : S047R5?.length == 0,
                                                             'firstClass' : S047R5?.length == 1,
@@ -3781,6 +3928,21 @@
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S049R4?.length != 0? S049R4?.length:''}}
+                                </div>
+                            </div>
+                        </div>
+                        <div fxFlex (click)="loadSelectedContainer(S049R5)" [ngClass]="{
+                            'secondClass' : S049R5?.length == 2,
+                            'zeroClass' : S049R5?.length == 0,
+                            'firstClass' : S049R5?.length == 1,
+                            'thirdClass' : S049R5?.length == 3,
+                            'fourthClass' : S049R5?.length == 4,
+                            'fifthClass' : S049R5?.length == 5
+                         }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S049R5)"
+                            fxLayoutAlign="center end">
+                            <div class="pbdiv-16">
+                                <div class="slot">
+                                    {{S049R5?.length != 0? S049R5?.length:''}}
                                 </div>
                             </div>
                         </div>
@@ -3896,6 +4058,21 @@
                                 </div>
                             </div>
                         </div>
+                        <div fxFlex (click)="loadSelectedContainer(S051R5)" [ngClass]="{
+                            'secondClass' : S051R5?.length == 2,
+                            'zeroClass' : S051R5?.length == 0,
+                            'firstClass' : S051R5?.length == 1,
+                            'thirdClass' : S051R5?.length == 3,
+                            'fourthClass' : S051R5?.length == 4,
+                            'fifthClass' : S051R5?.length == 5
+                         }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S051R5)"
+                            fxLayoutAlign="center end">
+                            <div class="pbdiv-16">
+                                <div class="slot">
+                                    {{S051R5?.length != 0? S051R5?.length:''}}
+                                </div>
+                            </div>
+                        </div>
                         <!-- <div fxFlex (click)="loadSelectedContainer(S051R5)" [ngClass]="{
                                                             'zeroClass' : S051R5?.length == 0,
                                                             'firstClass' : S051R5?.length == 1,
@@ -4005,6 +4182,21 @@
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S053R4?.length != 0? S053R4?.length:''}}
+                                </div>
+                            </div>
+                        </div>
+                        <div fxFlex (click)="loadSelectedContainer(S053R5)" [ngClass]="{
+                            'secondClass' : S053R5?.length == 2,
+                            'zeroClass' : S053R5?.length == 0,
+                            'firstClass' : S053R5?.length == 1,
+                            'thirdClass' : S053R5?.length == 3,
+                            'fourthClass' : S053R5?.length == 4,
+                            'fifthClass' : S053R5?.length == 5
+                         }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S053R5)"
+                            fxLayoutAlign="center end">
+                            <div class="pbdiv-16">
+                                <div class="slot">
+                                    {{S053R5?.length != 0? S053R5?.length:''}}
                                 </div>
                             </div>
                         </div>
@@ -4120,6 +4312,21 @@
                                 </div>
                             </div>
                         </div>
+                        <div fxFlex (click)="loadSelectedContainer(S055R5)" [ngClass]="{
+                            'secondClass' : S055R5?.length == 2,
+                            'zeroClass' : S055R5?.length == 0,
+                            'firstClass' : S055R5?.length == 1,
+                            'thirdClass' : S055R5?.length == 3,
+                            'fourthClass' : S055R5?.length == 4,
+                            'fifthClass' : S055R5?.length == 5
+                         }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S055R5)"
+                            fxLayoutAlign="center end">
+                            <div class="pbdiv-16">
+                                <div class="slot">
+                                    {{S055R5?.length != 0? S055R5?.length:''}}
+                                </div>
+                            </div>
+                        </div>
                         <!-- <div fxFlex (click)="loadSelectedContainer(S055R5)" [ngClass]="{
                                                             'zeroClass' : S055R5?.length == 0,
                                                             'firstClass' : S055R5?.length == 1,
@@ -4232,6 +4439,21 @@
                                 </div>
                             </div>
                         </div>
+                        <div fxFlex (click)="loadSelectedContainer(S057R5)" [ngClass]="{
+                            'secondClass' : S057R5?.length == 2,
+                            'zeroClass' : S057R5?.length == 0,
+                            'firstClass' : S057R5?.length == 1,
+                            'thirdClass' : S057R5?.length == 3,
+                            'fourthClass' : S057R5?.length == 4,
+                            'fifthClass' : S057R5?.length == 5
+                         }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S057R5)"
+                            fxLayoutAlign="center end">
+                            <div class="pbdiv-16">
+                                <div class="slot">
+                                    {{S057R5?.length != 0? S057R5?.length:''}}
+                                </div>
+                            </div>
+                        </div>
                         <!-- <div fxFlex (click)="loadSelectedContainer(S057R5)" [ngClass]="{
                                                             'zeroClass' : S057R5?.length == 0,
                                                             'firstClass' : S057R5?.length == 1,
@@ -4341,6 +4563,21 @@
                             <div class="pbdiv-16">
                                 <div class="slot">
                                     {{S059R4?.length != 0? S059R4?.length:''}}
+                                </div>
+                            </div>
+                        </div>
+                        <div fxFlex (click)="loadSelectedContainer(S059R5)" [ngClass]="{
+                            'secondClass' : S059R5?.length == 2,
+                            'zeroClass' : S059R5?.length == 0,
+                            'firstClass' : S059R5?.length == 1,
+                            'thirdClass' : S059R5?.length == 3,
+                            'fourthClass' : S059R5?.length == 4,
+                            'fifthClass' : S059R5?.length == 5
+                         }" class="slotContainer" [class.fourtyFeetContainerClass]="CheckFourtyFeet(S059R5)"
+                            fxLayoutAlign="center end">
+                            <div class="pbdiv-16">
+                                <div class="slot">
+                                    {{S059R5?.length != 0? S059R5?.length:''}}
                                 </div>
                             </div>
                         </div>

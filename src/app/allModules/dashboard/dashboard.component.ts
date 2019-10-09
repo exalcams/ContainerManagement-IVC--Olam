@@ -29,6 +29,8 @@ export class DashboardComponent implements OnInit {
   SetIntervalID: any;
   parkingCount: any;
   totalTransactionDetailsCount: number;
+  twentyFeetTotalTransCount:number;
+  fourtyFeetTotalTransCount:number;
   exceptionDetailsCount: number;
   completedTransactionsCount: number;
   availableSpaceCount: string;
@@ -465,12 +467,16 @@ export class DashboardComponent implements OnInit {
       this._router.navigate(['/auth/login']);
     }
     this.GetAllTransactionDetailsCount(this.authenticationDetails.userID);
+    this.GetAllTwentyFeetTransactionDetailsCount(this.authenticationDetails.userID);
+    this.GetAllFourtyFeetTransactionDetailsCount(this.authenticationDetails.userID);
     this.GetAllExceptionDetailsCount(this.authenticationDetails.userID);
     this.GetAllCompletedTransactionDetailsCount(this.authenticationDetails.userID);
     this.GetLastTransactionDetails(this.authenticationDetails.userID);
     this.GetAllTransactionDetailsByLocationID(this.authenticationDetails.userID);
     this.SetIntervalID = setInterval(() => {
       this.GetAllTransactionDetailsCount(this.authenticationDetails.userID);
+      this.GetAllTwentyFeetTransactionDetailsCount(this.authenticationDetails.userID);
+      this.GetAllFourtyFeetTransactionDetailsCount(this.authenticationDetails.userID);
       this.GetAllExceptionDetailsCount(this.authenticationDetails.userID);
       this.GetAllCompletedTransactionDetailsCount(this.authenticationDetails.userID);
       this.GetLastTransactionDetails(this.authenticationDetails.userID);
@@ -513,8 +519,66 @@ export class DashboardComponent implements OnInit {
     );
   }
 
+  GetAllTwentyFeetTransactionDetailsCount(ID: Guid): void {
+    this._dashboardService.GetAllTwentyFeetTransactionDetailsCount(ID).subscribe(
+      (data) => {
+        this.twentyFeetTotalTransCount = data as number;
+        this.IsProgressBarVisibile = false;
+      },
+      (err) => {
+        this.IsProgressBarVisibile = false;
+        this.notificationSnackBarComponent.openSnackBar(err instanceof Object ? 'Something went wrong' : err, SnackBarStatus.danger);
+      }
+    );
+  }
+
+  GetAllFourtyFeetTransactionDetailsCount(ID: Guid): void {
+    this._dashboardService.GetAllFourtyFeetTransactionDetailsCount(ID).subscribe(
+      (data) => {
+        this.fourtyFeetTotalTransCount = data as number;
+        this.IsProgressBarVisibile = false;
+      },
+      (err) => {
+        this.IsProgressBarVisibile = false;
+        this.notificationSnackBarComponent.openSnackBar(err instanceof Object ? 'Something went wrong' : err, SnackBarStatus.danger);
+      }
+    );
+  }
+
   GetAllTransactionDetails(ID: Guid): void {
     this._dashboardService.GetAllTransactionDetails(ID).subscribe(
+      (data) => {
+        this.AllTransactionDetails = data as TransactionDetails[];
+        this.commonDataSource = new MatTableDataSource(this.AllTransactionDetails);
+        this.commonDataSource.paginator = this.commonPaginator;
+        this.commonDataSource.sort = this.commonSort;
+        this.IsProgressBarVisibile = false;
+      },
+      (err) => {
+        this.IsProgressBarVisibile = false;
+        this.notificationSnackBarComponent.openSnackBar(err instanceof Object ? 'Something went wrong' : err, SnackBarStatus.danger);
+      }
+    );
+  }
+
+  GetAllTwentyFeetTransactionDetails(ID: Guid): void {
+    this._dashboardService.GetAllTwentyFeetTransactionDetails(ID).subscribe(
+      (data) => {
+        this.AllTransactionDetails = data as TransactionDetails[];
+        this.commonDataSource = new MatTableDataSource(this.AllTransactionDetails);
+        this.commonDataSource.paginator = this.commonPaginator;
+        this.commonDataSource.sort = this.commonSort;
+        this.IsProgressBarVisibile = false;
+      },
+      (err) => {
+        this.IsProgressBarVisibile = false;
+        this.notificationSnackBarComponent.openSnackBar(err instanceof Object ? 'Something went wrong' : err, SnackBarStatus.danger);
+      }
+    );
+  }
+
+  GetAllFourtyFeetTransactionDetails(ID: Guid): void {
+    this._dashboardService.GetAllFourtyFeetTransactionDetails(ID).subscribe(
       (data) => {
         this.AllTransactionDetails = data as TransactionDetails[];
         this.commonDataSource = new MatTableDataSource(this.AllTransactionDetails);
@@ -1032,6 +1096,26 @@ export class DashboardComponent implements OnInit {
       this.exceptionTableShow = true;
       this.exceptionDataSource = null;
       this.GetAllExceptionDetails(this.authenticationDetails.userID);
+    }
+    else  if (value === 'twentyFeetTotalTrans') {
+      this.diagramShow = false;
+      this.tableShowName = 'Total 20s Containers';
+      this.tableShow = true;
+      this.commonTableShow = true;
+      this.exceptionTableShow = false;
+      // const onlyTotalTrucks: any[] = this.AllTransactionDetails.filter(x => x.CUR_STATUS !== 'EXIT');
+      this.commonDataSource = null;
+      this.GetAllTwentyFeetTransactionDetails(this.authenticationDetails.userID);
+    }
+    else  if (value === 'fourtyFeetTotalTrans') {
+      this.diagramShow = false;
+      this.tableShowName = 'Total 40s Containers';
+      this.tableShow = true;
+      this.commonTableShow = true;
+      this.exceptionTableShow = false;
+      // const onlyTotalTrucks: any[] = this.AllTransactionDetails.filter(x => x.CUR_STATUS !== 'EXIT');
+      this.commonDataSource = null;
+      this.GetAllFourtyFeetTransactionDetails(this.authenticationDetails.userID);
     }
   }
   // *ngIf="!CheckFourtyFeet(S007R1)"

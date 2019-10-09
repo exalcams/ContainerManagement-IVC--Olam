@@ -50,8 +50,29 @@ export class DashboardService {
     return this._httpClient.get<TransactionDetails[]>(`${this.baseAddress}api/TransactionDetails/GetAllTransactionDetails?UserID=${ID}`)
       .pipe(catchError(this.errorHandler));
   }
+
+  GetAllTwentyFeetTransactionDetails(ID: Guid): Observable<TransactionDetails[] | string> {
+    return this._httpClient.get<TransactionDetails[]>(`${this.baseAddress}api/TransactionDetails/GetAllTwentyFeetTransactionDetails?UserID=${ID}`)
+      .pipe(catchError(this.errorHandler));
+  }
+
+  GetAllFourtyFeetTransactionDetails(ID: Guid): Observable<TransactionDetails[] | string> {
+    return this._httpClient.get<TransactionDetails[]>(`${this.baseAddress}api/TransactionDetails/GetAllFourtyFeetTransactionDetails?UserID=${ID}`)
+      .pipe(catchError(this.errorHandler));
+  }
+  
   GetAllTransactionDetailsCount(ID: Guid): Observable<number | string> {
     return this._httpClient.get<number>(`${this.baseAddress}api/TransactionDetails/GetAllTransactionDetailsCount?UserID=${ID}`)
+      .pipe(catchError(this.errorHandler));
+  }
+
+  GetAllTwentyFeetTransactionDetailsCount(ID: Guid): Observable<number | string> {
+    return this._httpClient.get<number>(`${this.baseAddress}api/TransactionDetails/GetAllTwentyFeetTransactionDetailsCount?UserID=${ID}`)
+      .pipe(catchError(this.errorHandler));
+  }
+
+  GetAllFourtyFeetTransactionDetailsCount(ID: Guid): Observable<number | string> {
+    return this._httpClient.get<number>(`${this.baseAddress}api/TransactionDetails/GetAllFourtyFeetTransactionDetailsCount?UserID=${ID}`)
       .pipe(catchError(this.errorHandler));
   }
 
