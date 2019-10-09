@@ -29,11 +29,11 @@ export class DashboardComponent implements OnInit {
   SetIntervalID: any;
   parkingCount: any;
   totalTransactionDetailsCount: number;
-  twentyFeetTotalTransCount:number;
-  fourtyFeetTotalTransCount:number;
+ public twentyFeetTotalTransCount: number;
+ public fourtyFeetTotalTransCount: number;
   exceptionDetailsCount: number;
   completedTransactionsCount: number;
-  availableSpaceCount: string;
+  availableSpaceCount: number;
   diagramShow = true;
   tableShow = false;
   tableShowName: string;
@@ -594,25 +594,50 @@ export class DashboardComponent implements OnInit {
   }
 
   GetLastTransactionDetails(ID: Guid): void {
-    this._dashboardService.GetLastTransactionDetails(ID).subscribe(
+    this._dashboardService.GetAllTwentyFeetTransactionDetailsCount(ID).subscribe(
       (data) => {
-        this.LastTransactionDetails = data as TransactionDetails;
-        if (this.LastTransactionDetails != null) {
-          this.availableSpaceCount = this.LastTransactionDetails.AVAILABLE_SPACE;
-          if (this.availableSpaceCount === null) {
-            this.availableSpaceCount = '0';
+        this.twentyFeetTotalTransCount = data as number;
+        this._dashboardService.GetAllFourtyFeetTransactionDetailsCount(ID).subscribe(
+          (data) => {
+            this.fourtyFeetTotalTransCount = data as number;
+            var totalOccupiedSpace = this.twentyFeetTotalTransCount + this.fourtyFeetTotalTransCount + this.fourtyFeetTotalTransCount;
+            this.availableSpaceCount=951-totalOccupiedSpace;
+          },
+          (err) => {
+            this.IsProgressBarVisibile = false;
+            this.notificationSnackBarComponent.openSnackBar(err instanceof Object ? 'Something went wrong' : err, SnackBarStatus.danger);
           }
-        }
-        else {
-          this.availableSpaceCount = '0';
-        }
-
+        );
       },
       (err) => {
         this.IsProgressBarVisibile = false;
         this.notificationSnackBarComponent.openSnackBar(err instanceof Object ? 'Something went wrong' : err, SnackBarStatus.danger);
       }
     );
+
+
+
+
+
+    // this._dashboardService.GetLastTransactionDetails(ID).subscribe(
+    //   (data) => {
+    //     this.LastTransactionDetails = data as TransactionDetails;
+    //     if (this.LastTransactionDetails != null) {
+    //       this.availableSpaceCount = this.LastTransactionDetails.AVAILABLE_SPACE;
+    //       if (this.availableSpaceCount === null) {
+    //         this.availableSpaceCount = '0';
+    //       }
+    //     }
+    //     else {
+    //       this.availableSpaceCount = '0';
+    //     }
+
+    //   },
+    //   (err) => {
+    //     this.IsProgressBarVisibile = false;
+    //     this.notificationSnackBarComponent.openSnackBar(err instanceof Object ? 'Something went wrong' : err, SnackBarStatus.danger);
+    //   }
+    // );
   }
 
   GetAllExceptionDetailsCount(ID: Guid): void {
@@ -681,7 +706,7 @@ export class DashboardComponent implements OnInit {
     this._dashboardService.GetAllTransactionDetailsByLocationID(ID).subscribe(
       (data) => {
         this.AllTransactionDetailsByLocationID = data as TransactionDetailsByLocationID[];
-                // this.S007R1.forEach(x => {
+        // this.S007R1.forEach(x => {
         //   this.S007R1CONTAINERSIZE = x.CONTAINER_SIZE;
         // });
         // this.S011R1.forEach(x => {
@@ -1097,7 +1122,7 @@ export class DashboardComponent implements OnInit {
       this.exceptionDataSource = null;
       this.GetAllExceptionDetails(this.authenticationDetails.userID);
     }
-    else  if (value === 'twentyFeetTotalTrans') {
+    else if (value === 'twentyFeetTotalTrans') {
       this.diagramShow = false;
       this.tableShowName = 'Total 20s Containers';
       this.tableShow = true;
@@ -1107,7 +1132,7 @@ export class DashboardComponent implements OnInit {
       this.commonDataSource = null;
       this.GetAllTwentyFeetTransactionDetails(this.authenticationDetails.userID);
     }
-    else  if (value === 'fourtyFeetTotalTrans') {
+    else if (value === 'fourtyFeetTotalTrans') {
       this.diagramShow = false;
       this.tableShowName = 'Total 40s Containers';
       this.tableShow = true;
@@ -1130,10 +1155,10 @@ export class DashboardComponent implements OnInit {
 
   CheckFourtyFeet(value: TransactionDetailsByLocationID[]): boolean {
     if (value && value.length) {
-     const filteredValue= value.filter(x=>x.CONTAINER_SIZE==='40');
-     if(filteredValue.length){
-       return true;
-     }
+      const filteredValue = value.filter(x => x.CONTAINER_SIZE === '40');
+      if (filteredValue.length) {
+        return true;
+      }
     }
     return false;
   }
