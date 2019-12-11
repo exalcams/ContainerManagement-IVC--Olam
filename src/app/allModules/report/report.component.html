@@ -326,7 +326,8 @@
                 </div>
                 <div fxFlex="20" style="padding-top:10px; margin-left: 50px;">
                   <button mat-raised-button color="accent" (click)="exportReportToExcel(content1ShowName)">
-                    <mat-icon svgIcon="excel" style="margin-right: 8px;" aria-hidden="false" aria-label="Excel SVG icon">
+                    <mat-icon svgIcon="excel" style="margin-right: 8px;" aria-hidden="false"
+                      aria-label="Excel SVG icon">
                     </mat-icon>Export XLSX
                   </button>
                 </div>
@@ -437,7 +438,8 @@
                   </div>
                 </div>
                 <div flex>
-                  <mat-paginator [pageSizeOptions]="[10, 20, 30, 50, 75, 100]" showFirstLastButtons></mat-paginator>
+                  <mat-paginator [pageSizeOptions]="[10, 20, 30, 50, 75, 100, 200, 300, 400, 500]" showFirstLastButtons>
+                  </mat-paginator>
                 </div>
               </div>
             </mat-card-content>
