@@ -76,6 +76,7 @@ export class DashboardDetailComponent implements OnInit {
       CONTAINER_SIZE: containerData.CONTAINER_SIZE,
       CONTAINER_TYPE: containerData.CONTAINER_TYPE,
       COLOR: containerData.COLOR,
+      TYPE: containerData.TYPE,
       RELEASE_ORDER_NUMBER: containerData.RELEASE_ORDER_NUMBER,
       CUSTOMER_NAME: containerData.CUSTOMER_NAME,
       SALES_CONTRACT_NO: containerData.SALES_CONTRACT_NO,
@@ -131,7 +132,7 @@ export class DashboardDetailComponent implements OnInit {
   }
   // tslint:disable-next-line:max-line-length
   // containerdetails(containerNo: number, transpoter: string, containerType: string, containerSize: string, sealNumber: number, exittime: string, currentStatus: string, releaseOrderNumber: number) {
-  //   // alert(containerNo); 
+  //   // alert(containerNo);
   //   const dialogConfig = new MatDialogConfig();
 
   //   dialogConfig.disableClose = true;

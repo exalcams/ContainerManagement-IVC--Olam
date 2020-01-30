@@ -21,7 +21,7 @@
                   </mat-list-item>
 
                   <mat-divider></mat-divider>
-                  <mat-list-item class="mat-form-field"> 
+                  <mat-list-item class="mat-form-field">
                     <span class="h3 secondary-text" style="margin-right: auto;">
                       Customer No
                     </span>
@@ -31,7 +31,7 @@
                   </mat-list-item>
 
                   <mat-divider></mat-divider>
-                  <mat-list-item class="mat-form-field"> 
+                  <mat-list-item class="mat-form-field">
                     <span class="h3 secondary-text" style="margin-right: auto;">
                       Customer Name
                     </span>
@@ -41,7 +41,7 @@
                   </mat-list-item>
 
                   <mat-divider></mat-divider>
-                  <mat-list-item class="mat-form-field"> 
+                  <mat-list-item class="mat-form-field">
                     <span class="h3 secondary-text" style="margin-right: auto;">
                       Sales Contract No
                     </span>
@@ -71,7 +71,7 @@
                   </mat-list-item>
 
                   <mat-divider></mat-divider>
-                  <mat-list-item class="mat-form-field"> 
+                  <mat-list-item class="mat-form-field">
                     <span class="h3 secondary-text" style="margin-right: auto;">
                       Container Size
                     </span>
@@ -81,7 +81,7 @@
                   </mat-list-item>
 
                   <mat-divider></mat-divider>
-                  <mat-list-item class="mat-form-field"> 
+                  <mat-list-item class="mat-form-field">
                     <span class="h3 secondary-text" style="margin-right: auto;">
                       Container Type
                     </span>
@@ -91,7 +91,17 @@
                   </mat-list-item>
 
                   <mat-divider></mat-divider>
-                  <mat-list-item class="mat-form-field"> 
+                  <mat-list-item class="mat-form-field">
+                    <span class="h3 secondary-text" style="margin-right: auto;">
+                      Full/Empty
+                    </span>
+                    <span class="h3">
+                        {{data.TYPE}}
+                    </span>
+                  </mat-list-item>
+
+                  <mat-divider></mat-divider>
+                  <mat-list-item class="mat-form-field">
                     <span class="h3 secondary-text" style="margin-right: auto;">
                       Color
                     </span>
@@ -101,7 +111,7 @@
                   </mat-list-item>
 
                   <mat-divider></mat-divider>
-                  <mat-list-item class="mat-form-field"> 
+                  <mat-list-item class="mat-form-field">
                     <span class="h3 secondary-text" style="margin-right: auto;">
                         Seal Number
                     </span>
@@ -111,7 +121,7 @@
                   </mat-list-item>
 
                   <!-- <mat-divider></mat-divider>
-                  <mat-list-item class="mat-form-field"> 
+                  <mat-list-item class="mat-form-field">
                     <span class="h3 secondary-text" style="margin-right: auto;">
                       Release Order Number
                     </span>
@@ -121,7 +131,7 @@
                   </mat-list-item> -->
 
                   <mat-divider></mat-divider>
-                  <mat-list-item class="mat-form-field"> 
+                  <mat-list-item class="mat-form-field">
                     <span class="h3 secondary-text" style="margin-right: auto;">
                       Entry Date
                     </span>
@@ -129,9 +139,9 @@
                         {{data.ENTRY_TIME | date:'dd/MM/yyyy'}}
                     </span>
                   </mat-list-item>
-<!-- 
+<!--
                   <mat-divider></mat-divider>
-                  <mat-list-item class="mat-form-field"> 
+                  <mat-list-item class="mat-form-field">
                     <span class="h3 secondary-text" style="margin-right: auto;">
                       Exit Time
                     </span>
